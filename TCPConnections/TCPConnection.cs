@@ -4,55 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConnectionInterface;
 
-namespace ConnectionTester {
-	class TCPConnection {
+namespace TCPConnections {
+	public class TCPConnection : Connection {
 		#region internalvars
-		private String connectionName;
-
 		private TcpClient client;
 		private NetworkStream stream;
 
-		private String hostName;
-		private int port;
-
-		private String log;
+		private String toSend;
 		#endregion
 
 		#region constructors
-		public TCPConnection(String name) {
-			connectionName = name;
+		public TCPConnection(String name) : base(name) {
 			client = null;
 			stream = null;
-			hostName = "";
-			port = 0;
-			log = "";
 		}
 
-		public TCPConnection(String name, String hostName, int port) {
-			connectionName = name;
+		public TCPConnection(String name, String hostName, int port) : base(name, hostName, port) {
 			client = null;
 			stream = null;
-			this.hostName = hostName;
-			this.port = port;
-			log = "";
-		}
-		#endregion
-
-		#region properties
-		public String ConnectionName {
-			get { return connectionName; }
-		}
-
-
-		public String HostName {
-			get { return hostName; }
-			set { hostName = value; }
-		}
-
-		public int Port {
-			get { return port; }
-			set { port = value; }
 		}
 		#endregion
 
@@ -62,8 +33,14 @@ namespace ConnectionTester {
 			Disconnect();
 		}
 
+		#region properties
+		public String ToSend {
+			set { toSend = value; }
+		}
+		#endregion
+
 		#region connectionmethods
-		public async void Connect() {
+		public override async void Connect() {
 			try {
 				if (client == null) client = new TcpClient();
 				else {
@@ -74,22 +51,21 @@ namespace ConnectionTester {
 				await client.ConnectAsync(hostName, port);
 				stream = client.GetStream();
 				log += "Connected\n";
-			} catch(SocketException err) { SocketPanic(err); }
+			} catch (SocketException err) { SocketPanic(err); }
 		}
 
-		public void Disconnect() {
+		public override void Disconnect() {
 			if (client != null) client.Close();
 			client = null;
 			log += "Disconnected\n";
 		}
 
-		public async void SendString(String toSend) {
+		public override async void Send() {
 			try {
 				Byte[] data = Encoding.ASCII.GetBytes(toSend);
 				await stream.WriteAsync(data, 0, data.Length);
 				//GetResponses();
-			} catch(SocketException err) { SocketPanic(err); }
-			catch (System.IO.IOException) {
+			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) {
 				// Usually thrown on timeout, should find a
 				// way to update Connected property
 				// without throwing
@@ -99,12 +75,12 @@ namespace ConnectionTester {
 		}
 
 		private async void GetResponses() {
-			if(stream.CanRead) {
+			if (stream.CanRead) {
 				try {
 					Byte[] data = new byte[256];
 					int numBytes = await stream.ReadAsync(data, 0, data.Length);
 					log += Encoding.ASCII.GetString(data, 0, numBytes);
-				} catch(SocketException err) { SocketPanic(err); }
+				} catch (SocketException err) { SocketPanic(err); }
 			}
 		}
 		#endregion
