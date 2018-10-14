@@ -74,7 +74,7 @@ namespace TCPConnections {
 			}
 		}
 
-		private async void GetResponses() {
+		public override async void GetResponses() {
 			if (stream.CanRead) {
 				try {
 					Byte[] data = new byte[256];

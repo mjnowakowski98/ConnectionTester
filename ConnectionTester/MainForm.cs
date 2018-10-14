@@ -14,20 +14,22 @@ using ConnectionInterface;
 
 namespace ConnectionTester {
 	public partial class MainForm : Form {
+		private List<ConnectionType> connectionTypes;
+
 		public MainForm() {
 			InitializeComponent();
+			connectionTypes = new List<ConnectionType>();
 		}
 
-		private void MainForm_Load(object sender, EventArgs e) {
-			foreach(SettingsProperty connection in Properties.ConnectionLibs.Default.Properties) {
+		private void LoadConnectionLibs(String path) {
+			foreach (SettingsProperty connection in Properties.ConnectionLibs.Default.Properties) {
 				tsConnectionType.TabPages.Add(connection.Name, connection.Name);
 				TabPage connectionTab = tsConnectionType.TabPages[connection.Name];
 				connectionTab.AutoScroll = true;
 
-
-				Assembly connectionDLL = Assembly.LoadFrom(".\\connectionlibs\\" + connection.DefaultValue);
-				foreach(Type type in connectionDLL.GetExportedTypes()) {
-					if (typeof(Connection).IsAssignableFrom(type)) continue;
+				Assembly connectionDLL = Assembly.LoadFrom(path + connection.DefaultValue);
+				foreach (Type type in connectionDLL.GetExportedTypes()) {
+					if (typeof(Connection).IsAssignableFrom(type)) connectionTypes.Add(new ConnectionType(type));
 					else if (typeof(UserControl).IsAssignableFrom(type)) {
 						UserControl control = (UserControl)Activator.CreateInstance(type);
 						control.Width = connectionTab.Width;
@@ -36,6 +38,10 @@ namespace ConnectionTester {
 					}
 				}
 			}
+		}
+
+		private void MainForm_Load(object sender, EventArgs e) {
+			LoadConnectionLibs(".\\connectionlibs\\");
 		}
 	}
 }
