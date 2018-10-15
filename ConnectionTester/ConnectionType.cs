@@ -8,21 +8,35 @@ using ConnectionInterface; // Reference from ConnectionInterface.dll (Solution l
 
 namespace ConnectionTester {
 	// Container for all connections of the derived type
-	class ConnectionType {
+	public class ConnectionType {
 		#region internalvars
 		private List<Connection> connections; // List of connections
+		private Connection currentConnection;
 		private Type derivedType; // Connection type
+		private String typeKey;
 		#endregion
 
-		public ConnectionType(Type type) {
+		public ConnectionType(Type type, String key) {
 			connections = new List<Connection>();
+			currentConnection = null;
 			derivedType = type; // Set type
+			typeKey = key; // Key to select connection type
 		}
 
 		// Readonly
 		// Connection type
 		public Type DerivedType {
 			get { return derivedType; }
+		}
+
+		// Key to match ConnectionType
+		public String TypeKey {
+			get { return typeKey; }
+		}
+
+		// Active connection
+		public Connection CurrentConnection {
+			get { return currentConnection; }
 		}
 
 		#region modifiermethods
@@ -44,6 +58,7 @@ namespace ConnectionTester {
 			if (success) { // Create new instance of derived type
 				dynamic newInstance = Activator.CreateInstance(derivedType);
 				connections.Add(newInstance);
+				currentConnection = newInstance;
 			}
 
 			return success;

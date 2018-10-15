@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionLibrariesDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.\\connectionlibs\\</Value>
+      <Value Profile="(Default)">.\connectionlibs\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

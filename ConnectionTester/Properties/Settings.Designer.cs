@@ -25,7 +25,7 @@ namespace ConnectionTester.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".\\\\connectionlibs\\\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\connectionlibs\\")]
         public string ConnectionLibrariesDir {
             get {
                 return ((string)(this["ConnectionLibrariesDir"]));

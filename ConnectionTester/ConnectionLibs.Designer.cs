@@ -33,6 +33,8 @@
 			this.tbLibDir = new System.Windows.Forms.TextBox();
 			this.btnBrowse = new System.Windows.Forms.Button();
 			this.cbReload = new System.Windows.Forms.CheckBox();
+			this.tbAddLibAssembly = new System.Windows.Forms.TextBox();
+			this.lblLibAssembly = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// lbLibNames
@@ -51,32 +53,33 @@
 			this.btnAddLib.TabIndex = 1;
 			this.btnAddLib.Text = "Add";
 			this.btnAddLib.UseVisualStyleBackColor = true;
+			this.btnAddLib.Click += new System.EventHandler(this.btnAddLib_Click);
 			// 
 			// tbAddLibName
 			// 
 			this.tbAddLibName.Location = new System.Drawing.Point(12, 178);
 			this.tbAddLibName.Name = "tbAddLibName";
-			this.tbAddLibName.Size = new System.Drawing.Size(260, 20);
+			this.tbAddLibName.Size = new System.Drawing.Size(75, 20);
 			this.tbAddLibName.TabIndex = 2;
 			// 
 			// btnRemoveLib
 			// 
-			this.btnRemoveLib.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnRemoveLib.Location = new System.Drawing.Point(93, 204);
 			this.btnRemoveLib.Name = "btnRemoveLib";
 			this.btnRemoveLib.Size = new System.Drawing.Size(75, 23);
 			this.btnRemoveLib.TabIndex = 3;
 			this.btnRemoveLib.Text = "Remove";
 			this.btnRemoveLib.UseVisualStyleBackColor = true;
+			this.btnRemoveLib.Click += new System.EventHandler(this.btnRemoveLib_Click);
 			// 
 			// lblLibName
 			// 
 			this.lblLibName.AutoSize = true;
 			this.lblLibName.Location = new System.Drawing.Point(12, 162);
 			this.lblLibName.Name = "lblLibName";
-			this.lblLibName.Size = new System.Drawing.Size(67, 13);
+			this.lblLibName.Size = new System.Drawing.Size(35, 13);
 			this.lblLibName.TabIndex = 5;
-			this.lblLibName.Text = "Library name";
+			this.lblLibName.Text = "Name";
 			// 
 			// lblLibDir
 			// 
@@ -108,6 +111,8 @@
 			// cbReload
 			// 
 			this.cbReload.AutoSize = true;
+			this.cbReload.Checked = true;
+			this.cbReload.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbReload.Location = new System.Drawing.Point(212, 208);
 			this.cbReload.Name = "cbReload";
 			this.cbReload.Size = new System.Drawing.Size(60, 17);
@@ -115,12 +120,30 @@
 			this.cbReload.Text = "Reload";
 			this.cbReload.UseVisualStyleBackColor = true;
 			// 
+			// tbAddLibAssembly
+			// 
+			this.tbAddLibAssembly.Location = new System.Drawing.Point(93, 178);
+			this.tbAddLibAssembly.Name = "tbAddLibAssembly";
+			this.tbAddLibAssembly.Size = new System.Drawing.Size(179, 20);
+			this.tbAddLibAssembly.TabIndex = 10;
+			// 
+			// lblLibAssembly
+			// 
+			this.lblLibAssembly.AutoSize = true;
+			this.lblLibAssembly.Location = new System.Drawing.Point(90, 162);
+			this.lblLibAssembly.Name = "lblLibAssembly";
+			this.lblLibAssembly.Size = new System.Drawing.Size(51, 13);
+			this.lblLibAssembly.TabIndex = 11;
+			this.lblLibAssembly.Text = "Assembly";
+			// 
 			// ConnectionLibs
 			// 
 			this.AcceptButton = this.btnAddLib;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 236);
+			this.Controls.Add(this.lblLibAssembly);
+			this.Controls.Add(this.tbAddLibAssembly);
 			this.Controls.Add(this.cbReload);
 			this.Controls.Add(this.btnBrowse);
 			this.Controls.Add(this.tbLibDir);
@@ -138,6 +161,7 @@
 			this.Name = "ConnectionLibs";
 			this.Text = "Connection Libraries";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConnectionLibs_FormClosing);
+			this.Load += new System.EventHandler(this.ConnectionLibs_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -155,5 +179,7 @@
 		private System.Windows.Forms.TextBox tbLibDir;
 		private System.Windows.Forms.Button btnBrowse;
 		private System.Windows.Forms.CheckBox cbReload;
+		private System.Windows.Forms.TextBox tbAddLibAssembly;
+		private System.Windows.Forms.Label lblLibAssembly;
 	}
 }

@@ -53,6 +53,7 @@
 			this.tsConnectionType.SelectedIndex = 0;
 			this.tsConnectionType.Size = new System.Drawing.Size(375, 116);
 			this.tsConnectionType.TabIndex = 0;
+			this.tsConnectionType.SelectedIndexChanged += new System.EventHandler(this.tsConnectionType_SelectedIndexChanged);
 			// 
 			// pnlConnections
 			// 
@@ -185,6 +186,7 @@
 			this.btnAddConnection.TabIndex = 6;
 			this.btnAddConnection.Text = "New";
 			this.btnAddConnection.UseVisualStyleBackColor = true;
+			this.btnAddConnection.Click += new System.EventHandler(this.btnAddConnection_Click);
 			// 
 			// btnDeleteConnection
 			// 
