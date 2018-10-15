@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionLibs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionLibs.Designer.cs">
+      <DependentUpon>ConnectionLibs.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionType.cs" />
     <Compile Include="Properties\ConnectionLibs.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConnectionLibs.resx">
+      <DependentUpon>ConnectionLibs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -23,12 +23,15 @@ namespace ConnectionTester.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("TCPConnections.dll")]
         public string TCP {
             get {
                 return ((string)(this["TCP"]));
+            }
+            set {
+                this["TCP"] = value;
             }
         }
     }

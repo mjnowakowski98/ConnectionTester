@@ -134,6 +134,7 @@
 			this.btnSendMessage.TabIndex = 6;
 			this.btnSendMessage.Text = "Send";
 			this.btnSendMessage.UseVisualStyleBackColor = true;
+			this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
 			// 
 			// tbResponses
 			// 
@@ -204,6 +205,7 @@
 			this.btnConnectionLibs.TabIndex = 8;
 			this.btnConnectionLibs.Text = "Connection Libraries";
 			this.btnConnectionLibs.UseVisualStyleBackColor = true;
+			this.btnConnectionLibs.Click += new System.EventHandler(this.btnConnectionLibs_Click);
 			// 
 			// MainForm
 			// 
