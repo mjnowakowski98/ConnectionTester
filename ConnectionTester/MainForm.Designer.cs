@@ -167,6 +167,7 @@
 			this.cbConnections.Name = "cbConnections";
 			this.cbConnections.Size = new System.Drawing.Size(117, 21);
 			this.cbConnections.TabIndex = 4;
+			this.cbConnections.SelectedIndexChanged += new System.EventHandler(this.cbConnections_SelectedIndexChanged);
 			// 
 			// lblConnections
 			// 

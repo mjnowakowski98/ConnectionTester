@@ -54,12 +54,18 @@ namespace ConnectionTester {
 			}
 		}
 
+		private void FillConnectionsList() {
+			cbConnections.Items.Clear();
+			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
+		}
+
 		// Set active connection type
 		private void SetCurrentConnectionType() {
 			int ndx = connectionTypes.Count;
 			while (--ndx >= 0) { // Find associated ConnectionType
 				if (connectionTypes[ndx].TypeKey == tsConnectionType.SelectedTab.Text) {
 					currentConnectionType = connectionTypes[ndx]; // Set active
+					FillConnectionsList();
 					return;
 				}
 			}
@@ -88,10 +94,18 @@ namespace ConnectionTester {
 		private void btnAddConnection_Click(object sender, EventArgs e) {
 			NewConnection dialog = new NewConnection(currentConnectionType);
 			dialog.ShowDialog();
+			FillConnectionsList();
+			cbConnections.SelectedIndex = cbConnections.Items.IndexOf(currentConnectionType.CurrentConnection.ConnectionName);
+			
 		}
 
 		// Set active connection type
 		private void tsConnectionType_SelectedIndexChanged(object sender, EventArgs e) { SetCurrentConnectionType(); }
 		#endregion
+
+		private void cbConnections_SelectedIndexChanged(object sender, EventArgs e) {
+			tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
+			tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
+		}
 	}
 }

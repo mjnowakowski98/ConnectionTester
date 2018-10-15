@@ -34,10 +34,24 @@ namespace ConnectionTester {
 			get { return typeKey; }
 		}
 
+		// User set names of connections
+		public List<String> ConnectionNames {
+			get {
+				List<String> namesList = new List<string>();
+				foreach (Connection connection in connections)
+					namesList.Add(connection.ConnectionName);	
+
+				return namesList;
+			}
+		}
+
+		// Read/write
 		// Active connection
 		public Connection CurrentConnection {
 			get { return currentConnection; }
+			set { currentConnection = value; }
 		}
+
 
 		#region modifiermethods
 		// Gets collection index by connection name
@@ -56,7 +70,7 @@ namespace ConnectionTester {
 				if (connections[i].ConnectionName == name) success = false;
 
 			if (success) { // Create new instance of derived type
-				dynamic newInstance = Activator.CreateInstance(derivedType);
+				dynamic newInstance = Activator.CreateInstance(derivedType, new object[] { name, hostName, port});
 				connections.Add(newInstance);
 				currentConnection = newInstance;
 			}
