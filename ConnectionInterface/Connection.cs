@@ -8,12 +8,13 @@ namespace ConnectionInterface {
 	// Base class for all connection types
 	public abstract class Connection {
 		#region eventdeclarations
-		public event EventHandler Connected;
+		public delegate void ConnectionEventHandler(object sender, ConnectionEventArgs e);
+		public event ConnectionEventHandler ConnectionEvent;
 		#endregion
 
 		#region eventmethods
-		protected virtual void OnConnected(EventArgs e) {
-			EventHandler handler = Connected;
+		protected virtual void OnConnectionEvent(object sender, ConnectionEventArgs e) {
+			ConnectionEventHandler handler = ConnectionEvent;
 			handler(this, e);
 		}
 		#endregion
@@ -28,23 +29,12 @@ namespace ConnectionInterface {
 		protected String log; // Output
 		#endregion
 
-		#region constructors
-		// Name only, hostname/port specified later
-		public Connection(String name) {
-			connectionName = name;
-			hostName = "";
-			port = 0;
-			log = "";
-		}
-
-		// One-shot name, hostname and port
 		public Connection(String name, String hostName, int port) {
 			connectionName = name;
 			this.hostName = hostName;
 			this.port = port;
 			log = "";
 		}
-		#endregion
 
 		#region properties
 		// Readonly
@@ -64,6 +54,10 @@ namespace ConnectionInterface {
 		public int Port {
 			get { return port; }
 			set { port = value; }
+		}
+
+		public String Log {
+			get { return log; }
 		}
 		#endregion
 

@@ -60,9 +60,10 @@ namespace ConnectionTester {
 			return ndx;
 		}
 
-		public void SetCurrentConnection(String connectionName) {
+		public void SetCurrentConnectionByName(String connectionName) {
 			int ndx = GetConnectionNdxByName(connectionName);
 			if (ndx >= 0) currentConnection = connections[ndx];
+			else currentConnection = null;
 		}
 
 		// Create a new connection
@@ -82,7 +83,7 @@ namespace ConnectionTester {
 
 		// Remove connection by index
 		public void RemoveConnection(int ndx) {
-			if (ndx < 0 | ndx >= connections.Count) return;
+			if (ndx < 0 || ndx >= connections.Count) return;
 			connections[ndx].Disconnect();
 			connections.RemoveAt(ndx);
 		}

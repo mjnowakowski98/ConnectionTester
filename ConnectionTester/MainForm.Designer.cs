@@ -89,6 +89,7 @@
 			this.btnConnect.TabIndex = 4;
 			this.btnConnect.Text = "Connect";
 			this.btnConnect.UseVisualStyleBackColor = true;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// tbPortNum
 			// 
@@ -131,6 +132,7 @@
 			// btnSendMessage
 			// 
 			this.btnSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnSendMessage.Enabled = false;
 			this.btnSendMessage.Location = new System.Drawing.Point(12, 220);
 			this.btnSendMessage.Name = "btnSendMessage";
 			this.btnSendMessage.Size = new System.Drawing.Size(89, 23);

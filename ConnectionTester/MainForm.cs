@@ -24,6 +24,29 @@ namespace ConnectionTester {
 			currentConnectionType = null;
 		}
 
+		protected void OnConnectionEvent(object sender, ConnectionEventArgs e) {
+			switch(e.EventEnum) {
+				case EventType.Connected:
+					btnConnect.Enabled = false;
+					btnDisconnect.Enabled = true;
+					btnSendMessage.Enabled = true;
+					break;
+				case EventType.Disconnected:
+					btnConnect.Enabled = true;
+					btnDisconnect.Enabled = false;
+					btnSendMessage.Enabled = false;
+					break;
+				case EventType.DataSent:
+					break;
+				case EventType.DataRecieved:
+					break;
+				default:
+					break;
+			}
+
+			tbResponses.Text = currentConnectionType.CurrentConnection.Log;
+		}
+
 		// Load configured libraries
 		private void LoadConnectionLibs() {
 			connectionTypes.Clear(); // Clear loaded ConnectionTypes
@@ -55,7 +78,8 @@ namespace ConnectionTester {
 		}
 
 		private void FillConnectionsList() {
-			cbConnections.Items.Clear();
+			cbConnections.Items.Clear(); // Clear current list
+			// Populate with connection names
 			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
 		}
 
@@ -65,7 +89,7 @@ namespace ConnectionTester {
 			while (--ndx >= 0) { // Find associated ConnectionType
 				if (connectionTypes[ndx].TypeKey == tsConnectionType.SelectedTab.Text) {
 					currentConnectionType = connectionTypes[ndx]; // Set active
-					FillConnectionsList();
+					FillConnectionsList(); // Fill the connections list
 					return;
 				}
 			}
@@ -75,6 +99,13 @@ namespace ConnectionTester {
 		private void MainForm_Load(object sender, EventArgs e) {
 			LoadConnectionLibs(); // Load configured libraries
 			SetCurrentConnectionType(); // Read the method name 8)
+		}
+
+		// Connect to the server using specified settings
+		private void btnConnect_Click(object sender, EventArgs e) {
+			if (currentConnectionType == null) return;
+			if (currentConnectionType.CurrentConnection == null) return;
+			currentConnectionType.CurrentConnection.Connect();
 		}
 
 		// Send to server using ConnectionType implementation
@@ -91,27 +122,39 @@ namespace ConnectionTester {
 			if (dr == DialogResult.Yes) LoadConnectionLibs(); // Reload libraries
 		}
 
+		// Add connection to connection type
 		private void btnAddConnection_Click(object sender, EventArgs e) {
 			NewConnection dialog = new NewConnection(currentConnectionType);
-			dialog.ShowDialog();
-			FillConnectionsList();
+			dialog.ShowDialog(); // Show NewConnection dialog
+			currentConnectionType.CurrentConnection.ConnectionEvent += OnConnectionEvent; // Register event handler
+			FillConnectionsList(); // Does what it says
+			// Set current type active connection to new connection
 			cbConnections.SelectedIndex = cbConnections.Items.IndexOf(currentConnectionType.CurrentConnection.ConnectionName);
 		}
 
+		// Remove selected connection from connection type
 		private void btnDeleteConnection_Click(object sender, EventArgs e) {
 			currentConnectionType.RemoveConnection(cbConnections.Text);
 			FillConnectionsList();
-			if (cbConnections.Items.Count > 0) cbConnections.SelectedIndex = 0;
+			cbConnections.SelectedIndex = cbConnections.Items.Count - 1;
 		}
 
 		// Set active connection type
 		private void tsConnectionType_SelectedIndexChanged(object sender, EventArgs e) { SetCurrentConnectionType(); }
 		#endregion
 
+		// Set active connection
 		private void cbConnections_SelectedIndexChanged(object sender, EventArgs e) {
-			currentConnectionType.SetCurrentConnection(cbConnections.Text);
-			tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
-			tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
+			currentConnectionType.SetCurrentConnectionByName(cbConnections.Text);
+			if (currentConnectionType.CurrentConnection != null) {
+				tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
+				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
+				tbResponses.Text = currentConnectionType.CurrentConnection.Log;
+			} else {
+				tbConnectTo.Text = "";
+				tbPortNum.Text = "";
+				tbResponses.Text = "";
+			}
 		}
 	}
 }
