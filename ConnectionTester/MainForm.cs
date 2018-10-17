@@ -96,7 +96,12 @@ namespace ConnectionTester {
 			dialog.ShowDialog();
 			FillConnectionsList();
 			cbConnections.SelectedIndex = cbConnections.Items.IndexOf(currentConnectionType.CurrentConnection.ConnectionName);
-			
+		}
+
+		private void btnDeleteConnection_Click(object sender, EventArgs e) {
+			currentConnectionType.RemoveConnection(cbConnections.Text);
+			FillConnectionsList();
+			if (cbConnections.Items.Count > 0) cbConnections.SelectedIndex = 0;
 		}
 
 		// Set active connection type
@@ -104,6 +109,7 @@ namespace ConnectionTester {
 		#endregion
 
 		private void cbConnections_SelectedIndexChanged(object sender, EventArgs e) {
+			currentConnectionType.SetCurrentConnection(cbConnections.Text);
 			tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
 			tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
 		}

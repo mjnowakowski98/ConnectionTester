@@ -51,6 +51,7 @@ namespace TCPConnections {
 				await client.ConnectAsync(hostName, port);
 				stream = client.GetStream();
 				log += "Connected\n";
+				OnConnected(null);
 			} catch (SocketException err) { SocketPanic(err); }
 		}
 
@@ -65,13 +66,7 @@ namespace TCPConnections {
 				Byte[] data = Encoding.ASCII.GetBytes(toSend);
 				await stream.WriteAsync(data, 0, data.Length);
 				//GetResponses();
-			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) {
-				// Usually thrown on timeout, should find a
-				// way to update Connected property
-				// without throwing
-
-				Disconnect();
-			}
+			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) { Disconnect(); }
 		}
 
 		public override async void GetResponses() {

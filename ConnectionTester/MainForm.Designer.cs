@@ -94,6 +94,7 @@
 			// 
 			this.tbPortNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPortNum.Enabled = false;
 			this.tbPortNum.Location = new System.Drawing.Point(47, 38);
 			this.tbPortNum.Name = "tbPortNum";
 			this.tbPortNum.Size = new System.Drawing.Size(154, 20);
@@ -121,6 +122,7 @@
 			// 
 			this.tbConnectTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbConnectTo.Enabled = false;
 			this.tbConnectTo.Location = new System.Drawing.Point(47, 12);
 			this.tbConnectTo.Name = "tbConnectTo";
 			this.tbConnectTo.Size = new System.Drawing.Size(316, 20);
@@ -162,6 +164,7 @@
 			// 
 			this.cbConnections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.cbConnections.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbConnections.FormattingEnabled = true;
 			this.cbConnections.Location = new System.Drawing.Point(84, 75);
 			this.cbConnections.Name = "cbConnections";
@@ -198,6 +201,7 @@
 			this.btnDeleteConnection.TabIndex = 7;
 			this.btnDeleteConnection.Text = "Remove";
 			this.btnDeleteConnection.UseVisualStyleBackColor = true;
+			this.btnDeleteConnection.Click += new System.EventHandler(this.btnDeleteConnection_Click);
 			// 
 			// btnConnectionLibs
 			// 

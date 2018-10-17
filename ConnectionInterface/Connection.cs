@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 namespace ConnectionInterface {
 	// Base class for all connection types
 	public abstract class Connection {
+		#region eventdeclarations
+		public event EventHandler Connected;
+		#endregion
+
+		#region eventmethods
+		protected virtual void OnConnected(EventArgs e) {
+			EventHandler handler = Connected;
+			handler(this, e);
+		}
+		#endregion
+
 		#region internalvars
 		protected String connectionName; // User name of connection
 

@@ -45,13 +45,10 @@ namespace ConnectionTester {
 			}
 		}
 
-		// Read/write
 		// Active connection
 		public Connection CurrentConnection {
 			get { return currentConnection; }
-			set { currentConnection = value; }
 		}
-
 
 		#region modifiermethods
 		// Gets collection index by connection name
@@ -61,6 +58,11 @@ namespace ConnectionTester {
 				if (connections[ndx].ConnectionName == name) break;
 
 			return ndx;
+		}
+
+		public void SetCurrentConnection(String connectionName) {
+			int ndx = GetConnectionNdxByName(connectionName);
+			if (ndx >= 0) currentConnection = connections[ndx];
 		}
 
 		// Create a new connection
