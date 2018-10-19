@@ -79,10 +79,12 @@
 			this.btnDisconnect.TabIndex = 5;
 			this.btnDisconnect.Text = "Disconnect";
 			this.btnDisconnect.UseVisualStyleBackColor = true;
+			this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
 			// 
 			// btnConnect
 			// 
 			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnConnect.Enabled = false;
 			this.btnConnect.Location = new System.Drawing.Point(207, 36);
 			this.btnConnect.Name = "btnConnect";
 			this.btnConnect.Size = new System.Drawing.Size(75, 23);

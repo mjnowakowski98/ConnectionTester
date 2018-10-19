@@ -23,6 +23,11 @@ namespace ConnectionTester {
 			typeKey = key; // Key to select connection type
 		}
 
+		~ConnectionType() {
+			foreach (Connection connection in connections)
+				connection.Disconnect();
+		}
+
 		// Readonly
 		// Connection type
 		public Type DerivedType {
@@ -48,6 +53,10 @@ namespace ConnectionTester {
 		// Active connection
 		public Connection CurrentConnection {
 			get { return currentConnection; }
+		}
+
+		public int NumConnections {
+			get { return connections.Count; }
 		}
 
 		#region modifiermethods

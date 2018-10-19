@@ -27,18 +27,10 @@ namespace ConnectionTester {
 		protected void OnConnectionEvent(object sender, ConnectionEventArgs e) {
 			switch(e.EventEnum) {
 				case EventType.Connected:
-					btnConnect.Enabled = false;
-					btnDisconnect.Enabled = true;
-					btnSendMessage.Enabled = true;
+					SetConnectedUI();
 					break;
 				case EventType.Disconnected:
-					btnConnect.Enabled = true;
-					btnDisconnect.Enabled = false;
-					btnSendMessage.Enabled = false;
-					break;
-				case EventType.DataSent:
-					break;
-				case EventType.DataRecieved:
+					SetDisconnectedUI(true);
 					break;
 				default:
 					break;
@@ -83,6 +75,24 @@ namespace ConnectionTester {
 			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
 		}
 
+		private void SetConnectedUI() {
+			btnConnect.Enabled = false;
+			btnDisconnect.Enabled = true;
+			btnSendMessage.Enabled = true;
+		}
+
+		private void SetDisconnectedUI(bool connectionSelected) {
+			if(connectionSelected) {
+				btnConnect.Enabled = true;
+				btnDisconnect.Enabled = false;
+				btnSendMessage.Enabled = false;
+			} else {
+				btnConnect.Enabled = false;
+				btnDisconnect.Enabled = false;
+				btnSendMessage.Enabled = false;
+			}
+		}
+
 		// Set active connection type
 		private void SetCurrentConnectionType() {
 			int ndx = connectionTypes.Count;
@@ -99,17 +109,25 @@ namespace ConnectionTester {
 		private void MainForm_Load(object sender, EventArgs e) {
 			LoadConnectionLibs(); // Load configured libraries
 			SetCurrentConnectionType(); // Read the method name 8)
+			btnSendMessage.Enabled = true;
 		}
 
 		// Connect to the server using specified settings
 		private void btnConnect_Click(object sender, EventArgs e) {
-			if (currentConnectionType == null) return;
+			if (currentConnectionType == null) return; // Note: Maybe change null detection
 			if (currentConnectionType.CurrentConnection == null) return;
 			currentConnectionType.CurrentConnection.Connect();
 		}
 
+		private void btnDisconnect_Click(object sender, EventArgs e) {
+			if (currentConnectionType == null) return; // Note: Maybe change null detection
+			if (currentConnectionType.CurrentConnection == null) return;
+			currentConnectionType.CurrentConnection.Disconnect();
+		}
+
 		// Send to server using ConnectionType implementation
 		private void btnSendMessage_Click(object sender, EventArgs e) {
+			cbConnections.SelectedIndex = -1;
 			if(currentConnectionType.CurrentConnection != null)
 				currentConnectionType.CurrentConnection.Send();
 		}
@@ -124,8 +142,11 @@ namespace ConnectionTester {
 
 		// Add connection to connection type
 		private void btnAddConnection_Click(object sender, EventArgs e) {
+			DialogResult dr;
 			NewConnection dialog = new NewConnection(currentConnectionType);
-			dialog.ShowDialog(); // Show NewConnection dialog
+			dr = dialog.ShowDialog(); // Show NewConnection dialog
+			if (dr != DialogResult.OK) return;
+
 			currentConnectionType.CurrentConnection.ConnectionEvent += OnConnectionEvent; // Register event handler
 			FillConnectionsList(); // Does what it says
 			// Set current type active connection to new connection
@@ -135,8 +156,8 @@ namespace ConnectionTester {
 		// Remove selected connection from connection type
 		private void btnDeleteConnection_Click(object sender, EventArgs e) {
 			currentConnectionType.RemoveConnection(cbConnections.Text);
+			cbConnections.SelectedIndex = currentConnectionType.NumConnections - 1;
 			FillConnectionsList();
-			cbConnections.SelectedIndex = cbConnections.Items.Count - 1;
 		}
 
 		// Set active connection type
@@ -150,10 +171,14 @@ namespace ConnectionTester {
 				tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
 				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
 				tbResponses.Text = currentConnectionType.CurrentConnection.Log;
+
+				if(currentConnectionType.CurrentConnection.IsConnected) SetConnectedUI();
+				else SetDisconnectedUI(true);
 			} else {
 				tbConnectTo.Text = "";
 				tbPortNum.Text = "";
 				tbResponses.Text = "";
+				SetDisconnectedUI(false);
 			}
 		}
 	}

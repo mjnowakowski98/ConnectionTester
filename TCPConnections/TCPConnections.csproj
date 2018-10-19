@@ -57,6 +57,7 @@
       <Project>{b0257f6d-4c7b-4eb2-b142-53ca4227b216}</Project>
       <Name>ConnectionInterface</Name>
       <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

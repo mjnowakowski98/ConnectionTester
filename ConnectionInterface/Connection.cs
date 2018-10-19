@@ -15,11 +15,16 @@ namespace ConnectionInterface {
 		#region eventmethods
 		protected virtual void OnConnectionEvent(object sender, ConnectionEventArgs e) {
 			ConnectionEventHandler handler = ConnectionEvent;
+			if (e.EventEnum == EventType.Connected) isConnected = true;
+			else if (e.EventEnum == EventType.Disconnected) isConnected = false;
+
 			handler(this, e);
 		}
 		#endregion
 
 		#region internalvars
+		private bool isConnected;
+
 		protected String connectionName; // User name of connection
 
 		// What is being connected to
@@ -30,6 +35,7 @@ namespace ConnectionInterface {
 		#endregion
 
 		public Connection(String name, String hostName, int port) {
+			isConnected = false;
 			connectionName = name;
 			this.hostName = hostName;
 			this.port = port;
@@ -41,6 +47,10 @@ namespace ConnectionInterface {
 		// User name of connection
 		public String ConnectionName {
 			get { return connectionName; }
+		}
+
+		public bool IsConnected {
+			get { return isConnected; }
 		}
 
 		// Read/write
