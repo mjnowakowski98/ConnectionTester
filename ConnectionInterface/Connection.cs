@@ -74,7 +74,7 @@ namespace ConnectionInterface {
 		}
 
 		public UserControl GetUIControl() { return uiControl; }
-		protected void SetUIControl(UserControl control) { uiControl = control; }
+		protected void SetUIControl(UserControl control) { this.uiControl = control; }
 		#endregion
 
 		// Type specific implementations

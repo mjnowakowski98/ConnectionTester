@@ -12,13 +12,14 @@ namespace TCPConnections {
 		private TcpClient client; // Client/socket wrapper
 		private NetworkStream stream; // Message stream
 
-		private TCPControl uiControl; // User visible control section
+		private TCPControl tcpControl; // User visible control section
 		#endregion
 
 		public TCPConnection(String name, String hostName, int port) : base(name, hostName, port) {
 			client = null;
 			stream = null;
-			uiControl = TCPControl.GetInstance();
+			tcpControl = TCPControl.GetInstance();
+			SetUIControl(tcpControl);
 		}
 
 		// On SocketException
@@ -56,10 +57,11 @@ namespace TCPConnections {
 		// Send message to server
 		public override async void Send() {
 			try {
-				Byte[] data = Encoding.ASCII.GetBytes(uiControl.SendString);
+				Byte[] data = Encoding.ASCII.GetBytes(tcpControl.SendString);
 				await stream.WriteAsync(data, 0, data.Length);
-				log += "Data sent: " + uiControl.SendString + "\n";
+				log += "Data sent: " + tcpControl.SendString + "\n";
 				OnConnectionEvent(this, new ConnectionEventArgs(EventType.DataSent));
+				tcpControl.SendString = "";
 				GetResponses();
 			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) { Disconnect(); }
 		}
@@ -71,7 +73,7 @@ namespace TCPConnections {
 					Byte[] data = new byte[256];
 					int numBytes = await stream.ReadAsync(data, 0, data.Length);
 					log += Encoding.ASCII.GetString(data, 0, numBytes) + "\n";
-
+					OnConnectionEvent(this, new ConnectionEventArgs(EventType.DataRecieved));
 				} catch (SocketException err) { SocketPanic(err); }
 			}
 		}

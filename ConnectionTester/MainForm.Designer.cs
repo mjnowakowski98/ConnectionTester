@@ -150,6 +150,7 @@
 			this.tbResponses.Location = new System.Drawing.Point(4, 266);
 			this.tbResponses.Name = "tbResponses";
 			this.tbResponses.ReadOnly = true;
+			this.tbResponses.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
 			this.tbResponses.Size = new System.Drawing.Size(367, 162);
 			this.tbResponses.TabIndex = 2;
 			this.tbResponses.Text = "";

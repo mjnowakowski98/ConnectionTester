@@ -59,11 +59,10 @@ namespace ConnectionTester {
 				connectionTab.AutoScroll = true; // Allow page to scroll
 
 				foreach (Type type in connectionDLL.GetExportedTypes()) { // Iterate through public types in dll (should only have Connection, assume someone made more)
-					if (typeof(Connection).IsAssignableFrom(type))
+					if (typeof(Connection).IsAssignableFrom(type)) {
 						connectionTypes.Add(new ConnectionType(type, libSetting.Name)); // Register Connection derived class
-
-					else if (typeof(UserControl).IsAssignableFrom(type)) { // Fill tabpage with UserControl
-						UserControl control = (UserControl)Activator.CreateInstance(type); // Make new instance
+						Connection tmp = (Connection)Activator.CreateInstance(type, new object[] { null, null, null });
+						UserControl control = tmp.GetUIControl(); // Get control singleton instance
 						control.Dock = DockStyle.Fill; // Fill page with control (up to control to implement proper scaling)
 						connectionTab.Controls.Add(control); // Add control to page
 					}
@@ -77,18 +76,20 @@ namespace ConnectionTester {
 			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
 		}
 
+		// Setup buttons for a connected connection
 		private void SetConnectedUI() {
 			btnConnect.Enabled = false;
 			btnDisconnect.Enabled = true;
 			btnSendMessage.Enabled = true;
 		}
 
+		// Setup buttons for a disconnected or no connection
 		private void SetDisconnectedUI(bool connectionSelected) {
-			if(connectionSelected) {
+			if(connectionSelected) { // Diconnected
 				btnConnect.Enabled = true;
 				btnDisconnect.Enabled = false;
 				btnSendMessage.Enabled = false;
-			} else {
+			} else { // No connection
 				btnConnect.Enabled = false;
 				btnDisconnect.Enabled = false;
 				btnSendMessage.Enabled = false;
@@ -129,7 +130,6 @@ namespace ConnectionTester {
 
 		// Send to server using ConnectionType implementation
 		private void btnSendMessage_Click(object sender, EventArgs e) {
-			cbConnections.SelectedIndex = -1;
 			if(currentConnectionType.CurrentConnection != null)
 				currentConnectionType.CurrentConnection.Send();
 		}
@@ -168,18 +168,18 @@ namespace ConnectionTester {
 
 		// Set active connection
 		private void cbConnections_SelectedIndexChanged(object sender, EventArgs e) {
-			currentConnectionType.SetCurrentConnectionByName(cbConnections.Text);
-			if (currentConnectionType.CurrentConnection != null) {
+			currentConnectionType.SetCurrentConnectionByName(cbConnections.Text); // Set the current connection for the current connection type
+			if (currentConnectionType.CurrentConnection != null) { // If set to a valid connection
 				tbConnectTo.Text = currentConnectionType.CurrentConnection.HostName;
 				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
 				tbResponses.Text = currentConnectionType.CurrentConnection.Log;
 
-				if(currentConnectionType.CurrentConnection.IsConnected) SetConnectedUI();
-				else SetDisconnectedUI(true);
-			} else {
-				tbConnectTo.Text = "";
-				tbPortNum.Text = "";
-				tbResponses.Text = "";
+				if(currentConnectionType.CurrentConnection.IsConnected) SetConnectedUI(); // Is currently connected
+				else SetDisconnectedUI(true); // Is not connected
+			} else { // Set to invalid connection
+				tbConnectTo.Clear();
+				tbPortNum.Clear();
+				tbResponses.Clear();
 				SetDisconnectedUI(false);
 			}
 		}

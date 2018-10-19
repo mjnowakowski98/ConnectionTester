@@ -25,8 +25,10 @@ namespace ConnectionTester {
 			if (!int.TryParse(tbPort.Text, out portNum)) canAdd = false;
 
 			if (canAdd) {
-				currentType.AddConnection(tbConnectionName.Text, tbHostName.Text, portNum);
-				Close();
+				if (currentType.AddConnection(tbConnectionName.Text, tbHostName.Text, portNum)) {
+					DialogResult = DialogResult.OK;
+					Close();
+				} else MessageBox.Show("Name must be unique for connection method", "Error");
 			} else MessageBox.Show("Some fields are invalid", "Error");
 		}
 	}

@@ -78,8 +78,12 @@ namespace ConnectionTester {
 		// Create a new connection
 		public bool AddConnection(String name, String hostName, int port) {
 			bool success = true;
-			for(int i = 0; i < connections.Count; i++) // Make sure name is unique
-				if (connections[i].ConnectionName == name) success = false;
+			for (int i = 0; i < connections.Count; i++) { // Make sure name is unique
+				if (connections[i].ConnectionName == name) {
+					success = false;
+					break;
+				}
+			}
 
 			if (success) { // Create new instance of derived type
 				dynamic newInstance = Activator.CreateInstance(derivedType, new object[] { name, hostName, port});

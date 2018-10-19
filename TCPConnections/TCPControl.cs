@@ -19,6 +19,7 @@ namespace TCPConnections {
 
 		internal String SendString {
 			get { return tbSendString.Text; }
+			set { tbSendString.Text = value; }
 		}
 
 		public static TCPControl GetInstance() {
