@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Reflection;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.IO;
 
 using ConnectionInterface;
-using System.IO;
+
 
 namespace ConnectionTester {
 	public partial class MainForm : Form {
@@ -43,6 +38,7 @@ namespace ConnectionTester {
 		private void LoadConnectionLibs() {
 			connectionTypes.Clear(); // Clear loaded ConnectionTypes
 			tsConnectionType.TabPages.Clear(); // Clear loaded UI
+			tsConnectionType.SelectedIndex = -1;
 
 			// Iterate through each line in ConnectionLibs.settings
 			foreach (SettingsProperty libSetting in Properties.ConnectionLibs.Default.Properties) {
@@ -68,12 +64,16 @@ namespace ConnectionTester {
 					}
 				}
 			}
+
+			if (tsConnectionType.TabCount > 0) tsConnectionType.SelectedIndex = 0;
 		}
 
 		private void FillConnectionsList() {
+			cbConnections.SelectedIndex = -1;
 			cbConnections.Items.Clear(); // Clear current list
 			// Populate with connection names
 			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
+			cbConnections.SelectedIndex = cbConnections.Items.Count - 1;
 		}
 
 		// Setup buttons for a connected connection
@@ -102,26 +102,26 @@ namespace ConnectionTester {
 			while (--ndx >= 0) { // Find associated ConnectionType
 				if (connectionTypes[ndx].TypeKey == tsConnectionType.SelectedTab.Text) {
 					currentConnectionType = connectionTypes[ndx]; // Set active
-					FillConnectionsList(); // Fill the connections list
-					return;
+					break;
 				}
 			}
+
+			FillConnectionsList(); // Fill the connections list
 		}
 
 		#region formevents
 		private void MainForm_Load(object sender, EventArgs e) {
 			LoadConnectionLibs(); // Load configured libraries
-			SetCurrentConnectionType(); // Read the method name 8)
-			btnSendMessage.Enabled = true;
 		}
 
-		// Connect to the server using specified settings
+		// Connect to the server using specified settings through connection implementation
 		private void btnConnect_Click(object sender, EventArgs e) {
 			if (currentConnectionType == null) return; // Note: Maybe change null detection
 			if (currentConnectionType.CurrentConnection == null) return;
 			currentConnectionType.CurrentConnection.Connect();
 		}
 
+		// Disconnect from server using connection implementation
 		private void btnDisconnect_Click(object sender, EventArgs e) {
 			if (currentConnectionType == null) return; // Note: Maybe change null detection
 			if (currentConnectionType.CurrentConnection == null) return;
