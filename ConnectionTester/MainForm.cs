@@ -45,21 +45,23 @@ namespace ConnectionTester {
 			tsConnectionType.TabPages.Clear(); // Clear loaded UI
 
 			// Iterate through each line in ConnectionLibs.settings
-			foreach (SettingsProperty connection in Properties.ConnectionLibs.Default.Properties) {
+			foreach (SettingsProperty libSetting in Properties.ConnectionLibs.Default.Properties) {
 				// Load the setting specified dll
 				Assembly connectionDLL = null;
-				try { connectionDLL = Assembly.LoadFrom(@Properties.Settings.Default.ConnectionLibrariesDir + connection.DefaultValue); }
+				try { connectionDLL = Assembly.LoadFrom(@Properties.Settings.Default.ConnectionLibrariesDir + libSetting.DefaultValue); }
 				catch (FileNotFoundException err) { // Tell user the library is invalid
-					MessageBox.Show(err.Message, "Error: " + connection.DefaultValue + " not found");
+					MessageBox.Show(err.Message, "Error: " + libSetting.DefaultValue + " not found");
 					continue; // Skip this setting
 				}
 
-				tsConnectionType.TabPages.Add(connection.Name, connection.Name); // Add new tab using setting name as key/title
-				TabPage connectionTab = tsConnectionType.TabPages[connection.Name]; // Get reference to the new page
+				tsConnectionType.TabPages.Add(libSetting.Name, libSetting.Name); // Add new tab using setting name as key/title
+				TabPage connectionTab = tsConnectionType.TabPages[libSetting.Name]; // Get reference to the new page
 				connectionTab.AutoScroll = true; // Allow page to scroll
 
-				foreach (Type type in connectionDLL.GetExportedTypes()) { // Iterate through public types in dll (should have UserControl and Connection)
-					if (typeof(Connection).IsAssignableFrom(type)) connectionTypes.Add(new ConnectionType(type, connection.Name)); // Register Connection derived class
+				foreach (Type type in connectionDLL.GetExportedTypes()) { // Iterate through public types in dll (should only have Connection, assume someone made more)
+					if (typeof(Connection).IsAssignableFrom(type))
+						connectionTypes.Add(new ConnectionType(type, libSetting.Name)); // Register Connection derived class
+
 					else if (typeof(UserControl).IsAssignableFrom(type)) { // Fill tabpage with UserControl
 						UserControl control = (UserControl)Activator.CreateInstance(type); // Make new instance
 						control.Dock = DockStyle.Fill; // Fill page with control (up to control to implement proper scaling)

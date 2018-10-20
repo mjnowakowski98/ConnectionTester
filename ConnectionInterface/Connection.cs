@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,7 @@ namespace ConnectionInterface {
 		protected int port;
 
 		protected String log; // Output
+		private UserControl uiControl;
 		#endregion
 
 		public Connection(String name, String hostName, int port) {
@@ -40,6 +42,7 @@ namespace ConnectionInterface {
 			this.hostName = hostName;
 			this.port = port;
 			log = "";
+			uiControl = null;
 		}
 
 		#region properties
@@ -60,7 +63,7 @@ namespace ConnectionInterface {
 			set { hostName = value; }
 		}
 
-		// Port number of connectee service
+		// Port number of sever service
 		public int Port {
 			get { return port; }
 			set { port = value; }
@@ -69,6 +72,9 @@ namespace ConnectionInterface {
 		public String Log {
 			get { return log; }
 		}
+
+		public UserControl GetUIControl() { return uiControl; }
+		protected void SetUIControl(UserControl control) { uiControl = control; }
 		#endregion
 
 		// Type specific implementations

@@ -12,13 +12,13 @@ namespace TCPConnections {
 		private TcpClient client; // Client/socket wrapper
 		private NetworkStream stream; // Message stream
 
-		private String toSend; // Message to send
+		private TCPControl uiControl; // User visible control section
 		#endregion
 
 		public TCPConnection(String name, String hostName, int port) : base(name, hostName, port) {
 			client = null;
 			stream = null;
-			toSend = "";
+			uiControl = TCPControl.GetInstance();
 		}
 
 		// On SocketException
@@ -27,13 +27,6 @@ namespace TCPConnections {
 			log += err.Message + "\n";
 			Disconnect();
 		}
-
-		#region properties
-		// Message to send
-		public String ToSend {
-			set { toSend = value; }
-		}
-		#endregion
 
 		#region connectionmethods
 		// Connect to the server
@@ -63,9 +56,9 @@ namespace TCPConnections {
 		// Send message to server
 		public override async void Send() {
 			try {
-				Byte[] data = Encoding.ASCII.GetBytes(toSend);
+				Byte[] data = Encoding.ASCII.GetBytes(uiControl.SendString);
 				await stream.WriteAsync(data, 0, data.Length);
-				log += "Data sent: " + toSend + "\n";
+				log += "Data sent: " + uiControl.SendString + "\n";
 				OnConnectionEvent(this, new ConnectionEventArgs(EventType.DataSent));
 				GetResponses();
 			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) { Disconnect(); }

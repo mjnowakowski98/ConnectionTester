@@ -7,11 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConnectionInterface;
 
 namespace TCPConnections {
-	public partial class TCPControl : UserControl {
-		public TCPControl() {
+	internal partial class TCPControl : UserControl {
+		private static TCPControl uniqueInstance = null;
+
+		private TCPControl() {
 			InitializeComponent();
+		}
+
+		internal String SendString {
+			get { return tbSendString.Text; }
+		}
+
+		public static TCPControl GetInstance() {
+			if (uniqueInstance == null) uniqueInstance = new TCPControl();
+			return uniqueInstance;
 		}
 	}
 }
