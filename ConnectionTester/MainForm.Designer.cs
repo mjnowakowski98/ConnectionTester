@@ -24,22 +24,24 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.connectionHostContainer = new System.Windows.Forms.Panel();
+			this.btnUpdate = new System.Windows.Forms.Button();
+			this.btnDisconnect = new System.Windows.Forms.Button();
+			this.btnConnect = new System.Windows.Forms.Button();
 			this.tbPortNum = new System.Windows.Forms.TextBox();
 			this.lblPort = new System.Windows.Forms.Label();
 			this.tbHostName = new System.Windows.Forms.TextBox();
 			this.lblHostName = new System.Windows.Forms.Label();
-			this.btnConnect = new System.Windows.Forms.Button();
-			this.btnDisconnect = new System.Windows.Forms.Button();
-			this.btnUpdate = new System.Windows.Forms.Button();
 			this.connectionsListContainer = new System.Windows.Forms.Panel();
-			this.lblConnectionsList = new System.Windows.Forms.Label();
-			this.cbConnections = new System.Windows.Forms.ComboBox();
-			this.btnNewConnection = new System.Windows.Forms.Button();
 			this.btnRemoveConnection = new System.Windows.Forms.Button();
+			this.btnNewConnection = new System.Windows.Forms.Button();
+			this.cbConnections = new System.Windows.Forms.ComboBox();
+			this.lblConnectionsList = new System.Windows.Forms.Label();
 			this.tsConnectionLibs = new System.Windows.Forms.TabControl();
 			this.outputContainer = new System.Windows.Forms.Panel();
-			this.lblLog = new System.Windows.Forms.Label();
 			this.tbLog = new System.Windows.Forms.RichTextBox();
+			this.lblLog = new System.Windows.Forms.Label();
+			this.btnSend = new System.Windows.Forms.Button();
+			this.btnConnectionLibs = new System.Windows.Forms.Button();
 			this.connectionHostContainer.SuspendLayout();
 			this.connectionsListContainer.SuspendLayout();
 			this.outputContainer.SuspendLayout();
@@ -60,6 +62,38 @@
 			this.connectionHostContainer.Name = "connectionHostContainer";
 			this.connectionHostContainer.Size = new System.Drawing.Size(375, 71);
 			this.connectionHostContainer.TabIndex = 0;
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnUpdate.Location = new System.Drawing.Point(288, 36);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+			this.btnUpdate.TabIndex = 6;
+			this.btnUpdate.Text = "Update";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			// 
+			// btnDisconnect
+			// 
+			this.btnDisconnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDisconnect.Location = new System.Drawing.Point(207, 36);
+			this.btnDisconnect.Name = "btnDisconnect";
+			this.btnDisconnect.Size = new System.Drawing.Size(75, 23);
+			this.btnDisconnect.TabIndex = 5;
+			this.btnDisconnect.Text = "Disconnect";
+			this.btnDisconnect.UseVisualStyleBackColor = true;
+			this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
+			// 
+			// btnConnect
+			// 
+			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnConnect.Location = new System.Drawing.Point(126, 36);
+			this.btnConnect.Name = "btnConnect";
+			this.btnConnect.Size = new System.Drawing.Size(75, 23);
+			this.btnConnect.TabIndex = 4;
+			this.btnConnect.Text = "Connect";
+			this.btnConnect.UseVisualStyleBackColor = true;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// tbPortNum
 			// 
@@ -97,36 +131,6 @@
 			this.lblHostName.TabIndex = 0;
 			this.lblHostName.Text = "Host";
 			// 
-			// btnConnect
-			// 
-			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnConnect.Location = new System.Drawing.Point(126, 36);
-			this.btnConnect.Name = "btnConnect";
-			this.btnConnect.Size = new System.Drawing.Size(75, 23);
-			this.btnConnect.TabIndex = 4;
-			this.btnConnect.Text = "Connect";
-			this.btnConnect.UseVisualStyleBackColor = true;
-			// 
-			// btnDisconnect
-			// 
-			this.btnDisconnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDisconnect.Location = new System.Drawing.Point(207, 36);
-			this.btnDisconnect.Name = "btnDisconnect";
-			this.btnDisconnect.Size = new System.Drawing.Size(75, 23);
-			this.btnDisconnect.TabIndex = 5;
-			this.btnDisconnect.Text = "Disconnect";
-			this.btnDisconnect.UseVisualStyleBackColor = true;
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnUpdate.Location = new System.Drawing.Point(288, 36);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-			this.btnUpdate.TabIndex = 6;
-			this.btnUpdate.Text = "Update";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			// 
 			// connectionsListContainer
 			// 
 			this.connectionsListContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -140,14 +144,27 @@
 			this.connectionsListContainer.Size = new System.Drawing.Size(375, 37);
 			this.connectionsListContainer.TabIndex = 1;
 			// 
-			// lblConnectionsList
+			// btnRemoveConnection
 			// 
-			this.lblConnectionsList.AutoSize = true;
-			this.lblConnectionsList.Location = new System.Drawing.Point(12, 6);
-			this.lblConnectionsList.Name = "lblConnectionsList";
-			this.lblConnectionsList.Size = new System.Drawing.Size(66, 13);
-			this.lblConnectionsList.TabIndex = 0;
-			this.lblConnectionsList.Text = "Connections";
+			this.btnRemoveConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnRemoveConnection.Location = new System.Drawing.Point(288, 3);
+			this.btnRemoveConnection.Name = "btnRemoveConnection";
+			this.btnRemoveConnection.Size = new System.Drawing.Size(75, 23);
+			this.btnRemoveConnection.TabIndex = 3;
+			this.btnRemoveConnection.Text = "Remove";
+			this.btnRemoveConnection.UseVisualStyleBackColor = true;
+			this.btnRemoveConnection.Click += new System.EventHandler(this.btnRemoveConnection_Click);
+			// 
+			// btnNewConnection
+			// 
+			this.btnNewConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnNewConnection.Location = new System.Drawing.Point(207, 3);
+			this.btnNewConnection.Name = "btnNewConnection";
+			this.btnNewConnection.Size = new System.Drawing.Size(75, 23);
+			this.btnNewConnection.TabIndex = 2;
+			this.btnNewConnection.Text = "New";
+			this.btnNewConnection.UseVisualStyleBackColor = true;
+			this.btnNewConnection.Click += new System.EventHandler(this.btnNewConnection_Click);
 			// 
 			// cbConnections
 			// 
@@ -160,26 +177,16 @@
 			this.cbConnections.Name = "cbConnections";
 			this.cbConnections.Size = new System.Drawing.Size(117, 21);
 			this.cbConnections.TabIndex = 1;
+			this.cbConnections.SelectedIndexChanged += new System.EventHandler(this.cbConnections_SelectedIndexChanged);
 			// 
-			// btnNewConnection
+			// lblConnectionsList
 			// 
-			this.btnNewConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnNewConnection.Location = new System.Drawing.Point(207, 3);
-			this.btnNewConnection.Name = "btnNewConnection";
-			this.btnNewConnection.Size = new System.Drawing.Size(75, 23);
-			this.btnNewConnection.TabIndex = 2;
-			this.btnNewConnection.Text = "New";
-			this.btnNewConnection.UseVisualStyleBackColor = true;
-			// 
-			// btnRemoveConnection
-			// 
-			this.btnRemoveConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnRemoveConnection.Location = new System.Drawing.Point(288, 3);
-			this.btnRemoveConnection.Name = "btnRemoveConnection";
-			this.btnRemoveConnection.Size = new System.Drawing.Size(75, 23);
-			this.btnRemoveConnection.TabIndex = 3;
-			this.btnRemoveConnection.Text = "Remove";
-			this.btnRemoveConnection.UseVisualStyleBackColor = true;
+			this.lblConnectionsList.AutoSize = true;
+			this.lblConnectionsList.Location = new System.Drawing.Point(12, 6);
+			this.lblConnectionsList.Name = "lblConnectionsList";
+			this.lblConnectionsList.Size = new System.Drawing.Size(66, 13);
+			this.lblConnectionsList.TabIndex = 0;
+			this.lblConnectionsList.Text = "Connections";
 			// 
 			// tsConnectionLibs
 			// 
@@ -190,8 +197,9 @@
 			this.tsConnectionLibs.Location = new System.Drawing.Point(0, 120);
 			this.tsConnectionLibs.Name = "tsConnectionLibs";
 			this.tsConnectionLibs.SelectedIndex = 0;
-			this.tsConnectionLibs.Size = new System.Drawing.Size(375, 178);
+			this.tsConnectionLibs.Size = new System.Drawing.Size(375, 149);
 			this.tsConnectionLibs.TabIndex = 2;
+			this.tsConnectionLibs.SelectedIndexChanged += new System.EventHandler(this.tsConnectionLibs_SelectedIndexChanged);
 			// 
 			// outputContainer
 			// 
@@ -203,15 +211,6 @@
 			this.outputContainer.Name = "outputContainer";
 			this.outputContainer.Size = new System.Drawing.Size(375, 138);
 			this.outputContainer.TabIndex = 3;
-			// 
-			// lblLog
-			// 
-			this.lblLog.AutoSize = true;
-			this.lblLog.Location = new System.Drawing.Point(6, 0);
-			this.lblLog.Name = "lblLog";
-			this.lblLog.Size = new System.Drawing.Size(25, 13);
-			this.lblLog.TabIndex = 0;
-			this.lblLog.Text = "Log";
 			// 
 			// tbLog
 			// 
@@ -225,11 +224,43 @@
 			this.tbLog.TabIndex = 1;
 			this.tbLog.Text = "";
 			// 
+			// lblLog
+			// 
+			this.lblLog.AutoSize = true;
+			this.lblLog.Location = new System.Drawing.Point(6, 0);
+			this.lblLog.Name = "lblLog";
+			this.lblLog.Size = new System.Drawing.Size(25, 13);
+			this.lblLog.TabIndex = 0;
+			this.lblLog.Text = "Log";
+			// 
+			// btnSend
+			// 
+			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnSend.Location = new System.Drawing.Point(12, 275);
+			this.btnSend.Name = "btnSend";
+			this.btnSend.Size = new System.Drawing.Size(75, 23);
+			this.btnSend.TabIndex = 4;
+			this.btnSend.Text = "Send";
+			this.btnSend.UseVisualStyleBackColor = true;
+			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+			// 
+			// btnConnectionLibs
+			// 
+			this.btnConnectionLibs.Location = new System.Drawing.Point(242, 275);
+			this.btnConnectionLibs.Name = "btnConnectionLibs";
+			this.btnConnectionLibs.Size = new System.Drawing.Size(121, 23);
+			this.btnConnectionLibs.TabIndex = 5;
+			this.btnConnectionLibs.Text = "Connection libraries...";
+			this.btnConnectionLibs.UseVisualStyleBackColor = true;
+			this.btnConnectionLibs.Click += new System.EventHandler(this.btnConnectionLibs_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(375, 440);
+			this.Controls.Add(this.btnConnectionLibs);
+			this.Controls.Add(this.btnSend);
 			this.Controls.Add(this.outputContainer);
 			this.Controls.Add(this.tsConnectionLibs);
 			this.Controls.Add(this.connectionsListContainer);
@@ -237,6 +268,7 @@
 			this.MinimumSize = new System.Drawing.Size(391, 479);
 			this.Name = "MainForm";
 			this.Text = "Network Thing";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.connectionHostContainer.ResumeLayout(false);
 			this.connectionHostContainer.PerformLayout();
 			this.connectionsListContainer.ResumeLayout(false);
@@ -266,6 +298,8 @@
 		private System.Windows.Forms.Panel outputContainer;
 		private System.Windows.Forms.Label lblLog;
 		private System.Windows.Forms.RichTextBox tbLog;
+		private System.Windows.Forms.Button btnSend;
+		private System.Windows.Forms.Button btnConnectionLibs;
 	}
 }
 

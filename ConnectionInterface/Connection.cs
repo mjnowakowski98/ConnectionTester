@@ -19,7 +19,7 @@ namespace ConnectionInterface {
 			if (e.EventEnum == EventType.Connected) isConnected = true;
 			else if (e.EventEnum == EventType.Disconnected) isConnected = false;
 
-			handler(this, e);
+			handler?.Invoke(this, e);
 		}
 		#endregion
 
@@ -74,7 +74,7 @@ namespace ConnectionInterface {
 		}
 
 		public UserControl GetUIControl() { return uiControl; }
-		protected void SetUIControl(UserControl control) { this.uiControl = control; }
+		protected void SetUIControl(UserControl control) { uiControl = control; }
 		#endregion
 
 		// Type specific implementations
