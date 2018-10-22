@@ -161,5 +161,19 @@ namespace ConnectionTester {
 
 		// Disconnect from server using ConnectionType implementation
 		private void btnDisconnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Disconnect(); }
+
+		// Update hostname/port for current Connection
+		private void btnUpdate_Click(object sender, EventArgs e) {
+			int tmp = 0;
+			if(!int.TryParse(tbPortNum.Text, out tmp)) {
+				MessageBox.Show("Port number is invalid");
+				tbHostName.Text = currentConnectionType.CurrentConnection.HostName;
+				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
+				return;
+			}
+
+			currentConnectionType.CurrentConnection.HostName = tbHostName.Text;
+			currentConnectionType.CurrentConnection.Port = tmp;
+		}
 	}
 }
