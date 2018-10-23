@@ -27,6 +27,7 @@ namespace ConnectionTester {
 			tbLog.Text = currentConnectionType.CurrentConnection.Log;
 		}
 
+		#region uifunctions
 		// Set connection button states
 		private void SetConnectedUI(bool connected) {
 			btnConnect.Enabled = !connected;
@@ -62,9 +63,10 @@ namespace ConnectionTester {
 			cbConnections.Items.AddRange(currentConnectionType.ConnectionNames.ToArray());
 			cbConnections.SelectedIndex = currentConnectionType.CurrentConnectionNdx; // Select list item from current connection
 		}
+		#endregion
 
 		// Load ConnectionType libraries based on application settings
-        private void LoadConnectionLibs() {
+		private void LoadConnectionLibs() {
 			loadedTypes.Clear(); // Clear loaded ConnectionTypes
             foreach (SettingsProperty libSetting in Properties.ConnectionLibs.Default.Properties) {
 				// Load connection dll
@@ -92,6 +94,7 @@ namespace ConnectionTester {
 			tsConnectionLibs.SelectedIndex = 0; // Select first tab page
 		}
 
+		#region formevents
 		// Initial loading
 		private void MainForm_Load(object sender, EventArgs e) {
 			LoadConnectionLibs();
@@ -99,46 +102,24 @@ namespace ConnectionTester {
 			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
 		}
 
-		// Show ConnectionLibs dialog
-		private void btnConnectionLibs_Click(object sender, EventArgs e) {
-			DialogResult dr = DialogResult.Cancel;
-			ConnectionLibs dialog = new ConnectionLibs();
-			dr = dialog.ShowDialog();
-			if (dr != DialogResult.Yes) return;
+		// Connect to server using ConnectionType inplementation
+		private void btnConnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Connect(); }
 
-			// Reload UI
-			LoadConnectionLibs();
-			FillConnectionsList();
-			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
-		}
+		// Disconnect from server using ConnectionType implementation
+		private void btnDisconnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Disconnect(); }
 
-		// Remove selected connection for ConnectionType
-		private void btnRemoveConnection_Click(object sender, EventArgs e) {
-			currentConnectionType.RemoveConnection(cbConnections.Text);
-			FillConnectionsList();
-			cbConnections.SelectedIndex = 0;
-			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
-		}
+		// Update hostname/port for current Connection
+		private void btnUpdate_Click(object sender, EventArgs e) {
+			int tmp = 0;
+			if (!int.TryParse(tbPortNum.Text, out tmp)) {
+				MessageBox.Show("Port number is invalid");
+				tbHostName.Text = currentConnectionType.CurrentConnection.HostName;
+				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
+				return;
+			}
 
-		// Show NewConnection dialog
-		private void btnNewConnection_Click(object sender, EventArgs e) {
-			DialogResult dr = DialogResult.Cancel;
-			NewConnection dialog = new NewConnection(currentConnectionType);
-			dr = dialog.ShowDialog();
-			if (dr != DialogResult.OK) return;
-
-			FillConnectionsList();
-			cbConnections.SelectedIndex = currentConnectionType.CurrentConnectionNdx;
-			currentConnectionType.CurrentConnection.ConnectionEvent += OnConnectionEvent;
-		}
-
-		// Setup UI for newly selected ConnectionType
-		private void tsConnectionLibs_SelectedIndexChanged(object sender, EventArgs e) {
-			if (tsConnectionLibs.SelectedIndex >= 0) {
-				currentConnectionType = loadedTypes[tsConnectionLibs.SelectedIndex];
-				FillConnectionsList();
-				SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
-			} else currentConnectionType = loadedTypes[0];
+			currentConnectionType.CurrentConnection.HostName = tbHostName.Text;
+			currentConnectionType.CurrentConnection.Port = tmp;
 		}
 
 		// Setup UI for newly selected Connection
@@ -153,27 +134,50 @@ namespace ConnectionTester {
 			tbLog.Text = currentConnectionType.CurrentConnection.Log;
 		}
 
+		// Show NewConnection dialog
+		private void btnNewConnection_Click(object sender, EventArgs e) {
+			DialogResult dr = DialogResult.Cancel;
+			NewConnection dialog = new NewConnection(currentConnectionType);
+			dr = dialog.ShowDialog();
+			if (dr != DialogResult.OK) return;
+
+			FillConnectionsList();
+			cbConnections.SelectedIndex = currentConnectionType.CurrentConnectionNdx;
+			currentConnectionType.CurrentConnection.ConnectionEvent += OnConnectionEvent;
+		}
+
+		// Remove selected connection for ConnectionType
+		private void btnRemoveConnection_Click(object sender, EventArgs e) {
+			currentConnectionType.RemoveConnection(cbConnections.Text);
+			FillConnectionsList();
+			cbConnections.SelectedIndex = 0;
+			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
+		}
+
+		// Setup UI for newly selected ConnectionType
+		private void tsConnectionLibs_SelectedIndexChanged(object sender, EventArgs e) {
+			if (tsConnectionLibs.SelectedIndex >= 0) {
+				currentConnectionType = loadedTypes[tsConnectionLibs.SelectedIndex];
+				FillConnectionsList();
+				SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
+			} else currentConnectionType = loadedTypes[0];
+		}
+
 		// Send message to server using ConnectionType implementation
 		private void btnSend_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Send(); }
 
-		// Connect to server using ConnectionType inplementation
-		private void btnConnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Connect(); }
+		// Show ConnectionLibs dialog
+		private void btnConnectionLibs_Click(object sender, EventArgs e) {
+			DialogResult dr = DialogResult.Cancel;
+			ConnectionLibs dialog = new ConnectionLibs();
+			dr = dialog.ShowDialog();
+			if (dr != DialogResult.Yes) return;
 
-		// Disconnect from server using ConnectionType implementation
-		private void btnDisconnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Disconnect(); }
-
-		// Update hostname/port for current Connection
-		private void btnUpdate_Click(object sender, EventArgs e) {
-			int tmp = 0;
-			if(!int.TryParse(tbPortNum.Text, out tmp)) {
-				MessageBox.Show("Port number is invalid");
-				tbHostName.Text = currentConnectionType.CurrentConnection.HostName;
-				tbPortNum.Text = currentConnectionType.CurrentConnection.Port.ToString();
-				return;
-			}
-
-			currentConnectionType.CurrentConnection.HostName = tbHostName.Text;
-			currentConnectionType.CurrentConnection.Port = tmp;
+			// Reload UI
+			LoadConnectionLibs();
+			FillConnectionsList();
+			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
 		}
+		#endregion
 	}
 }
