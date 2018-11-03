@@ -5,5 +5,8 @@
     <Setting Name="TCP" Type="System.String" Scope="User">
       <Value Profile="(Default)">TCPConnections.dll</Value>
     </Setting>
+    <Setting Name="HTTP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HTTPConnections.dll</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

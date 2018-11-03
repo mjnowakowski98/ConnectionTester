@@ -34,5 +34,17 @@ namespace ConnectionTester.Properties {
                 this["TCP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HTTPConnections.dll")]
+        public string HTTP {
+            get {
+                return ((string)(this["HTTP"]));
+            }
+            set {
+                this["HTTP"] = value;
+            }
+        }
     }
 }

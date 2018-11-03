@@ -5,6 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionTester", "ConnectionTester\ConnectionTester.csproj", "{01C95D03-EB65-449F-A6A1-055E31A312D5}"
 	ProjectSection(ProjectDependencies) = postProject
+		{804FB182-F309-4BBB-BA18-637D45A6ACE9} = {804FB182-F309-4BBB-BA18-637D45A6ACE9}
 		{5E3B6EAC-A074-48BF-BABA-9D423B9C3CDB} = {5E3B6EAC-A074-48BF-BABA-9D423B9C3CDB}
 	EndProjectSection
 EndProject
@@ -13,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionInterface", "ConnectionInterface\ConnectionInterface.csproj", "{B0257F6D-4C7B-4EB2-B142-53CA4227B216}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondaryTest", "SecondaryTest\SecondaryTest.csproj", "{70CB5D68-F12E-4B61-A24C-3D1C5122F92D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTPConnections", "HTTPConnections\HTTPConnections.csproj", "{804FB182-F309-4BBB-BA18-637D45A6ACE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +39,10 @@ Global
 		{70CB5D68-F12E-4B61-A24C-3D1C5122F92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70CB5D68-F12E-4B61-A24C-3D1C5122F92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70CB5D68-F12E-4B61-A24C-3D1C5122F92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804FB182-F309-4BBB-BA18-637D45A6ACE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804FB182-F309-4BBB-BA18-637D45A6ACE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804FB182-F309-4BBB-BA18-637D45A6ACE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804FB182-F309-4BBB-BA18-637D45A6ACE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
