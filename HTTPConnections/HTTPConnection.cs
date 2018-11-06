@@ -34,6 +34,13 @@ namespace HTTPConnections {
                     break;
                 case "POST":
                     Dictionary<String, String> values = new Dictionary<String, String>();
+                    String dataString = httpControl.tbRequestData.Text;
+
+                    int pairNdx = 0;
+                    while(pairNdx != -1) {
+                        int keyNdx = dataString.IndexOf('=');
+                        
+                    }
                     
 
                     //FormUrlEncodedContent content = new FormUrlEncodedContent(values);
