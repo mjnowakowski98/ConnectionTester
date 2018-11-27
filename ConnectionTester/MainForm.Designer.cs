@@ -42,6 +42,7 @@
 			this.lblLog = new System.Windows.Forms.Label();
 			this.btnSend = new System.Windows.Forms.Button();
 			this.btnConnectionLibs = new System.Windows.Forms.Button();
+			this.btnClearLog = new System.Windows.Forms.Button();
 			this.connectionHostContainer.SuspendLayout();
 			this.connectionsListContainer.SuspendLayout();
 			this.outputContainer.SuspendLayout();
@@ -256,11 +257,22 @@
 			this.btnConnectionLibs.UseVisualStyleBackColor = true;
 			this.btnConnectionLibs.Click += new System.EventHandler(this.btnConnectionLibs_Click);
 			// 
+			// btnClearLog
+			// 
+			this.btnClearLog.Location = new System.Drawing.Point(93, 275);
+			this.btnClearLog.Name = "btnClearLog";
+			this.btnClearLog.Size = new System.Drawing.Size(75, 23);
+			this.btnClearLog.TabIndex = 6;
+			this.btnClearLog.Text = "Clear log";
+			this.btnClearLog.UseVisualStyleBackColor = true;
+			this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(375, 440);
+			this.Controls.Add(this.btnClearLog);
 			this.Controls.Add(this.btnConnectionLibs);
 			this.Controls.Add(this.btnSend);
 			this.Controls.Add(this.outputContainer);
@@ -302,6 +314,7 @@
 		private System.Windows.Forms.RichTextBox tbLog;
 		private System.Windows.Forms.Button btnSend;
 		private System.Windows.Forms.Button btnConnectionLibs;
+		private System.Windows.Forms.Button btnClearLog;
 	}
 }
 

@@ -73,6 +73,11 @@ namespace ConnectionInterface {
 			get { return log; }
 		}
 
+		public void ClearLog() {
+			log = "";
+			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Internal));
+		}
+
 		public UserControl GetUIControl() { return uiControl; }
 		protected void SetUIControl(UserControl control) { uiControl = control; }
 		#endregion

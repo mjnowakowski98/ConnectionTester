@@ -9,7 +9,9 @@ namespace ConnectionInterface {
 		Connected,
 		Disconnected,
 		DataSent,
-		DataRecieved
+		DataRecieved,
+		Error,
+		Internal
 	}
 
 	public class ConnectionEventArgs : EventArgs {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HTTPConnections {
-    public partial class HTTPControl : UserControl {
+    internal partial class HTTPControl : UserControl {
         private static HTTPControl uniqueInstance = null;
 
         private HTTPControl() {

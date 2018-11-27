@@ -30,6 +30,16 @@ namespace ConnectionTester {
 		#region uifunctions
 		// Set connection button states
 		private void SetConnectedUI(bool connected) {
+			if(currentConnectionType.CurrentConnection is NoConnection) {
+				btnConnect.Enabled = false;
+				btnDisconnect.Enabled = false;
+				btnUpdate.Enabled = false;
+				btnSend.Enabled = false;
+				tbHostName.Enabled = false;
+				tbPortNum.Enabled = false;
+				return;
+			}
+
 			btnConnect.Enabled = !connected;
 			btnDisconnect.Enabled = connected;
 			btnUpdate.Enabled = !connected;
@@ -178,6 +188,8 @@ namespace ConnectionTester {
 			FillConnectionsList();
 			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
 		}
+
+		private void btnClearLog_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.ClearLog(); }
 		#endregion
 	}
 }
