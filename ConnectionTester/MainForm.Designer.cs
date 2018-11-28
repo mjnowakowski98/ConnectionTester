@@ -199,7 +199,7 @@
 			this.tsConnectionLibs.Location = new System.Drawing.Point(0, 120);
 			this.tsConnectionLibs.Name = "tsConnectionLibs";
 			this.tsConnectionLibs.SelectedIndex = 0;
-			this.tsConnectionLibs.Size = new System.Drawing.Size(375, 149);
+			this.tsConnectionLibs.Size = new System.Drawing.Size(375, 187);
 			this.tsConnectionLibs.TabIndex = 2;
 			this.tsConnectionLibs.SelectedIndexChanged += new System.EventHandler(this.tsConnectionLibs_SelectedIndexChanged);
 			// 
@@ -209,7 +209,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.outputContainer.Controls.Add(this.tbLog);
 			this.outputContainer.Controls.Add(this.lblLog);
-			this.outputContainer.Location = new System.Drawing.Point(0, 304);
+			this.outputContainer.Location = new System.Drawing.Point(0, 342);
 			this.outputContainer.Name = "outputContainer";
 			this.outputContainer.Size = new System.Drawing.Size(375, 138);
 			this.outputContainer.TabIndex = 3;
@@ -238,7 +238,7 @@
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnSend.Location = new System.Drawing.Point(12, 275);
+			this.btnSend.Location = new System.Drawing.Point(12, 313);
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(75, 23);
 			this.btnSend.TabIndex = 4;
@@ -249,7 +249,7 @@
 			// btnConnectionLibs
 			// 
 			this.btnConnectionLibs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnConnectionLibs.Location = new System.Drawing.Point(242, 275);
+			this.btnConnectionLibs.Location = new System.Drawing.Point(242, 313);
 			this.btnConnectionLibs.Name = "btnConnectionLibs";
 			this.btnConnectionLibs.Size = new System.Drawing.Size(121, 23);
 			this.btnConnectionLibs.TabIndex = 5;
@@ -259,7 +259,8 @@
 			// 
 			// btnClearLog
 			// 
-			this.btnClearLog.Location = new System.Drawing.Point(93, 275);
+			this.btnClearLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnClearLog.Location = new System.Drawing.Point(93, 313);
 			this.btnClearLog.Name = "btnClearLog";
 			this.btnClearLog.Size = new System.Drawing.Size(75, 23);
 			this.btnClearLog.TabIndex = 6;
@@ -271,7 +272,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(375, 440);
+			this.ClientSize = new System.Drawing.Size(375, 478);
 			this.Controls.Add(this.btnClearLog);
 			this.Controls.Add(this.btnConnectionLibs);
 			this.Controls.Add(this.btnSend);

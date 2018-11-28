@@ -31,21 +31,25 @@ namespace ConnectionTester {
 		// Set connection button states
 		private void SetConnectedUI(bool connected) {
 			if(currentConnectionType.CurrentConnection is NoConnection) {
+                // Disable everything as there is nothing to connect to
 				btnConnect.Enabled = false;
 				btnDisconnect.Enabled = false;
 				btnUpdate.Enabled = false;
 				btnSend.Enabled = false;
 				tbHostName.Enabled = false;
 				tbPortNum.Enabled = false;
+                currentConnectionType.UIControl.Enabled = false; // No connection, no UserControl
 				return;
 			}
 
-			btnConnect.Enabled = !connected;
-			btnDisconnect.Enabled = connected;
-			btnUpdate.Enabled = !connected;
-			btnSend.Enabled = connected;
-			tbHostName.Enabled = !connected;
-			tbPortNum.Enabled = !connected;
+            // If connected
+			btnConnect.Enabled = !connected; // Can not connect again
+			btnDisconnect.Enabled = connected; // Can disconnect
+			btnUpdate.Enabled = !connected; // Can not update host/port
+			btnSend.Enabled = connected; // can send data
+			tbHostName.Enabled = !connected; // Can not update host
+			tbPortNum.Enabled = !connected; // Can not update port
+            currentConnectionType.UIControl.Enabled = true; // Always able to use ConnectionType's UserControl
 		}
 
 		// Add the connection control to the ConnectionType's tab page
@@ -102,6 +106,7 @@ namespace ConnectionTester {
 
 			SetupConnectionSwitcher(); // Setup tab switcher with loaded types
 			tsConnectionLibs.SelectedIndex = 0; // Select first tab page
+            currentConnectionType = loadedTypes[0]; // Set first loaded ConnectionType as current
 		}
 
 		#region formevents

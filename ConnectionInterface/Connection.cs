@@ -26,7 +26,7 @@ namespace ConnectionInterface {
 		#region internalvars
 		private bool isConnected;
 
-		protected String connectionName; // User name of connection
+		protected String connectionName; // User set name of connection
 
 		// What is being connected to
 		protected String hostName;
@@ -69,10 +69,12 @@ namespace ConnectionInterface {
 			set { port = value; }
 		}
 
+		// Connection log
 		public String Log {
 			get { return log; }
 		}
 
+		// Clear connection log
 		public void ClearLog() {
 			log = "";
 			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Internal));

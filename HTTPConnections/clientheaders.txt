@@ -1,0 +1,90 @@
+HTTP headers - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#Request_context
+
+Accept - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept
+
+Accept-Charset - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Charset
+
+Accept-Encoding - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding
+
+Accept-Language - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
+
+Accept-Ranges - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Ranges
+
+Authorization - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
+
+Cache-Control - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+
+Connection - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection
+
+Date - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date
+
+Expect - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect
+
+Expect-CT - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT
+
+From - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/From
+
+Host - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Host
+
+If-Match - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match
+
+If-Modified-Since - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since
+
+If-None-Match - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match
+
+If-Range - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Range
+
+If-Unmodified-Since - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Unmodified-Since
+
+Pragma - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma
+
+Proxy-Authorization - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization
+
+Range - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
+
+Referer - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer
+
+TE - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/TE
+
+Trailer - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Trailer
+
+Transfer-Encoding - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding
+
+Upgrade-Insecure-Requests - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade-Insecure-Requests
+
+User-Agent - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
+
+Via - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Via
+
+Warning - HTTP | MDN
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Warning
+

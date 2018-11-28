@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientHeaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientHeaders.Designer.cs">
+      <DependentUpon>ClientHeaders.cs</DependentUpon>
+    </Compile>
     <Compile Include="HTTPConnection.cs" />
     <Compile Include="HTTPControl.cs">
       <SubType>UserControl</SubType>
@@ -59,6 +65,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ClientHeaders.resx">
+      <DependentUpon>ClientHeaders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HTTPControl.resx">
       <DependentUpon>HTTPControl.cs</DependentUpon>
     </EmbeddedResource>

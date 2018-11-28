@@ -16,6 +16,7 @@ namespace HTTPConnections {
             InitializeComponent();
         }
 
+        #region formevents
         private void HTTPControl_Load(object sender, EventArgs e) {
             cbConnectionMethod.SelectedIndex = 0;
         }
@@ -24,5 +25,11 @@ namespace HTTPConnections {
             if (uniqueInstance == null) uniqueInstance = new HTTPControl();
             return uniqueInstance;
         }
+
+        private void btnClientHeaders_Click(object sender, EventArgs e) {
+            ClientHeaders dialog = new ClientHeaders();
+            dialog.ShowDialog();
+        }
+        #endregion
     }
 }

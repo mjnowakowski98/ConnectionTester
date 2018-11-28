@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SecondaryTest {
-	public partial class TestControl : UserControl {
-		public TestControl() {
+namespace HTTPConnections {
+	public partial class ClientHeaders : Form {
+		public ClientHeaders() {
 			InitializeComponent();
 		}
 	}
