@@ -46,6 +46,9 @@
     <Compile Include="ConnectionEventArgs.cs" />
     <Compile Include="NoConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

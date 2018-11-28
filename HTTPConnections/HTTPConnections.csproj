@@ -56,6 +56,12 @@
       <DependentUpon>HTTPControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestHeaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestHeaders.Designer.cs">
+      <DependentUpon>RequestHeaders.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConnectionInterface\ConnectionInterface.csproj">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HTTPControl.resx">
       <DependentUpon>HTTPControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestHeaders.resx">
+      <DependentUpon>RequestHeaders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

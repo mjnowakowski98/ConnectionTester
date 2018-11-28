@@ -307,7 +307,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAccept.Location = new System.Drawing.Point(12, 25);
             this.tbAccept.Name = "tbAccept";
-            this.tbAccept.Size = new System.Drawing.Size(207, 47);
+            this.tbAccept.Size = new System.Drawing.Size(173, 47);
             this.tbAccept.TabIndex = 31;
             this.tbAccept.Text = "";
             // 
@@ -317,7 +317,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAcceptCharset.Location = new System.Drawing.Point(12, 91);
             this.tbAcceptCharset.Name = "tbAcceptCharset";
-            this.tbAcceptCharset.Size = new System.Drawing.Size(207, 47);
+            this.tbAcceptCharset.Size = new System.Drawing.Size(173, 47);
             this.tbAcceptCharset.TabIndex = 32;
             this.tbAcceptCharset.Text = "";
             // 
@@ -327,7 +327,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAcceptEncoding.Location = new System.Drawing.Point(12, 157);
             this.tbAcceptEncoding.Name = "tbAcceptEncoding";
-            this.tbAcceptEncoding.Size = new System.Drawing.Size(207, 47);
+            this.tbAcceptEncoding.Size = new System.Drawing.Size(173, 47);
             this.tbAcceptEncoding.TabIndex = 33;
             this.tbAcceptEncoding.Text = "";
             // 
@@ -337,7 +337,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAcceptLanguage.Location = new System.Drawing.Point(12, 223);
             this.tbAcceptLanguage.Name = "tbAcceptLanguage";
-            this.tbAcceptLanguage.Size = new System.Drawing.Size(207, 47);
+            this.tbAcceptLanguage.Size = new System.Drawing.Size(173, 47);
             this.tbAcceptLanguage.TabIndex = 34;
             this.tbAcceptLanguage.Text = "";
             // 
@@ -347,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAuthorization.Location = new System.Drawing.Point(12, 289);
             this.tbAuthorization.Name = "tbAuthorization";
-            this.tbAuthorization.Size = new System.Drawing.Size(207, 47);
+            this.tbAuthorization.Size = new System.Drawing.Size(173, 47);
             this.tbAuthorization.TabIndex = 35;
             this.tbAuthorization.Text = "";
             // 
@@ -357,7 +357,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCacheControl.Location = new System.Drawing.Point(12, 355);
             this.tbCacheControl.Name = "tbCacheControl";
-            this.tbCacheControl.Size = new System.Drawing.Size(207, 47);
+            this.tbCacheControl.Size = new System.Drawing.Size(173, 47);
             this.tbCacheControl.TabIndex = 36;
             this.tbCacheControl.Text = "";
             // 
@@ -367,7 +367,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbConnection.Location = new System.Drawing.Point(12, 421);
             this.tbConnection.Name = "tbConnection";
-            this.tbConnection.Size = new System.Drawing.Size(207, 47);
+            this.tbConnection.Size = new System.Drawing.Size(173, 47);
             this.tbConnection.TabIndex = 37;
             this.tbConnection.Text = "";
             // 
@@ -377,7 +377,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDate.Location = new System.Drawing.Point(12, 487);
             this.tbDate.Name = "tbDate";
-            this.tbDate.Size = new System.Drawing.Size(207, 47);
+            this.tbDate.Size = new System.Drawing.Size(173, 47);
             this.tbDate.TabIndex = 38;
             this.tbDate.Text = "";
             // 
@@ -387,7 +387,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbExpect.Location = new System.Drawing.Point(12, 553);
             this.tbExpect.Name = "tbExpect";
-            this.tbExpect.Size = new System.Drawing.Size(207, 47);
+            this.tbExpect.Size = new System.Drawing.Size(173, 47);
             this.tbExpect.TabIndex = 39;
             this.tbExpect.Text = "";
             // 
@@ -397,7 +397,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFrom.Location = new System.Drawing.Point(12, 619);
             this.tbFrom.Name = "tbFrom";
-            this.tbFrom.Size = new System.Drawing.Size(207, 47);
+            this.tbFrom.Size = new System.Drawing.Size(173, 47);
             this.tbFrom.TabIndex = 40;
             this.tbFrom.Text = "";
             // 
@@ -407,7 +407,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbHost.Location = new System.Drawing.Point(12, 685);
             this.tbHost.Name = "tbHost";
-            this.tbHost.Size = new System.Drawing.Size(207, 47);
+            this.tbHost.Size = new System.Drawing.Size(173, 47);
             this.tbHost.TabIndex = 41;
             this.tbHost.Text = "";
             // 
@@ -417,7 +417,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIfMatch.Location = new System.Drawing.Point(12, 751);
             this.tbIfMatch.Name = "tbIfMatch";
-            this.tbIfMatch.Size = new System.Drawing.Size(207, 47);
+            this.tbIfMatch.Size = new System.Drawing.Size(173, 47);
             this.tbIfMatch.TabIndex = 42;
             this.tbIfMatch.Text = "";
             // 
@@ -427,7 +427,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIfModifiedSince.Location = new System.Drawing.Point(12, 817);
             this.tbIfModifiedSince.Name = "tbIfModifiedSince";
-            this.tbIfModifiedSince.Size = new System.Drawing.Size(207, 47);
+            this.tbIfModifiedSince.Size = new System.Drawing.Size(173, 47);
             this.tbIfModifiedSince.TabIndex = 43;
             this.tbIfModifiedSince.Text = "";
             // 
@@ -437,7 +437,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIfNoneMatch.Location = new System.Drawing.Point(12, 883);
             this.tbIfNoneMatch.Name = "tbIfNoneMatch";
-            this.tbIfNoneMatch.Size = new System.Drawing.Size(207, 47);
+            this.tbIfNoneMatch.Size = new System.Drawing.Size(173, 47);
             this.tbIfNoneMatch.TabIndex = 44;
             this.tbIfNoneMatch.Text = "";
             // 
@@ -447,7 +447,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIfRange.Location = new System.Drawing.Point(12, 949);
             this.tbIfRange.Name = "tbIfRange";
-            this.tbIfRange.Size = new System.Drawing.Size(207, 47);
+            this.tbIfRange.Size = new System.Drawing.Size(173, 47);
             this.tbIfRange.TabIndex = 45;
             this.tbIfRange.Text = "";
             // 
@@ -457,7 +457,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIfUnmodifiedSince.Location = new System.Drawing.Point(12, 1015);
             this.tbIfUnmodifiedSince.Name = "tbIfUnmodifiedSince";
-            this.tbIfUnmodifiedSince.Size = new System.Drawing.Size(207, 47);
+            this.tbIfUnmodifiedSince.Size = new System.Drawing.Size(173, 47);
             this.tbIfUnmodifiedSince.TabIndex = 46;
             this.tbIfUnmodifiedSince.Text = "";
             // 
@@ -467,7 +467,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbProxyAuthorzition.Location = new System.Drawing.Point(12, 1081);
             this.tbProxyAuthorzition.Name = "tbProxyAuthorzition";
-            this.tbProxyAuthorzition.Size = new System.Drawing.Size(207, 47);
+            this.tbProxyAuthorzition.Size = new System.Drawing.Size(173, 47);
             this.tbProxyAuthorzition.TabIndex = 47;
             this.tbProxyAuthorzition.Text = "";
             // 
@@ -477,7 +477,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRange.Location = new System.Drawing.Point(12, 1147);
             this.tbRange.Name = "tbRange";
-            this.tbRange.Size = new System.Drawing.Size(207, 47);
+            this.tbRange.Size = new System.Drawing.Size(173, 47);
             this.tbRange.TabIndex = 48;
             this.tbRange.Text = "";
             // 
@@ -487,7 +487,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbReferrer.Location = new System.Drawing.Point(12, 1213);
             this.tbReferrer.Name = "tbReferrer";
-            this.tbReferrer.Size = new System.Drawing.Size(207, 47);
+            this.tbReferrer.Size = new System.Drawing.Size(173, 47);
             this.tbReferrer.TabIndex = 49;
             this.tbReferrer.Text = "";
             // 
@@ -497,7 +497,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTE.Location = new System.Drawing.Point(12, 1279);
             this.tbTE.Name = "tbTE";
-            this.tbTE.Size = new System.Drawing.Size(207, 47);
+            this.tbTE.Size = new System.Drawing.Size(173, 47);
             this.tbTE.TabIndex = 50;
             this.tbTE.Text = "";
             // 
@@ -507,7 +507,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTrailer.Location = new System.Drawing.Point(12, 1345);
             this.tbTrailer.Name = "tbTrailer";
-            this.tbTrailer.Size = new System.Drawing.Size(207, 47);
+            this.tbTrailer.Size = new System.Drawing.Size(173, 47);
             this.tbTrailer.TabIndex = 51;
             this.tbTrailer.Text = "";
             // 
@@ -517,7 +517,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTransferEncoding.Location = new System.Drawing.Point(12, 1411);
             this.tbTransferEncoding.Name = "tbTransferEncoding";
-            this.tbTransferEncoding.Size = new System.Drawing.Size(207, 47);
+            this.tbTransferEncoding.Size = new System.Drawing.Size(173, 47);
             this.tbTransferEncoding.TabIndex = 52;
             this.tbTransferEncoding.Text = "";
             // 
@@ -527,7 +527,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUserAgent.Location = new System.Drawing.Point(12, 1477);
             this.tbUserAgent.Name = "tbUserAgent";
-            this.tbUserAgent.Size = new System.Drawing.Size(207, 47);
+            this.tbUserAgent.Size = new System.Drawing.Size(173, 47);
             this.tbUserAgent.TabIndex = 53;
             this.tbUserAgent.Text = "";
             // 
@@ -537,7 +537,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbVia.Location = new System.Drawing.Point(12, 1543);
             this.tbVia.Name = "tbVia";
-            this.tbVia.Size = new System.Drawing.Size(207, 47);
+            this.tbVia.Size = new System.Drawing.Size(173, 47);
             this.tbVia.TabIndex = 54;
             this.tbVia.Text = "";
             // 
@@ -547,7 +547,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWarning.Location = new System.Drawing.Point(12, 1609);
             this.tbWarning.Name = "tbWarning";
-            this.tbWarning.Size = new System.Drawing.Size(207, 47);
+            this.tbWarning.Size = new System.Drawing.Size(173, 47);
             this.tbWarning.TabIndex = 55;
             this.tbWarning.Text = "";
             // 
@@ -563,7 +563,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(319, 610);
+            this.ClientSize = new System.Drawing.Size(421, 610);
             this.Controls.Add(this.tbWarning);
             this.Controls.Add(this.tbVia);
             this.Controls.Add(this.tbUserAgent);
@@ -617,6 +617,7 @@
             this.Controls.Add(this.pnlForm);
             this.Name = "ClientHeaders";
             this.Text = "ClientHeaders";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientHeaders_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

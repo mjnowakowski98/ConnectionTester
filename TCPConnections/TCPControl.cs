@@ -10,14 +10,23 @@ using System.Windows.Forms;
 using ConnectionInterface;
 
 namespace TCPConnections {
-	internal partial class TCPControl : UserControl {
+	internal partial class TCPControl : UIControl {
 		private static TCPControl uniqueInstance = null;
 
 		private TCPControl() {
 			InitializeComponent();
 		}
 
-		internal String SendString {
+        public override bool CurrentConnectionIsConnected {
+            get { return base.CurrentConnectionIsConnected; }
+
+            set {
+                base.CurrentConnectionIsConnected = value;
+                tbSendString.Enabled = value;
+            }
+        }
+
+        internal String SendString {
 			get { return tbSendString.Text; }
 			set { tbSendString.Text = value; }
 		}

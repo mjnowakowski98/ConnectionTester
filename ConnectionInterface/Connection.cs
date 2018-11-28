@@ -33,7 +33,7 @@ namespace ConnectionInterface {
 		protected int port;
 
 		protected String log; // Output
-		private UserControl uiControl;
+		private UIControl uiControl;
 		#endregion
 
 		public Connection(String name, String hostName, int port) {
@@ -80,8 +80,8 @@ namespace ConnectionInterface {
 			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Internal));
 		}
 
-		public UserControl GetUIControl() { return uiControl; }
-		protected void SetUIControl(UserControl control) { uiControl = control; }
+		public UIControl GetUIControl() { return uiControl; }
+		protected void SetUIControl(UIControl control) { uiControl = control; }
 		#endregion
 
 		// Type specific implementations

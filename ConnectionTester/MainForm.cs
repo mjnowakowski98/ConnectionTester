@@ -16,8 +16,7 @@ namespace ConnectionTester {
         public MainForm() {
             InitializeComponent();
 			loadedTypes = new List<ConnectionType>();
-			loadedTypes.Add(new ConnectionType(typeof(NoConnection), "No Type", new UserControl()));
-			currentConnectionType = loadedTypes[0];
+			loadedTypes.Add(new ConnectionType(typeof(NoConnection), "No Type", new UIControl()));
         }
 
 		// Update UI for current connection on event from any connection
@@ -39,6 +38,7 @@ namespace ConnectionTester {
 				tbHostName.Enabled = false;
 				tbPortNum.Enabled = false;
                 currentConnectionType.UIControl.Enabled = false; // No connection, no UserControl
+                currentConnectionType.UIControl.CurrentConnectionIsConnected = false;
 				return;
 			}
 
@@ -50,6 +50,7 @@ namespace ConnectionTester {
 			tbHostName.Enabled = !connected; // Can not update host
 			tbPortNum.Enabled = !connected; // Can not update port
             currentConnectionType.UIControl.Enabled = true; // Always able to use ConnectionType's UserControl
+            currentConnectionType.UIControl.CurrentConnectionIsConnected = connected;
 		}
 
 		// Add the connection control to the ConnectionType's tab page
@@ -102,7 +103,7 @@ namespace ConnectionTester {
 			}
 
 			// Create a blank ConnectionType with no Connection if nothing is loaded
-			if (loadedTypes.Count <= 0) loadedTypes.Add(new ConnectionType(typeof(NoConnection), "NoType", new UserControl()));
+			if (loadedTypes.Count <= 0) loadedTypes.Add(new ConnectionType(typeof(NoConnection), "NoType", new UIControl()));
 
 			SetupConnectionSwitcher(); // Setup tab switcher with loaded types
 			tsConnectionLibs.SelectedIndex = 0; // Select first tab page

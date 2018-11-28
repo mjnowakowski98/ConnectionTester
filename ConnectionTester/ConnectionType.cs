@@ -16,10 +16,10 @@ namespace ConnectionTester {
 		private Type derivedType; // Connection type
 		private String typeKey;
 
-		private UserControl uiControl;
+		private UIControl uiControl;
 		#endregion
 
-		public ConnectionType(Type type, String key, UserControl control) {
+		public ConnectionType(Type type, String key, UIControl control) {
 			connections = new List<Connection>();
 			connections.Add(new NoConnection());
 			currentConnection = connections[0];
@@ -68,7 +68,7 @@ namespace ConnectionTester {
 			get { return connections.Count; }
 		}
 
-		public UserControl UIControl {
+		public UIControl UIControl {
 			get { return uiControl; }
 		}
 

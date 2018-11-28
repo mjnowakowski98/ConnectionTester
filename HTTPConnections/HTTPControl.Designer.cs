@@ -69,6 +69,7 @@
             this.btnRequestHeaders.TabIndex = 2;
             this.btnRequestHeaders.Text = "Request Headers";
             this.btnRequestHeaders.UseVisualStyleBackColor = true;
+            this.btnRequestHeaders.Click += new System.EventHandler(this.btnRequestHeaders_Click);
             // 
             // tbRequestData
             // 
