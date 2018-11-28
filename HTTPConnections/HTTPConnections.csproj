@@ -48,6 +48,7 @@
     <Compile Include="ClientHeaders.Designer.cs">
       <DependentUpon>ClientHeaders.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpClientHeaders.cs" />
     <Compile Include="HTTPConnection.cs" />
     <Compile Include="HTTPControl.cs">
       <SubType>UserControl</SubType>

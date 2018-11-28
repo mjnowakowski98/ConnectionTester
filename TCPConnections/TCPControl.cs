@@ -19,7 +19,6 @@ namespace TCPConnections {
 
         public override bool CurrentConnectionIsConnected {
             get { return base.CurrentConnectionIsConnected; }
-
             set {
                 base.CurrentConnectionIsConnected = value;
                 tbSendString.Enabled = value;

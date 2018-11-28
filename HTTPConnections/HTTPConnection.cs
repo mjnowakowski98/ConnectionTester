@@ -25,6 +25,23 @@ namespace HTTPConnections {
             // No persistant connections, connecting creates a new client
             // Allows updating DefaultRequestHeaders without a race condition
 			client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpClientHeaders clientHeaders = httpControl.ClientHeaders;
+
+            foreach (String line in clientHeaders.Accept)
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(line));
+
+            client.DefaultRequestHeaders.AcceptCharset.Clear();
+            foreach (String line in clientHeaders.AcceptCharset)
+                client.DefaultRequestHeaders.AcceptCharset.Add(new StringWithQualityHeaderValue(line));
+
+            client.DefaultRequestHeaders.AcceptEncoding.Clear();
+            foreach (String line in clientHeaders.AcceptEncoding)
+                client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue(line));
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(clientHeaders.Authorization);
+            // TODO: Re-implement ClientHeaders UI, finish this
+
 			log += "Connected\n";
 			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Connected));
         }
@@ -34,7 +51,7 @@ namespace HTTPConnections {
 			try {
 				switch (connectionMethod) {
 					case "GET": // ---Needs overhaul---
-                        //HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, hostName + ':' + port);
+                        HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, hostName + ':' + port);
 						response = await client.GetAsync(hostName + ':' + port + '?' + httpControl.tbRequestData.Text); // Send with quesrystring
                         log += "Request sent\n";
 						break;

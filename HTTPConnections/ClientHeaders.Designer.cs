@@ -563,7 +563,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(421, 610);
+            this.ClientSize = new System.Drawing.Size(438, 610);
             this.Controls.Add(this.tbWarning);
             this.Controls.Add(this.tbVia);
             this.Controls.Add(this.tbUserAgent);

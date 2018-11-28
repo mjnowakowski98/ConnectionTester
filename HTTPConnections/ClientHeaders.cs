@@ -10,39 +10,39 @@ using System.Windows.Forms;
 
 namespace HTTPConnections {
 	internal partial class ClientHeaders : Form {
-        private HTTPControl parentControl;
+        private HttpClientHeaders clientHeaders;
 
-		public ClientHeaders(HTTPControl _parentControl) {
+		public ClientHeaders(HttpClientHeaders _clientHeaders) {
 			InitializeComponent();
-            parentControl = _parentControl;
+            clientHeaders = _clientHeaders;
 		}
 
         // Set client headers to UI control
         private void ClientHeaders_FormClosing(object sender, FormClosingEventArgs e) {
-            parentControl.Accept.AddRange(tbAccept.Text.Split('\n'));
-            parentControl.AcceptCharset.AddRange(tbAcceptCharset.Text.Split('\n'));
-            parentControl.AcceptEncoding.AddRange(tbAcceptEncoding.Text.Split('\n'));
-            parentControl.AcceptLanguage.AddRange(tbAcceptLanguage.Text.Split('\n'));
-            parentControl.Authorization = tbAuthorization.Text;
-            parentControl.CacheControl.AddRange(tbCacheControl.Text.Split('\n'));
-            parentControl.Connection.AddRange(tbConnection.Text.Split('\n'));
-            parentControl.Date = tbDate.Text;
-            parentControl.Expect = tbExpect.Text;
-            parentControl.From = tbFrom.Text;
-            parentControl.Host = tbHost.Text;
-            parentControl.IfMatch.AddRange(tbIfMatch.Text.Split('\n'));
-            parentControl.IfModifiedSince.AddRange(tbIfModifiedSince.Text.Split('\n'));
-            parentControl.IfNoneMatch.AddRange(tbIfNoneMatch.Text.Split('\n'));
-            parentControl.IfRange.AddRange(tbRange.Text.Split('\n'));
-            parentControl.IfUnmodifiedSince.AddRange(tbIfUnmodifiedSince.Text.Split('\n'));
-            parentControl.Range.AddRange(tbRange.Text.Split('\n'));
-            parentControl.Referrer = tbReferrer.Text;
-            parentControl.Te.AddRange(tbTE.Text.Split('\n'));
-            parentControl.Trailer.AddRange(tbTrailer.Text.Split('\n'));
-            parentControl.TransferEncoding = tbTransferEncoding.Text;
-            parentControl.UserAgent = tbUserAgent.Text;
-            parentControl.Via.AddRange(tbVia.Text.Split('\n'));
-            parentControl.Warning = tbWarning.Text;
+            clientHeaders.Accept.AddRange(tbAccept.Text.Split('\n'));
+            clientHeaders.AcceptCharset.AddRange(tbAcceptCharset.Text.Split('\n'));
+            clientHeaders.AcceptEncoding.AddRange(tbAcceptEncoding.Text.Split('\n'));
+            clientHeaders.AcceptLanguage.AddRange(tbAcceptLanguage.Text.Split('\n'));
+            clientHeaders.Authorization = tbAuthorization.Text;
+            clientHeaders.CacheControl.AddRange(tbCacheControl.Text.Split('\n'));
+            clientHeaders.Connection.AddRange(tbConnection.Text.Split('\n'));
+            clientHeaders.Date = tbDate.Text;
+            clientHeaders.Expect = tbExpect.Text;
+            clientHeaders.From = tbFrom.Text;
+            clientHeaders.Host = tbHost.Text;
+            clientHeaders.IfMatch.AddRange(tbIfMatch.Text.Split('\n'));
+            clientHeaders.IfModifiedSince.AddRange(tbIfModifiedSince.Text.Split('\n'));
+            clientHeaders.IfNoneMatch.AddRange(tbIfNoneMatch.Text.Split('\n'));
+            clientHeaders.IfRange.AddRange(tbRange.Text.Split('\n'));
+            clientHeaders.IfUnmodifiedSince.AddRange(tbIfUnmodifiedSince.Text.Split('\n'));
+            clientHeaders.Range.AddRange(tbRange.Text.Split('\n'));
+            clientHeaders.Referrer = tbReferrer.Text;
+            clientHeaders.Te.AddRange(tbTE.Text.Split('\n'));
+            clientHeaders.Trailer.AddRange(tbTrailer.Text.Split('\n'));
+            clientHeaders.TransferEncoding = tbTransferEncoding.Text;
+            clientHeaders.UserAgent = tbUserAgent.Text;
+            clientHeaders.Via.AddRange(tbVia.Text.Split('\n'));
+            clientHeaders.Warning = tbWarning.Text;
         }
     }
 }
