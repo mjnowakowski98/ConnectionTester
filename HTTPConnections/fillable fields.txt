@@ -1,40 +1,24 @@
 Accept - Collection
-AcceptCharset - Collection
-AcceptEncoding - Collection
 AcceptLanguage - Collection
 ---
 Authorization - AuthenticationHeaderValue
-*ProxyAuhtorization - Collection
+ProxyAuhtorization - Collection
 ---
 CacheControl - CacheControlHeaderValue
-	Extensions - Collection
 	MaxAge - TimeSpan
-	MaxStale - bool
+	*MaxStale - bool
 	MaxStaleLimit - TimeSpan
 	MinFresh - TimeSpan
-	MustRevalidate - bool
-	NoCache - bool
-	NoCacheHeaders - Collection
+	NoCache - bool 
+	*NoCacheHeaders - Collection
 	NoStore - bool
 	NoTransform - bool
 	OnlyIfCached - bool
-	Private - bool
-	PrivateHeaders - Collection
-	ProxyRevalidate - bool
-	Public - bool
-	SharedMaxAge - TimeSpan
----
-Connection - Collection
-ConnectionClose - bool
----
-*Date - DateTimeOffset
 --
-Expect - Collection
+*Expect - Collection
 ExpectContinue - bool
 --
 From - String
-Host - String
-Referrer - Uri
 --
 IfMatch - Collection
 IfModifiedSince - Collection
@@ -42,16 +26,7 @@ IfNoneMatch - Collection
 IfRange - Collection
 IfUnmodifiedSince - Collection
 --
-*MaxForwards - int
-*(obsolete) Pragma - Collection
-*Range - RangeHeaderValue
+Range - RangeHeaderValue
 --
-Trailer - Collection
-TE - Collection
-TransferEncoding - Collection
-TransferEncodingChunked - bool
---
-Upgrade - Collection
 UserAgent - Collection
-Via - Collection
 Warning - Collection

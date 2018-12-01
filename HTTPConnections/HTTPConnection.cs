@@ -25,22 +25,8 @@ namespace HTTPConnections {
             // No persistant connections, connecting creates a new client
             // Allows updating DefaultRequestHeaders without a race condition
 			client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            HttpClientHeaders clientHeaders = httpControl.ClientHeaders;
 
-            foreach (String line in clientHeaders.Accept)
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(line));
-
-            client.DefaultRequestHeaders.AcceptCharset.Clear();
-            foreach (String line in clientHeaders.AcceptCharset)
-                client.DefaultRequestHeaders.AcceptCharset.Add(new StringWithQualityHeaderValue(line));
-
-            client.DefaultRequestHeaders.AcceptEncoding.Clear();
-            foreach (String line in clientHeaders.AcceptEncoding)
-                client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue(line));
-
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(clientHeaders.Authorization);
-            // TODO: Re-implement ClientHeaders UI, finish this
+            // TODO: Implement setting DefaultRequestHeaders
 
 			log += "Connected\n";
 			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Connected));
