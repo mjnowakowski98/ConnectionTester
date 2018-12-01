@@ -51,6 +51,7 @@ namespace HTTPConnections {
 
         private void btnRequestHeaders_Click(object sender, EventArgs e) {
             RequestHeaders dialog = new RequestHeaders(this);
+            dialog.ShowDialog();
         }
     }
 }

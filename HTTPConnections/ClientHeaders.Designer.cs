@@ -23,658 +23,908 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-            this.lblAccept = new System.Windows.Forms.Label();
-            this.lblAcceptCharset = new System.Windows.Forms.Label();
-            this.lblAcceptEncoding = new System.Windows.Forms.Label();
-            this.lblAcceptLanguage = new System.Windows.Forms.Label();
-            this.lblAuthoriaztion = new System.Windows.Forms.Label();
-            this.lblCacheControl = new System.Windows.Forms.Label();
-            this.lblConnection = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblExpect = new System.Windows.Forms.Label();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.Host = new System.Windows.Forms.Label();
-            this.lblIfMatch = new System.Windows.Forms.Label();
-            this.lblIfModifiedSince = new System.Windows.Forms.Label();
-            this.lblIfNoneMatch = new System.Windows.Forms.Label();
-            this.lblIfRange = new System.Windows.Forms.Label();
-            this.lblIfUnmodifiedSince = new System.Windows.Forms.Label();
-            this.lblProxyAuthorization = new System.Windows.Forms.Label();
-            this.lblRange = new System.Windows.Forms.Label();
-            this.lblReferrer = new System.Windows.Forms.Label();
-            this.lblTE = new System.Windows.Forms.Label();
-            this.Trailer = new System.Windows.Forms.Label();
-            this.lblTransferEncoding = new System.Windows.Forms.Label();
-            this.lblUserAgent = new System.Windows.Forms.Label();
-            this.lblVia = new System.Windows.Forms.Label();
-            this.lblWarning = new System.Windows.Forms.Label();
-            this.tbAccept = new System.Windows.Forms.RichTextBox();
-            this.tbAcceptCharset = new System.Windows.Forms.RichTextBox();
-            this.tbAcceptEncoding = new System.Windows.Forms.RichTextBox();
-            this.tbAcceptLanguage = new System.Windows.Forms.RichTextBox();
-            this.tbAuthorization = new System.Windows.Forms.RichTextBox();
-            this.tbCacheControl = new System.Windows.Forms.RichTextBox();
-            this.tbConnection = new System.Windows.Forms.RichTextBox();
-            this.tbDate = new System.Windows.Forms.RichTextBox();
-            this.tbExpect = new System.Windows.Forms.RichTextBox();
-            this.tbFrom = new System.Windows.Forms.RichTextBox();
-            this.tbHost = new System.Windows.Forms.RichTextBox();
-            this.tbIfMatch = new System.Windows.Forms.RichTextBox();
-            this.tbIfModifiedSince = new System.Windows.Forms.RichTextBox();
-            this.tbIfNoneMatch = new System.Windows.Forms.RichTextBox();
-            this.tbIfRange = new System.Windows.Forms.RichTextBox();
-            this.tbIfUnmodifiedSince = new System.Windows.Forms.RichTextBox();
-            this.tbProxyAuthorzition = new System.Windows.Forms.RichTextBox();
-            this.tbRange = new System.Windows.Forms.RichTextBox();
-            this.tbReferrer = new System.Windows.Forms.RichTextBox();
-            this.tbTE = new System.Windows.Forms.RichTextBox();
-            this.tbTrailer = new System.Windows.Forms.RichTextBox();
-            this.tbTransferEncoding = new System.Windows.Forms.RichTextBox();
-            this.tbUserAgent = new System.Windows.Forms.RichTextBox();
-            this.tbVia = new System.Windows.Forms.RichTextBox();
-            this.tbWarning = new System.Windows.Forms.RichTextBox();
-            this.pnlForm = new System.Windows.Forms.Panel();
-            this.SuspendLayout();
-            // 
-            // lblAccept
-            // 
-            this.lblAccept.AutoSize = true;
-            this.lblAccept.Location = new System.Drawing.Point(12, 9);
-            this.lblAccept.Name = "lblAccept";
-            this.lblAccept.Size = new System.Drawing.Size(41, 13);
-            this.lblAccept.TabIndex = 0;
-            this.lblAccept.Text = "Accept";
-            // 
-            // lblAcceptCharset
-            // 
-            this.lblAcceptCharset.AutoSize = true;
-            this.lblAcceptCharset.Location = new System.Drawing.Point(12, 75);
-            this.lblAcceptCharset.Name = "lblAcceptCharset";
-            this.lblAcceptCharset.Size = new System.Drawing.Size(80, 13);
-            this.lblAcceptCharset.TabIndex = 1;
-            this.lblAcceptCharset.Text = "Accept-Charset";
-            // 
-            // lblAcceptEncoding
-            // 
-            this.lblAcceptEncoding.AutoSize = true;
-            this.lblAcceptEncoding.Location = new System.Drawing.Point(12, 141);
-            this.lblAcceptEncoding.Name = "lblAcceptEncoding";
-            this.lblAcceptEncoding.Size = new System.Drawing.Size(89, 13);
-            this.lblAcceptEncoding.TabIndex = 2;
-            this.lblAcceptEncoding.Text = "Accept-Encoding";
-            // 
-            // lblAcceptLanguage
-            // 
-            this.lblAcceptLanguage.AutoSize = true;
-            this.lblAcceptLanguage.Location = new System.Drawing.Point(12, 207);
-            this.lblAcceptLanguage.Name = "lblAcceptLanguage";
-            this.lblAcceptLanguage.Size = new System.Drawing.Size(92, 13);
-            this.lblAcceptLanguage.TabIndex = 3;
-            this.lblAcceptLanguage.Text = "Accept-Language";
-            // 
-            // lblAuthoriaztion
-            // 
-            this.lblAuthoriaztion.AutoSize = true;
-            this.lblAuthoriaztion.Location = new System.Drawing.Point(12, 273);
-            this.lblAuthoriaztion.Name = "lblAuthoriaztion";
-            this.lblAuthoriaztion.Size = new System.Drawing.Size(68, 13);
-            this.lblAuthoriaztion.TabIndex = 4;
-            this.lblAuthoriaztion.Text = "Authorization";
-            // 
-            // lblCacheControl
-            // 
-            this.lblCacheControl.AutoSize = true;
-            this.lblCacheControl.Location = new System.Drawing.Point(12, 339);
-            this.lblCacheControl.Name = "lblCacheControl";
-            this.lblCacheControl.Size = new System.Drawing.Size(74, 13);
-            this.lblCacheControl.TabIndex = 5;
-            this.lblCacheControl.Text = "Cache-Control";
-            // 
-            // lblConnection
-            // 
-            this.lblConnection.AutoSize = true;
-            this.lblConnection.Location = new System.Drawing.Point(12, 405);
-            this.lblConnection.Name = "lblConnection";
-            this.lblConnection.Size = new System.Drawing.Size(61, 13);
-            this.lblConnection.TabIndex = 6;
-            this.lblConnection.Text = "Connection";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(12, 471);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
-            this.lblDate.TabIndex = 8;
-            this.lblDate.Text = "Date";
-            // 
-            // lblExpect
-            // 
-            this.lblExpect.AutoSize = true;
-            this.lblExpect.Location = new System.Drawing.Point(12, 537);
-            this.lblExpect.Name = "lblExpect";
-            this.lblExpect.Size = new System.Drawing.Size(40, 13);
-            this.lblExpect.TabIndex = 9;
-            this.lblExpect.Text = "Expect";
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(12, 603);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(30, 13);
-            this.lblFrom.TabIndex = 11;
-            this.lblFrom.Text = "From";
-            // 
-            // Host
-            // 
-            this.Host.AutoSize = true;
-            this.Host.Location = new System.Drawing.Point(12, 669);
-            this.Host.Name = "Host";
-            this.Host.Size = new System.Drawing.Size(29, 13);
-            this.Host.TabIndex = 12;
-            this.Host.Text = "Host";
-            // 
-            // lblIfMatch
-            // 
-            this.lblIfMatch.AutoSize = true;
-            this.lblIfMatch.Location = new System.Drawing.Point(12, 735);
-            this.lblIfMatch.Name = "lblIfMatch";
-            this.lblIfMatch.Size = new System.Drawing.Size(46, 13);
-            this.lblIfMatch.TabIndex = 13;
-            this.lblIfMatch.Text = "If-Match";
-            // 
-            // lblIfModifiedSince
-            // 
-            this.lblIfModifiedSince.AutoSize = true;
-            this.lblIfModifiedSince.Location = new System.Drawing.Point(12, 801);
-            this.lblIfModifiedSince.Name = "lblIfModifiedSince";
-            this.lblIfModifiedSince.Size = new System.Drawing.Size(86, 13);
-            this.lblIfModifiedSince.TabIndex = 14;
-            this.lblIfModifiedSince.Text = "If-Modified-Since";
-            // 
-            // lblIfNoneMatch
-            // 
-            this.lblIfNoneMatch.AutoSize = true;
-            this.lblIfNoneMatch.Location = new System.Drawing.Point(12, 867);
-            this.lblIfNoneMatch.Name = "lblIfNoneMatch";
-            this.lblIfNoneMatch.Size = new System.Drawing.Size(75, 13);
-            this.lblIfNoneMatch.TabIndex = 15;
-            this.lblIfNoneMatch.Text = "If-None-Match";
-            // 
-            // lblIfRange
-            // 
-            this.lblIfRange.AutoSize = true;
-            this.lblIfRange.Location = new System.Drawing.Point(12, 933);
-            this.lblIfRange.Name = "lblIfRange";
-            this.lblIfRange.Size = new System.Drawing.Size(48, 13);
-            this.lblIfRange.TabIndex = 16;
-            this.lblIfRange.Text = "If-Range";
-            // 
-            // lblIfUnmodifiedSince
-            // 
-            this.lblIfUnmodifiedSince.AutoSize = true;
-            this.lblIfUnmodifiedSince.Location = new System.Drawing.Point(12, 999);
-            this.lblIfUnmodifiedSince.Name = "lblIfUnmodifiedSince";
-            this.lblIfUnmodifiedSince.Size = new System.Drawing.Size(99, 13);
-            this.lblIfUnmodifiedSince.TabIndex = 17;
-            this.lblIfUnmodifiedSince.Text = "If-Unmodified-Since";
-            // 
-            // lblProxyAuthorization
-            // 
-            this.lblProxyAuthorization.AutoSize = true;
-            this.lblProxyAuthorization.Location = new System.Drawing.Point(12, 1065);
-            this.lblProxyAuthorization.Name = "lblProxyAuthorization";
-            this.lblProxyAuthorization.Size = new System.Drawing.Size(97, 13);
-            this.lblProxyAuthorization.TabIndex = 20;
-            this.lblProxyAuthorization.Text = "Proxy-Authorization";
-            // 
-            // lblRange
-            // 
-            this.lblRange.AutoSize = true;
-            this.lblRange.Location = new System.Drawing.Point(12, 1131);
-            this.lblRange.Name = "lblRange";
-            this.lblRange.Size = new System.Drawing.Size(39, 13);
-            this.lblRange.TabIndex = 21;
-            this.lblRange.Text = "Range";
-            // 
-            // lblReferrer
-            // 
-            this.lblReferrer.AutoSize = true;
-            this.lblReferrer.Location = new System.Drawing.Point(12, 1197);
-            this.lblReferrer.Name = "lblReferrer";
-            this.lblReferrer.Size = new System.Drawing.Size(45, 13);
-            this.lblReferrer.TabIndex = 22;
-            this.lblReferrer.Text = "Referrer";
-            // 
-            // lblTE
-            // 
-            this.lblTE.AutoSize = true;
-            this.lblTE.Location = new System.Drawing.Point(12, 1263);
-            this.lblTE.Name = "lblTE";
-            this.lblTE.Size = new System.Drawing.Size(21, 13);
-            this.lblTE.TabIndex = 23;
-            this.lblTE.Text = "TE";
-            // 
-            // Trailer
-            // 
-            this.Trailer.AutoSize = true;
-            this.Trailer.Location = new System.Drawing.Point(12, 1329);
-            this.Trailer.Name = "Trailer";
-            this.Trailer.Size = new System.Drawing.Size(36, 13);
-            this.Trailer.TabIndex = 24;
-            this.Trailer.Text = "Trailer";
-            // 
-            // lblTransferEncoding
-            // 
-            this.lblTransferEncoding.AutoSize = true;
-            this.lblTransferEncoding.Location = new System.Drawing.Point(12, 1395);
-            this.lblTransferEncoding.Name = "lblTransferEncoding";
-            this.lblTransferEncoding.Size = new System.Drawing.Size(94, 13);
-            this.lblTransferEncoding.TabIndex = 25;
-            this.lblTransferEncoding.Text = "Transfer-Encoding";
-            // 
-            // lblUserAgent
-            // 
-            this.lblUserAgent.AutoSize = true;
-            this.lblUserAgent.Location = new System.Drawing.Point(12, 1461);
-            this.lblUserAgent.Name = "lblUserAgent";
-            this.lblUserAgent.Size = new System.Drawing.Size(60, 13);
-            this.lblUserAgent.TabIndex = 28;
-            this.lblUserAgent.Text = "User-Agent";
-            // 
-            // lblVia
-            // 
-            this.lblVia.AutoSize = true;
-            this.lblVia.Location = new System.Drawing.Point(12, 1527);
-            this.lblVia.Name = "lblVia";
-            this.lblVia.Size = new System.Drawing.Size(22, 13);
-            this.lblVia.TabIndex = 29;
-            this.lblVia.Text = "Via";
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Location = new System.Drawing.Point(12, 1593);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(47, 13);
-            this.lblWarning.TabIndex = 30;
-            this.lblWarning.Text = "Warning";
-            // 
-            // tbAccept
-            // 
-            this.tbAccept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAccept.Location = new System.Drawing.Point(12, 25);
-            this.tbAccept.Name = "tbAccept";
-            this.tbAccept.Size = new System.Drawing.Size(173, 47);
-            this.tbAccept.TabIndex = 31;
-            this.tbAccept.Text = "";
-            // 
-            // tbAcceptCharset
-            // 
-            this.tbAcceptCharset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAcceptCharset.Location = new System.Drawing.Point(12, 91);
-            this.tbAcceptCharset.Name = "tbAcceptCharset";
-            this.tbAcceptCharset.Size = new System.Drawing.Size(173, 47);
-            this.tbAcceptCharset.TabIndex = 32;
-            this.tbAcceptCharset.Text = "";
-            // 
-            // tbAcceptEncoding
-            // 
-            this.tbAcceptEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAcceptEncoding.Location = new System.Drawing.Point(12, 157);
-            this.tbAcceptEncoding.Name = "tbAcceptEncoding";
-            this.tbAcceptEncoding.Size = new System.Drawing.Size(173, 47);
-            this.tbAcceptEncoding.TabIndex = 33;
-            this.tbAcceptEncoding.Text = "";
-            // 
-            // tbAcceptLanguage
-            // 
-            this.tbAcceptLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAcceptLanguage.Location = new System.Drawing.Point(12, 223);
-            this.tbAcceptLanguage.Name = "tbAcceptLanguage";
-            this.tbAcceptLanguage.Size = new System.Drawing.Size(173, 47);
-            this.tbAcceptLanguage.TabIndex = 34;
-            this.tbAcceptLanguage.Text = "";
-            // 
-            // tbAuthorization
-            // 
-            this.tbAuthorization.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAuthorization.Location = new System.Drawing.Point(12, 289);
-            this.tbAuthorization.Name = "tbAuthorization";
-            this.tbAuthorization.Size = new System.Drawing.Size(173, 47);
-            this.tbAuthorization.TabIndex = 35;
-            this.tbAuthorization.Text = "";
-            // 
-            // tbCacheControl
-            // 
-            this.tbCacheControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCacheControl.Location = new System.Drawing.Point(12, 355);
-            this.tbCacheControl.Name = "tbCacheControl";
-            this.tbCacheControl.Size = new System.Drawing.Size(173, 47);
-            this.tbCacheControl.TabIndex = 36;
-            this.tbCacheControl.Text = "";
-            // 
-            // tbConnection
-            // 
-            this.tbConnection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbConnection.Location = new System.Drawing.Point(12, 421);
-            this.tbConnection.Name = "tbConnection";
-            this.tbConnection.Size = new System.Drawing.Size(173, 47);
-            this.tbConnection.TabIndex = 37;
-            this.tbConnection.Text = "";
-            // 
-            // tbDate
-            // 
-            this.tbDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDate.Location = new System.Drawing.Point(12, 487);
-            this.tbDate.Name = "tbDate";
-            this.tbDate.Size = new System.Drawing.Size(173, 47);
-            this.tbDate.TabIndex = 38;
-            this.tbDate.Text = "";
-            // 
-            // tbExpect
-            // 
-            this.tbExpect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbExpect.Location = new System.Drawing.Point(12, 553);
-            this.tbExpect.Name = "tbExpect";
-            this.tbExpect.Size = new System.Drawing.Size(173, 47);
-            this.tbExpect.TabIndex = 39;
-            this.tbExpect.Text = "";
-            // 
-            // tbFrom
-            // 
-            this.tbFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFrom.Location = new System.Drawing.Point(12, 619);
-            this.tbFrom.Name = "tbFrom";
-            this.tbFrom.Size = new System.Drawing.Size(173, 47);
-            this.tbFrom.TabIndex = 40;
-            this.tbFrom.Text = "";
-            // 
-            // tbHost
-            // 
-            this.tbHost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbHost.Location = new System.Drawing.Point(12, 685);
-            this.tbHost.Name = "tbHost";
-            this.tbHost.Size = new System.Drawing.Size(173, 47);
-            this.tbHost.TabIndex = 41;
-            this.tbHost.Text = "";
-            // 
-            // tbIfMatch
-            // 
-            this.tbIfMatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbIfMatch.Location = new System.Drawing.Point(12, 751);
-            this.tbIfMatch.Name = "tbIfMatch";
-            this.tbIfMatch.Size = new System.Drawing.Size(173, 47);
-            this.tbIfMatch.TabIndex = 42;
-            this.tbIfMatch.Text = "";
-            // 
-            // tbIfModifiedSince
-            // 
-            this.tbIfModifiedSince.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbIfModifiedSince.Location = new System.Drawing.Point(12, 817);
-            this.tbIfModifiedSince.Name = "tbIfModifiedSince";
-            this.tbIfModifiedSince.Size = new System.Drawing.Size(173, 47);
-            this.tbIfModifiedSince.TabIndex = 43;
-            this.tbIfModifiedSince.Text = "";
-            // 
-            // tbIfNoneMatch
-            // 
-            this.tbIfNoneMatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbIfNoneMatch.Location = new System.Drawing.Point(12, 883);
-            this.tbIfNoneMatch.Name = "tbIfNoneMatch";
-            this.tbIfNoneMatch.Size = new System.Drawing.Size(173, 47);
-            this.tbIfNoneMatch.TabIndex = 44;
-            this.tbIfNoneMatch.Text = "";
-            // 
-            // tbIfRange
-            // 
-            this.tbIfRange.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbIfRange.Location = new System.Drawing.Point(12, 949);
-            this.tbIfRange.Name = "tbIfRange";
-            this.tbIfRange.Size = new System.Drawing.Size(173, 47);
-            this.tbIfRange.TabIndex = 45;
-            this.tbIfRange.Text = "";
-            // 
-            // tbIfUnmodifiedSince
-            // 
-            this.tbIfUnmodifiedSince.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbIfUnmodifiedSince.Location = new System.Drawing.Point(12, 1015);
-            this.tbIfUnmodifiedSince.Name = "tbIfUnmodifiedSince";
-            this.tbIfUnmodifiedSince.Size = new System.Drawing.Size(173, 47);
-            this.tbIfUnmodifiedSince.TabIndex = 46;
-            this.tbIfUnmodifiedSince.Text = "";
-            // 
-            // tbProxyAuthorzition
-            // 
-            this.tbProxyAuthorzition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProxyAuthorzition.Location = new System.Drawing.Point(12, 1081);
-            this.tbProxyAuthorzition.Name = "tbProxyAuthorzition";
-            this.tbProxyAuthorzition.Size = new System.Drawing.Size(173, 47);
-            this.tbProxyAuthorzition.TabIndex = 47;
-            this.tbProxyAuthorzition.Text = "";
-            // 
-            // tbRange
-            // 
-            this.tbRange.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbRange.Location = new System.Drawing.Point(12, 1147);
-            this.tbRange.Name = "tbRange";
-            this.tbRange.Size = new System.Drawing.Size(173, 47);
-            this.tbRange.TabIndex = 48;
-            this.tbRange.Text = "";
-            // 
-            // tbReferrer
-            // 
-            this.tbReferrer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbReferrer.Location = new System.Drawing.Point(12, 1213);
-            this.tbReferrer.Name = "tbReferrer";
-            this.tbReferrer.Size = new System.Drawing.Size(173, 47);
-            this.tbReferrer.TabIndex = 49;
-            this.tbReferrer.Text = "";
-            // 
-            // tbTE
-            // 
-            this.tbTE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTE.Location = new System.Drawing.Point(12, 1279);
-            this.tbTE.Name = "tbTE";
-            this.tbTE.Size = new System.Drawing.Size(173, 47);
-            this.tbTE.TabIndex = 50;
-            this.tbTE.Text = "";
-            // 
-            // tbTrailer
-            // 
-            this.tbTrailer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTrailer.Location = new System.Drawing.Point(12, 1345);
-            this.tbTrailer.Name = "tbTrailer";
-            this.tbTrailer.Size = new System.Drawing.Size(173, 47);
-            this.tbTrailer.TabIndex = 51;
-            this.tbTrailer.Text = "";
-            // 
-            // tbTransferEncoding
-            // 
-            this.tbTransferEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTransferEncoding.Location = new System.Drawing.Point(12, 1411);
-            this.tbTransferEncoding.Name = "tbTransferEncoding";
-            this.tbTransferEncoding.Size = new System.Drawing.Size(173, 47);
-            this.tbTransferEncoding.TabIndex = 52;
-            this.tbTransferEncoding.Text = "";
-            // 
-            // tbUserAgent
-            // 
-            this.tbUserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUserAgent.Location = new System.Drawing.Point(12, 1477);
-            this.tbUserAgent.Name = "tbUserAgent";
-            this.tbUserAgent.Size = new System.Drawing.Size(173, 47);
-            this.tbUserAgent.TabIndex = 53;
-            this.tbUserAgent.Text = "";
-            // 
-            // tbVia
-            // 
-            this.tbVia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbVia.Location = new System.Drawing.Point(12, 1543);
-            this.tbVia.Name = "tbVia";
-            this.tbVia.Size = new System.Drawing.Size(173, 47);
-            this.tbVia.TabIndex = 54;
-            this.tbVia.Text = "";
-            // 
-            // tbWarning
-            // 
-            this.tbWarning.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbWarning.Location = new System.Drawing.Point(12, 1609);
-            this.tbWarning.Name = "tbWarning";
-            this.tbWarning.Size = new System.Drawing.Size(173, 47);
-            this.tbWarning.TabIndex = 55;
-            this.tbWarning.Text = "";
-            // 
-            // pnlForm
-            // 
-            this.pnlForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(302, 1663);
-            this.pnlForm.TabIndex = 56;
-            // 
-            // ClientHeaders
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(438, 610);
-            this.Controls.Add(this.tbWarning);
-            this.Controls.Add(this.tbVia);
-            this.Controls.Add(this.tbUserAgent);
-            this.Controls.Add(this.tbTransferEncoding);
-            this.Controls.Add(this.tbTrailer);
-            this.Controls.Add(this.tbTE);
-            this.Controls.Add(this.tbReferrer);
-            this.Controls.Add(this.tbRange);
-            this.Controls.Add(this.tbProxyAuthorzition);
-            this.Controls.Add(this.tbIfUnmodifiedSince);
-            this.Controls.Add(this.tbIfRange);
-            this.Controls.Add(this.tbIfNoneMatch);
-            this.Controls.Add(this.tbIfModifiedSince);
-            this.Controls.Add(this.tbIfMatch);
-            this.Controls.Add(this.tbHost);
-            this.Controls.Add(this.tbFrom);
-            this.Controls.Add(this.tbExpect);
-            this.Controls.Add(this.tbDate);
-            this.Controls.Add(this.tbConnection);
-            this.Controls.Add(this.tbCacheControl);
-            this.Controls.Add(this.tbAuthorization);
-            this.Controls.Add(this.tbAcceptLanguage);
-            this.Controls.Add(this.tbAcceptEncoding);
-            this.Controls.Add(this.tbAcceptCharset);
-            this.Controls.Add(this.tbAccept);
-            this.Controls.Add(this.lblWarning);
-            this.Controls.Add(this.lblVia);
-            this.Controls.Add(this.lblUserAgent);
-            this.Controls.Add(this.lblTransferEncoding);
-            this.Controls.Add(this.Trailer);
-            this.Controls.Add(this.lblTE);
-            this.Controls.Add(this.lblReferrer);
-            this.Controls.Add(this.lblRange);
-            this.Controls.Add(this.lblProxyAuthorization);
-            this.Controls.Add(this.lblIfUnmodifiedSince);
-            this.Controls.Add(this.lblIfRange);
-            this.Controls.Add(this.lblIfNoneMatch);
-            this.Controls.Add(this.lblIfModifiedSince);
-            this.Controls.Add(this.lblIfMatch);
-            this.Controls.Add(this.Host);
-            this.Controls.Add(this.lblFrom);
-            this.Controls.Add(this.lblExpect);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblConnection);
-            this.Controls.Add(this.lblCacheControl);
-            this.Controls.Add(this.lblAuthoriaztion);
-            this.Controls.Add(this.lblAcceptLanguage);
-            this.Controls.Add(this.lblAcceptEncoding);
-            this.Controls.Add(this.lblAcceptCharset);
-            this.Controls.Add(this.lblAccept);
-            this.Controls.Add(this.pnlForm);
-            this.Name = "ClientHeaders";
-            this.Text = "ClientHeaders";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientHeaders_FormClosing);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			System.Windows.Forms.RichTextBox tbNote;
+			this.tbAccept = new System.Windows.Forms.RichTextBox();
+			this.lblAcceptCharset = new System.Windows.Forms.Label();
+			this.tbAcceptCharset = new System.Windows.Forms.RichTextBox();
+			this.lblAcceptEncoding = new System.Windows.Forms.Label();
+			this.tbAcceptEncoding = new System.Windows.Forms.RichTextBox();
+			this.lblAcceptLanguage = new System.Windows.Forms.Label();
+			this.tbAcceptLanguage = new System.Windows.Forms.RichTextBox();
+			this.lblAuthScheme = new System.Windows.Forms.Label();
+			this.tbAuthScheme = new System.Windows.Forms.TextBox();
+			this.lblAuthorization = new System.Windows.Forms.Label();
+			this.tbAuthorization = new System.Windows.Forms.RichTextBox();
+			this.gbAcceptHeads = new System.Windows.Forms.GroupBox();
+			this.gbAuthorization = new System.Windows.Forms.GroupBox();
+			this.gbCacheControl = new System.Windows.Forms.GroupBox();
+			this.tbSharedMaxAge = new System.Windows.Forms.TextBox();
+			this.lblSharedMaxAge = new System.Windows.Forms.Label();
+			this.cbPublic = new System.Windows.Forms.CheckBox();
+			this.cbProxyRevalidate = new System.Windows.Forms.CheckBox();
+			this.gbPrivate = new System.Windows.Forms.GroupBox();
+			this.lblPrivateHeaders = new System.Windows.Forms.Label();
+			this.tbPrivateHeaders = new System.Windows.Forms.RichTextBox();
+			this.cbPrivate = new System.Windows.Forms.CheckBox();
+			this.cbOnlyIfCached = new System.Windows.Forms.CheckBox();
+			this.cbNoTransform = new System.Windows.Forms.CheckBox();
+			this.cbNoStore = new System.Windows.Forms.CheckBox();
+			this.gbNoCache = new System.Windows.Forms.GroupBox();
+			this.tbNoCacheHeaders = new System.Windows.Forms.RichTextBox();
+			this.lblNoCacheHeaders = new System.Windows.Forms.Label();
+			this.cbNoCache = new System.Windows.Forms.CheckBox();
+			this.cbMustRevalidate = new System.Windows.Forms.CheckBox();
+			this.tbMinFresh = new System.Windows.Forms.TextBox();
+			this.lblMinFresh = new System.Windows.Forms.Label();
+			this.gbMaxStale = new System.Windows.Forms.GroupBox();
+			this.cbMaxStale = new System.Windows.Forms.CheckBox();
+			this.tbMaxStaleLimit = new System.Windows.Forms.TextBox();
+			this.lblMaxStaleLimit = new System.Windows.Forms.Label();
+			this.tbMaxAge = new System.Windows.Forms.TextBox();
+			this.lblMaxAge = new System.Windows.Forms.Label();
+			this.tbExtensions = new System.Windows.Forms.RichTextBox();
+			this.lblExtensions = new System.Windows.Forms.Label();
+			this.gbConnection = new System.Windows.Forms.GroupBox();
+			this.cbConnectionClose = new System.Windows.Forms.CheckBox();
+			this.tbConnection = new System.Windows.Forms.TextBox();
+			this.gbExpect = new System.Windows.Forms.GroupBox();
+			this.cbExpectContinue = new System.Windows.Forms.CheckBox();
+			this.tbExpect = new System.Windows.Forms.RichTextBox();
+			this.gbRouting = new System.Windows.Forms.GroupBox();
+			this.tbReferrer = new System.Windows.Forms.TextBox();
+			this.lblReferrer = new System.Windows.Forms.Label();
+			this.tbHost = new System.Windows.Forms.TextBox();
+			this.lblHost = new System.Windows.Forms.Label();
+			this.tbFrom = new System.Windows.Forms.TextBox();
+			this.lblFrom = new System.Windows.Forms.Label();
+			this.gbIf = new System.Windows.Forms.GroupBox();
+			this.tbIfNoneMatch = new System.Windows.Forms.RichTextBox();
+			this.lblIfNoneMatch = new System.Windows.Forms.Label();
+			this.tbIfModifiedSince = new System.Windows.Forms.RichTextBox();
+			this.lblIfModifiedSince = new System.Windows.Forms.Label();
+			this.tbIfMatch = new System.Windows.Forms.RichTextBox();
+			this.lblIfMatch = new System.Windows.Forms.Label();
+			this.lblIfRange = new System.Windows.Forms.Label();
+			this.tbIfrange = new System.Windows.Forms.RichTextBox();
+			this.lblIfUnmodifiedSince = new System.Windows.Forms.Label();
+			this.tbIfUnmodifiedSince = new System.Windows.Forms.RichTextBox();
+			this.gbTE = new System.Windows.Forms.GroupBox();
+			this.tbTE = new System.Windows.Forms.TextBox();
+			this.lblTransferEncoding = new System.Windows.Forms.Label();
+			this.tbTransferEncoding = new System.Windows.Forms.RichTextBox();
+			this.cbTransferEncodingChunked = new System.Windows.Forms.CheckBox();
+			this.lblTrailer = new System.Windows.Forms.Label();
+			this.tbTrailer = new System.Windows.Forms.RichTextBox();
+			this.pnlScrollOffset = new System.Windows.Forms.Panel();
+			tbNote = new System.Windows.Forms.RichTextBox();
+			this.gbAcceptHeads.SuspendLayout();
+			this.gbAuthorization.SuspendLayout();
+			this.gbCacheControl.SuspendLayout();
+			this.gbPrivate.SuspendLayout();
+			this.gbNoCache.SuspendLayout();
+			this.gbMaxStale.SuspendLayout();
+			this.gbConnection.SuspendLayout();
+			this.gbExpect.SuspendLayout();
+			this.gbRouting.SuspendLayout();
+			this.gbIf.SuspendLayout();
+			this.gbTE.SuspendLayout();
+			this.pnlScrollOffset.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// tbAccept
+			// 
+			this.tbAccept.Location = new System.Drawing.Point(6, 19);
+			this.tbAccept.Name = "tbAccept";
+			this.tbAccept.Size = new System.Drawing.Size(200, 75);
+			this.tbAccept.TabIndex = 1;
+			this.tbAccept.Text = "";
+			// 
+			// lblAcceptCharset
+			// 
+			this.lblAcceptCharset.AutoSize = true;
+			this.lblAcceptCharset.Location = new System.Drawing.Point(6, 97);
+			this.lblAcceptCharset.Name = "lblAcceptCharset";
+			this.lblAcceptCharset.Size = new System.Drawing.Size(80, 13);
+			this.lblAcceptCharset.TabIndex = 2;
+			this.lblAcceptCharset.Text = "Accept Charset";
+			// 
+			// tbAcceptCharset
+			// 
+			this.tbAcceptCharset.Location = new System.Drawing.Point(6, 113);
+			this.tbAcceptCharset.Name = "tbAcceptCharset";
+			this.tbAcceptCharset.Size = new System.Drawing.Size(200, 75);
+			this.tbAcceptCharset.TabIndex = 3;
+			this.tbAcceptCharset.Text = "";
+			// 
+			// lblAcceptEncoding
+			// 
+			this.lblAcceptEncoding.AutoSize = true;
+			this.lblAcceptEncoding.Location = new System.Drawing.Point(6, 191);
+			this.lblAcceptEncoding.Name = "lblAcceptEncoding";
+			this.lblAcceptEncoding.Size = new System.Drawing.Size(89, 13);
+			this.lblAcceptEncoding.TabIndex = 4;
+			this.lblAcceptEncoding.Text = "Accept Encoding";
+			// 
+			// tbAcceptEncoding
+			// 
+			this.tbAcceptEncoding.Location = new System.Drawing.Point(6, 207);
+			this.tbAcceptEncoding.Name = "tbAcceptEncoding";
+			this.tbAcceptEncoding.Size = new System.Drawing.Size(200, 75);
+			this.tbAcceptEncoding.TabIndex = 5;
+			this.tbAcceptEncoding.Text = "";
+			// 
+			// lblAcceptLanguage
+			// 
+			this.lblAcceptLanguage.AutoSize = true;
+			this.lblAcceptLanguage.Location = new System.Drawing.Point(6, 285);
+			this.lblAcceptLanguage.Name = "lblAcceptLanguage";
+			this.lblAcceptLanguage.Size = new System.Drawing.Size(92, 13);
+			this.lblAcceptLanguage.TabIndex = 6;
+			this.lblAcceptLanguage.Text = "Accept Language";
+			// 
+			// tbAcceptLanguage
+			// 
+			this.tbAcceptLanguage.Location = new System.Drawing.Point(6, 301);
+			this.tbAcceptLanguage.Name = "tbAcceptLanguage";
+			this.tbAcceptLanguage.Size = new System.Drawing.Size(200, 75);
+			this.tbAcceptLanguage.TabIndex = 7;
+			this.tbAcceptLanguage.Text = "";
+			// 
+			// lblAuthScheme
+			// 
+			this.lblAuthScheme.AutoSize = true;
+			this.lblAuthScheme.Location = new System.Drawing.Point(6, 16);
+			this.lblAuthScheme.Name = "lblAuthScheme";
+			this.lblAuthScheme.Size = new System.Drawing.Size(46, 13);
+			this.lblAuthScheme.TabIndex = 0;
+			this.lblAuthScheme.Text = "Scheme";
+			// 
+			// tbAuthScheme
+			// 
+			this.tbAuthScheme.Location = new System.Drawing.Point(6, 32);
+			this.tbAuthScheme.Name = "tbAuthScheme";
+			this.tbAuthScheme.Size = new System.Drawing.Size(200, 20);
+			this.tbAuthScheme.TabIndex = 1;
+			// 
+			// lblAuthorization
+			// 
+			this.lblAuthorization.AutoSize = true;
+			this.lblAuthorization.Location = new System.Drawing.Point(6, 55);
+			this.lblAuthorization.Name = "lblAuthorization";
+			this.lblAuthorization.Size = new System.Drawing.Size(68, 13);
+			this.lblAuthorization.TabIndex = 2;
+			this.lblAuthorization.Text = "Authorization";
+			// 
+			// tbAuthorization
+			// 
+			this.tbAuthorization.Location = new System.Drawing.Point(6, 71);
+			this.tbAuthorization.Name = "tbAuthorization";
+			this.tbAuthorization.Size = new System.Drawing.Size(200, 75);
+			this.tbAuthorization.TabIndex = 3;
+			this.tbAuthorization.Text = "";
+			// 
+			// gbAcceptHeads
+			// 
+			this.gbAcceptHeads.Controls.Add(this.tbAcceptLanguage);
+			this.gbAcceptHeads.Controls.Add(this.tbAcceptEncoding);
+			this.gbAcceptHeads.Controls.Add(this.lblAcceptLanguage);
+			this.gbAcceptHeads.Controls.Add(this.tbAccept);
+			this.gbAcceptHeads.Controls.Add(this.lblAcceptEncoding);
+			this.gbAcceptHeads.Controls.Add(this.lblAcceptCharset);
+			this.gbAcceptHeads.Controls.Add(this.tbAcceptCharset);
+			this.gbAcceptHeads.Location = new System.Drawing.Point(12, 12);
+			this.gbAcceptHeads.Name = "gbAcceptHeads";
+			this.gbAcceptHeads.Size = new System.Drawing.Size(213, 385);
+			this.gbAcceptHeads.TabIndex = 4;
+			this.gbAcceptHeads.TabStop = false;
+			this.gbAcceptHeads.Text = "Accept";
+			// 
+			// gbAuthorization
+			// 
+			this.gbAuthorization.Controls.Add(this.tbAuthorization);
+			this.gbAuthorization.Controls.Add(this.tbAuthScheme);
+			this.gbAuthorization.Controls.Add(this.lblAuthorization);
+			this.gbAuthorization.Controls.Add(this.lblAuthScheme);
+			this.gbAuthorization.Location = new System.Drawing.Point(888, 323);
+			this.gbAuthorization.Name = "gbAuthorization";
+			this.gbAuthorization.Size = new System.Drawing.Size(213, 152);
+			this.gbAuthorization.TabIndex = 5;
+			this.gbAuthorization.TabStop = false;
+			this.gbAuthorization.Text = "Authorization";
+			// 
+			// gbCacheControl
+			// 
+			this.gbCacheControl.Controls.Add(this.tbSharedMaxAge);
+			this.gbCacheControl.Controls.Add(this.lblSharedMaxAge);
+			this.gbCacheControl.Controls.Add(this.cbPublic);
+			this.gbCacheControl.Controls.Add(this.cbProxyRevalidate);
+			this.gbCacheControl.Controls.Add(this.gbPrivate);
+			this.gbCacheControl.Controls.Add(this.cbOnlyIfCached);
+			this.gbCacheControl.Controls.Add(this.cbNoTransform);
+			this.gbCacheControl.Controls.Add(this.cbNoStore);
+			this.gbCacheControl.Controls.Add(this.gbNoCache);
+			this.gbCacheControl.Controls.Add(this.cbMustRevalidate);
+			this.gbCacheControl.Controls.Add(this.tbMinFresh);
+			this.gbCacheControl.Controls.Add(this.lblMinFresh);
+			this.gbCacheControl.Controls.Add(this.gbMaxStale);
+			this.gbCacheControl.Controls.Add(this.tbMaxAge);
+			this.gbCacheControl.Controls.Add(this.lblMaxAge);
+			this.gbCacheControl.Controls.Add(this.tbExtensions);
+			this.gbCacheControl.Controls.Add(this.lblExtensions);
+			this.gbCacheControl.Location = new System.Drawing.Point(231, 12);
+			this.gbCacheControl.Name = "gbCacheControl";
+			this.gbCacheControl.Size = new System.Drawing.Size(432, 463);
+			this.gbCacheControl.TabIndex = 6;
+			this.gbCacheControl.TabStop = false;
+			this.gbCacheControl.Text = "Cache Control (Reorganize)";
+			// 
+			// tbSharedMaxAge
+			// 
+			this.tbSharedMaxAge.Location = new System.Drawing.Point(225, 221);
+			this.tbSharedMaxAge.Name = "tbSharedMaxAge";
+			this.tbSharedMaxAge.Size = new System.Drawing.Size(200, 20);
+			this.tbSharedMaxAge.TabIndex = 21;
+			// 
+			// lblSharedMaxAge
+			// 
+			this.lblSharedMaxAge.AutoSize = true;
+			this.lblSharedMaxAge.Location = new System.Drawing.Point(225, 205);
+			this.lblSharedMaxAge.Name = "lblSharedMaxAge";
+			this.lblSharedMaxAge.Size = new System.Drawing.Size(86, 13);
+			this.lblSharedMaxAge.TabIndex = 20;
+			this.lblSharedMaxAge.Text = "Shared Max Age";
+			// 
+			// cbPublic
+			// 
+			this.cbPublic.AutoSize = true;
+			this.cbPublic.Location = new System.Drawing.Point(225, 185);
+			this.cbPublic.Name = "cbPublic";
+			this.cbPublic.Size = new System.Drawing.Size(55, 17);
+			this.cbPublic.TabIndex = 19;
+			this.cbPublic.Text = "Public";
+			this.cbPublic.UseVisualStyleBackColor = true;
+			// 
+			// cbProxyRevalidate
+			// 
+			this.cbProxyRevalidate.AutoSize = true;
+			this.cbProxyRevalidate.Location = new System.Drawing.Point(225, 162);
+			this.cbProxyRevalidate.Name = "cbProxyRevalidate";
+			this.cbProxyRevalidate.Size = new System.Drawing.Size(106, 17);
+			this.cbProxyRevalidate.TabIndex = 18;
+			this.cbProxyRevalidate.Text = "Proxy Revalidate";
+			this.cbProxyRevalidate.UseVisualStyleBackColor = true;
+			// 
+			// gbPrivate
+			// 
+			this.gbPrivate.Controls.Add(this.lblPrivateHeaders);
+			this.gbPrivate.Controls.Add(this.tbPrivateHeaders);
+			this.gbPrivate.Controls.Add(this.cbPrivate);
+			this.gbPrivate.Location = new System.Drawing.Point(225, 16);
+			this.gbPrivate.Name = "gbPrivate";
+			this.gbPrivate.Size = new System.Drawing.Size(200, 140);
+			this.gbPrivate.TabIndex = 17;
+			this.gbPrivate.TabStop = false;
+			this.gbPrivate.Text = "Private";
+			// 
+			// lblPrivateHeaders
+			// 
+			this.lblPrivateHeaders.AutoSize = true;
+			this.lblPrivateHeaders.Location = new System.Drawing.Point(6, 39);
+			this.lblPrivateHeaders.Name = "lblPrivateHeaders";
+			this.lblPrivateHeaders.Size = new System.Drawing.Size(83, 13);
+			this.lblPrivateHeaders.TabIndex = 18;
+			this.lblPrivateHeaders.Text = "Private Headers";
+			// 
+			// tbPrivateHeaders
+			// 
+			this.tbPrivateHeaders.Location = new System.Drawing.Point(6, 55);
+			this.tbPrivateHeaders.Name = "tbPrivateHeaders";
+			this.tbPrivateHeaders.Size = new System.Drawing.Size(188, 75);
+			this.tbPrivateHeaders.TabIndex = 17;
+			this.tbPrivateHeaders.Text = "";
+			// 
+			// cbPrivate
+			// 
+			this.cbPrivate.AutoSize = true;
+			this.cbPrivate.Location = new System.Drawing.Point(6, 19);
+			this.cbPrivate.Name = "cbPrivate";
+			this.cbPrivate.Size = new System.Drawing.Size(45, 17);
+			this.cbPrivate.TabIndex = 16;
+			this.cbPrivate.Text = "Use";
+			this.cbPrivate.UseVisualStyleBackColor = true;
+			// 
+			// cbOnlyIfCached
+			// 
+			this.cbOnlyIfCached.AutoSize = true;
+			this.cbOnlyIfCached.Location = new System.Drawing.Point(225, 293);
+			this.cbOnlyIfCached.Name = "cbOnlyIfCached";
+			this.cbOnlyIfCached.Size = new System.Drawing.Size(96, 17);
+			this.cbOnlyIfCached.TabIndex = 15;
+			this.cbOnlyIfCached.Text = "Only If Cached";
+			this.cbOnlyIfCached.UseVisualStyleBackColor = true;
+			// 
+			// cbNoTransform
+			// 
+			this.cbNoTransform.AutoSize = true;
+			this.cbNoTransform.Location = new System.Drawing.Point(225, 270);
+			this.cbNoTransform.Name = "cbNoTransform";
+			this.cbNoTransform.Size = new System.Drawing.Size(87, 17);
+			this.cbNoTransform.TabIndex = 14;
+			this.cbNoTransform.Text = "NoTransform";
+			this.cbNoTransform.UseVisualStyleBackColor = true;
+			// 
+			// cbNoStore
+			// 
+			this.cbNoStore.AutoSize = true;
+			this.cbNoStore.Location = new System.Drawing.Point(225, 247);
+			this.cbNoStore.Name = "cbNoStore";
+			this.cbNoStore.Size = new System.Drawing.Size(68, 17);
+			this.cbNoStore.TabIndex = 13;
+			this.cbNoStore.Text = "No Store";
+			this.cbNoStore.UseVisualStyleBackColor = true;
+			// 
+			// gbNoCache
+			// 
+			this.gbNoCache.Controls.Add(this.tbNoCacheHeaders);
+			this.gbNoCache.Controls.Add(this.lblNoCacheHeaders);
+			this.gbNoCache.Controls.Add(this.cbNoCache);
+			this.gbNoCache.Location = new System.Drawing.Point(6, 301);
+			this.gbNoCache.Name = "gbNoCache";
+			this.gbNoCache.Size = new System.Drawing.Size(200, 138);
+			this.gbNoCache.TabIndex = 12;
+			this.gbNoCache.TabStop = false;
+			this.gbNoCache.Text = "No Cache";
+			// 
+			// tbNoCacheHeaders
+			// 
+			this.tbNoCacheHeaders.Location = new System.Drawing.Point(6, 55);
+			this.tbNoCacheHeaders.Name = "tbNoCacheHeaders";
+			this.tbNoCacheHeaders.Size = new System.Drawing.Size(188, 75);
+			this.tbNoCacheHeaders.TabIndex = 2;
+			this.tbNoCacheHeaders.Text = "";
+			// 
+			// lblNoCacheHeaders
+			// 
+			this.lblNoCacheHeaders.AutoSize = true;
+			this.lblNoCacheHeaders.Location = new System.Drawing.Point(6, 39);
+			this.lblNoCacheHeaders.Name = "lblNoCacheHeaders";
+			this.lblNoCacheHeaders.Size = new System.Drawing.Size(98, 13);
+			this.lblNoCacheHeaders.TabIndex = 1;
+			this.lblNoCacheHeaders.Text = "No Cache Headers";
+			// 
+			// cbNoCache
+			// 
+			this.cbNoCache.AutoSize = true;
+			this.cbNoCache.Location = new System.Drawing.Point(6, 19);
+			this.cbNoCache.Name = "cbNoCache";
+			this.cbNoCache.Size = new System.Drawing.Size(45, 17);
+			this.cbNoCache.TabIndex = 0;
+			this.cbNoCache.Text = "Use";
+			this.cbNoCache.UseVisualStyleBackColor = true;
+			// 
+			// cbMustRevalidate
+			// 
+			this.cbMustRevalidate.AutoSize = true;
+			this.cbMustRevalidate.Location = new System.Drawing.Point(6, 278);
+			this.cbMustRevalidate.Name = "cbMustRevalidate";
+			this.cbMustRevalidate.Size = new System.Drawing.Size(103, 17);
+			this.cbMustRevalidate.TabIndex = 11;
+			this.cbMustRevalidate.Text = "Must Revalidate";
+			this.cbMustRevalidate.UseVisualStyleBackColor = true;
+			// 
+			// tbMinFresh
+			// 
+			this.tbMinFresh.Location = new System.Drawing.Point(6, 251);
+			this.tbMinFresh.Name = "tbMinFresh";
+			this.tbMinFresh.Size = new System.Drawing.Size(200, 20);
+			this.tbMinFresh.TabIndex = 6;
+			// 
+			// lblMinFresh
+			// 
+			this.lblMinFresh.AutoSize = true;
+			this.lblMinFresh.Location = new System.Drawing.Point(6, 235);
+			this.lblMinFresh.Name = "lblMinFresh";
+			this.lblMinFresh.Size = new System.Drawing.Size(53, 13);
+			this.lblMinFresh.TabIndex = 5;
+			this.lblMinFresh.Text = "Min Fresh";
+			// 
+			// gbMaxStale
+			// 
+			this.gbMaxStale.Controls.Add(this.cbMaxStale);
+			this.gbMaxStale.Controls.Add(this.tbMaxStaleLimit);
+			this.gbMaxStale.Controls.Add(this.lblMaxStaleLimit);
+			this.gbMaxStale.Location = new System.Drawing.Point(6, 152);
+			this.gbMaxStale.Name = "gbMaxStale";
+			this.gbMaxStale.Size = new System.Drawing.Size(200, 80);
+			this.gbMaxStale.TabIndex = 4;
+			this.gbMaxStale.TabStop = false;
+			this.gbMaxStale.Text = "Max Stale";
+			// 
+			// cbMaxStale
+			// 
+			this.cbMaxStale.AutoSize = true;
+			this.cbMaxStale.Location = new System.Drawing.Point(6, 19);
+			this.cbMaxStale.Name = "cbMaxStale";
+			this.cbMaxStale.Size = new System.Drawing.Size(45, 17);
+			this.cbMaxStale.TabIndex = 11;
+			this.cbMaxStale.Text = "Use";
+			this.cbMaxStale.UseVisualStyleBackColor = true;
+			// 
+			// tbMaxStaleLimit
+			// 
+			this.tbMaxStaleLimit.Location = new System.Drawing.Point(6, 55);
+			this.tbMaxStaleLimit.Name = "tbMaxStaleLimit";
+			this.tbMaxStaleLimit.Size = new System.Drawing.Size(188, 20);
+			this.tbMaxStaleLimit.TabIndex = 3;
+			// 
+			// lblMaxStaleLimit
+			// 
+			this.lblMaxStaleLimit.AutoSize = true;
+			this.lblMaxStaleLimit.Location = new System.Drawing.Point(6, 39);
+			this.lblMaxStaleLimit.Name = "lblMaxStaleLimit";
+			this.lblMaxStaleLimit.Size = new System.Drawing.Size(78, 13);
+			this.lblMaxStaleLimit.TabIndex = 2;
+			this.lblMaxStaleLimit.Text = "Max Stale Limit";
+			// 
+			// tbMaxAge
+			// 
+			this.tbMaxAge.Location = new System.Drawing.Point(6, 126);
+			this.tbMaxAge.Name = "tbMaxAge";
+			this.tbMaxAge.Size = new System.Drawing.Size(200, 20);
+			this.tbMaxAge.TabIndex = 3;
+			// 
+			// lblMaxAge
+			// 
+			this.lblMaxAge.AutoSize = true;
+			this.lblMaxAge.Location = new System.Drawing.Point(6, 110);
+			this.lblMaxAge.Name = "lblMaxAge";
+			this.lblMaxAge.Size = new System.Drawing.Size(49, 13);
+			this.lblMaxAge.TabIndex = 2;
+			this.lblMaxAge.Text = "Max Age";
+			// 
+			// tbExtensions
+			// 
+			this.tbExtensions.Location = new System.Drawing.Point(6, 32);
+			this.tbExtensions.Name = "tbExtensions";
+			this.tbExtensions.Size = new System.Drawing.Size(200, 75);
+			this.tbExtensions.TabIndex = 1;
+			this.tbExtensions.Text = "";
+			// 
+			// lblExtensions
+			// 
+			this.lblExtensions.AutoSize = true;
+			this.lblExtensions.Location = new System.Drawing.Point(6, 16);
+			this.lblExtensions.Name = "lblExtensions";
+			this.lblExtensions.Size = new System.Drawing.Size(58, 13);
+			this.lblExtensions.TabIndex = 0;
+			this.lblExtensions.Text = "Extensions";
+			// 
+			// gbConnection
+			// 
+			this.gbConnection.Controls.Add(this.cbConnectionClose);
+			this.gbConnection.Controls.Add(this.tbConnection);
+			this.gbConnection.Location = new System.Drawing.Point(231, 481);
+			this.gbConnection.Name = "gbConnection";
+			this.gbConnection.Size = new System.Drawing.Size(233, 69);
+			this.gbConnection.TabIndex = 7;
+			this.gbConnection.TabStop = false;
+			this.gbConnection.Text = "Connection";
+			// 
+			// cbConnectionClose
+			// 
+			this.cbConnectionClose.AutoSize = true;
+			this.cbConnectionClose.Location = new System.Drawing.Point(6, 45);
+			this.cbConnectionClose.Name = "cbConnectionClose";
+			this.cbConnectionClose.Size = new System.Drawing.Size(109, 17);
+			this.cbConnectionClose.TabIndex = 1;
+			this.cbConnectionClose.Text = "Connection Close";
+			this.cbConnectionClose.UseVisualStyleBackColor = true;
+			// 
+			// tbConnection
+			// 
+			this.tbConnection.Location = new System.Drawing.Point(6, 19);
+			this.tbConnection.Name = "tbConnection";
+			this.tbConnection.Size = new System.Drawing.Size(200, 20);
+			this.tbConnection.TabIndex = 0;
+			// 
+			// gbExpect
+			// 
+			this.gbExpect.Controls.Add(this.cbExpectContinue);
+			this.gbExpect.Controls.Add(this.tbExpect);
+			this.gbExpect.Location = new System.Drawing.Point(231, 556);
+			this.gbExpect.Name = "gbExpect";
+			this.gbExpect.Size = new System.Drawing.Size(233, 123);
+			this.gbExpect.TabIndex = 8;
+			this.gbExpect.TabStop = false;
+			this.gbExpect.Text = "Expect";
+			// 
+			// cbExpectContinue
+			// 
+			this.cbExpectContinue.AutoSize = true;
+			this.cbExpectContinue.Location = new System.Drawing.Point(6, 100);
+			this.cbExpectContinue.Name = "cbExpectContinue";
+			this.cbExpectContinue.Size = new System.Drawing.Size(104, 17);
+			this.cbExpectContinue.TabIndex = 1;
+			this.cbExpectContinue.Text = "Expect Continue";
+			this.cbExpectContinue.UseVisualStyleBackColor = true;
+			// 
+			// tbExpect
+			// 
+			this.tbExpect.Location = new System.Drawing.Point(6, 19);
+			this.tbExpect.Name = "tbExpect";
+			this.tbExpect.Size = new System.Drawing.Size(200, 75);
+			this.tbExpect.TabIndex = 0;
+			this.tbExpect.Text = "";
+			// 
+			// gbRouting
+			// 
+			this.gbRouting.Controls.Add(this.tbReferrer);
+			this.gbRouting.Controls.Add(this.lblReferrer);
+			this.gbRouting.Controls.Add(this.tbHost);
+			this.gbRouting.Controls.Add(this.lblHost);
+			this.gbRouting.Controls.Add(this.tbFrom);
+			this.gbRouting.Controls.Add(this.lblFrom);
+			this.gbRouting.Location = new System.Drawing.Point(669, 323);
+			this.gbRouting.Name = "gbRouting";
+			this.gbRouting.Size = new System.Drawing.Size(213, 152);
+			this.gbRouting.TabIndex = 9;
+			this.gbRouting.TabStop = false;
+			this.gbRouting.Text = "Routing";
+			// 
+			// tbReferrer
+			// 
+			this.tbReferrer.Location = new System.Drawing.Point(6, 110);
+			this.tbReferrer.Name = "tbReferrer";
+			this.tbReferrer.Size = new System.Drawing.Size(200, 20);
+			this.tbReferrer.TabIndex = 5;
+			// 
+			// lblReferrer
+			// 
+			this.lblReferrer.AutoSize = true;
+			this.lblReferrer.Location = new System.Drawing.Point(6, 94);
+			this.lblReferrer.Name = "lblReferrer";
+			this.lblReferrer.Size = new System.Drawing.Size(45, 13);
+			this.lblReferrer.TabIndex = 4;
+			this.lblReferrer.Text = "Referrer";
+			// 
+			// tbHost
+			// 
+			this.tbHost.Location = new System.Drawing.Point(6, 71);
+			this.tbHost.Name = "tbHost";
+			this.tbHost.Size = new System.Drawing.Size(200, 20);
+			this.tbHost.TabIndex = 3;
+			// 
+			// lblHost
+			// 
+			this.lblHost.AutoSize = true;
+			this.lblHost.Location = new System.Drawing.Point(6, 55);
+			this.lblHost.Name = "lblHost";
+			this.lblHost.Size = new System.Drawing.Size(29, 13);
+			this.lblHost.TabIndex = 2;
+			this.lblHost.Text = "Host";
+			// 
+			// tbFrom
+			// 
+			this.tbFrom.Location = new System.Drawing.Point(6, 32);
+			this.tbFrom.Name = "tbFrom";
+			this.tbFrom.Size = new System.Drawing.Size(200, 20);
+			this.tbFrom.TabIndex = 1;
+			// 
+			// lblFrom
+			// 
+			this.lblFrom.AutoSize = true;
+			this.lblFrom.Location = new System.Drawing.Point(6, 16);
+			this.lblFrom.Name = "lblFrom";
+			this.lblFrom.Size = new System.Drawing.Size(30, 13);
+			this.lblFrom.TabIndex = 0;
+			this.lblFrom.Text = "From";
+			// 
+			// gbIf
+			// 
+			this.gbIf.Controls.Add(this.tbIfUnmodifiedSince);
+			this.gbIf.Controls.Add(this.lblIfUnmodifiedSince);
+			this.gbIf.Controls.Add(this.tbIfrange);
+			this.gbIf.Controls.Add(this.lblIfRange);
+			this.gbIf.Controls.Add(this.tbIfNoneMatch);
+			this.gbIf.Controls.Add(this.lblIfNoneMatch);
+			this.gbIf.Controls.Add(this.tbIfModifiedSince);
+			this.gbIf.Controls.Add(this.lblIfModifiedSince);
+			this.gbIf.Controls.Add(this.tbIfMatch);
+			this.gbIf.Controls.Add(this.lblIfMatch);
+			this.gbIf.Location = new System.Drawing.Point(669, 12);
+			this.gbIf.Name = "gbIf";
+			this.gbIf.Size = new System.Drawing.Size(432, 305);
+			this.gbIf.TabIndex = 10;
+			this.gbIf.TabStop = false;
+			this.gbIf.Text = "If";
+			// 
+			// tbIfNoneMatch
+			// 
+			this.tbIfNoneMatch.Location = new System.Drawing.Point(6, 220);
+			this.tbIfNoneMatch.Name = "tbIfNoneMatch";
+			this.tbIfNoneMatch.Size = new System.Drawing.Size(200, 75);
+			this.tbIfNoneMatch.TabIndex = 5;
+			this.tbIfNoneMatch.Text = "";
+			// 
+			// lblIfNoneMatch
+			// 
+			this.lblIfNoneMatch.AutoSize = true;
+			this.lblIfNoneMatch.Location = new System.Drawing.Point(6, 204);
+			this.lblIfNoneMatch.Name = "lblIfNoneMatch";
+			this.lblIfNoneMatch.Size = new System.Drawing.Size(75, 13);
+			this.lblIfNoneMatch.TabIndex = 4;
+			this.lblIfNoneMatch.Text = "If None Match";
+			// 
+			// tbIfModifiedSince
+			// 
+			this.tbIfModifiedSince.Location = new System.Drawing.Point(6, 126);
+			this.tbIfModifiedSince.Name = "tbIfModifiedSince";
+			this.tbIfModifiedSince.Size = new System.Drawing.Size(200, 75);
+			this.tbIfModifiedSince.TabIndex = 3;
+			this.tbIfModifiedSince.Text = "";
+			// 
+			// lblIfModifiedSince
+			// 
+			this.lblIfModifiedSince.AutoSize = true;
+			this.lblIfModifiedSince.Location = new System.Drawing.Point(6, 110);
+			this.lblIfModifiedSince.Name = "lblIfModifiedSince";
+			this.lblIfModifiedSince.Size = new System.Drawing.Size(86, 13);
+			this.lblIfModifiedSince.TabIndex = 2;
+			this.lblIfModifiedSince.Text = "If Modified Since";
+			// 
+			// tbIfMatch
+			// 
+			this.tbIfMatch.Location = new System.Drawing.Point(6, 32);
+			this.tbIfMatch.Name = "tbIfMatch";
+			this.tbIfMatch.Size = new System.Drawing.Size(200, 75);
+			this.tbIfMatch.TabIndex = 1;
+			this.tbIfMatch.Text = "";
+			// 
+			// lblIfMatch
+			// 
+			this.lblIfMatch.AutoSize = true;
+			this.lblIfMatch.Location = new System.Drawing.Point(6, 16);
+			this.lblIfMatch.Name = "lblIfMatch";
+			this.lblIfMatch.Size = new System.Drawing.Size(46, 13);
+			this.lblIfMatch.TabIndex = 0;
+			this.lblIfMatch.Text = "If Match";
+			// 
+			// lblIfRange
+			// 
+			this.lblIfRange.AutoSize = true;
+			this.lblIfRange.Location = new System.Drawing.Point(226, 16);
+			this.lblIfRange.Name = "lblIfRange";
+			this.lblIfRange.Size = new System.Drawing.Size(48, 13);
+			this.lblIfRange.TabIndex = 6;
+			this.lblIfRange.Text = "If Range";
+			// 
+			// tbIfrange
+			// 
+			this.tbIfrange.Location = new System.Drawing.Point(226, 33);
+			this.tbIfrange.Name = "tbIfrange";
+			this.tbIfrange.Size = new System.Drawing.Size(200, 75);
+			this.tbIfrange.TabIndex = 7;
+			this.tbIfrange.Text = "";
+			// 
+			// lblIfUnmodifiedSince
+			// 
+			this.lblIfUnmodifiedSince.AutoSize = true;
+			this.lblIfUnmodifiedSince.Location = new System.Drawing.Point(226, 110);
+			this.lblIfUnmodifiedSince.Name = "lblIfUnmodifiedSince";
+			this.lblIfUnmodifiedSince.Size = new System.Drawing.Size(99, 13);
+			this.lblIfUnmodifiedSince.TabIndex = 8;
+			this.lblIfUnmodifiedSince.Text = "If Unmodified Since";
+			// 
+			// tbIfUnmodifiedSince
+			// 
+			this.tbIfUnmodifiedSince.Location = new System.Drawing.Point(226, 126);
+			this.tbIfUnmodifiedSince.Name = "tbIfUnmodifiedSince";
+			this.tbIfUnmodifiedSince.Size = new System.Drawing.Size(200, 75);
+			this.tbIfUnmodifiedSince.TabIndex = 9;
+			this.tbIfUnmodifiedSince.Text = "";
+			// 
+			// gbTE
+			// 
+			this.gbTE.Controls.Add(this.tbTrailer);
+			this.gbTE.Controls.Add(this.lblTrailer);
+			this.gbTE.Controls.Add(this.cbTransferEncodingChunked);
+			this.gbTE.Controls.Add(this.tbTransferEncoding);
+			this.gbTE.Controls.Add(this.lblTransferEncoding);
+			this.gbTE.Controls.Add(this.tbTE);
+			this.gbTE.Location = new System.Drawing.Point(12, 403);
+			this.gbTE.Name = "gbTE";
+			this.gbTE.Size = new System.Drawing.Size(213, 276);
+			this.gbTE.TabIndex = 11;
+			this.gbTE.TabStop = false;
+			this.gbTE.Text = "TE";
+			// 
+			// tbTE
+			// 
+			this.tbTE.Location = new System.Drawing.Point(6, 19);
+			this.tbTE.Name = "tbTE";
+			this.tbTE.Size = new System.Drawing.Size(200, 20);
+			this.tbTE.TabIndex = 0;
+			// 
+			// lblTransferEncoding
+			// 
+			this.lblTransferEncoding.AutoSize = true;
+			this.lblTransferEncoding.Location = new System.Drawing.Point(6, 42);
+			this.lblTransferEncoding.Name = "lblTransferEncoding";
+			this.lblTransferEncoding.Size = new System.Drawing.Size(94, 13);
+			this.lblTransferEncoding.TabIndex = 1;
+			this.lblTransferEncoding.Text = "Transfer Encoding";
+			// 
+			// tbTransferEncoding
+			// 
+			this.tbTransferEncoding.Location = new System.Drawing.Point(6, 58);
+			this.tbTransferEncoding.Name = "tbTransferEncoding";
+			this.tbTransferEncoding.Size = new System.Drawing.Size(200, 75);
+			this.tbTransferEncoding.TabIndex = 2;
+			this.tbTransferEncoding.Text = "";
+			// 
+			// cbTransferEncodingChunked
+			// 
+			this.cbTransferEncodingChunked.AutoSize = true;
+			this.cbTransferEncodingChunked.Location = new System.Drawing.Point(6, 139);
+			this.cbTransferEncodingChunked.Name = "cbTransferEncodingChunked";
+			this.cbTransferEncodingChunked.Size = new System.Drawing.Size(69, 17);
+			this.cbTransferEncodingChunked.TabIndex = 3;
+			this.cbTransferEncodingChunked.Text = "Chunked";
+			this.cbTransferEncodingChunked.UseVisualStyleBackColor = true;
+			// 
+			// lblTrailer
+			// 
+			this.lblTrailer.AutoSize = true;
+			this.lblTrailer.Location = new System.Drawing.Point(6, 159);
+			this.lblTrailer.Name = "lblTrailer";
+			this.lblTrailer.Size = new System.Drawing.Size(36, 13);
+			this.lblTrailer.TabIndex = 4;
+			this.lblTrailer.Text = "Trailer";
+			// 
+			// tbTrailer
+			// 
+			this.tbTrailer.Location = new System.Drawing.Point(6, 175);
+			this.tbTrailer.Name = "tbTrailer";
+			this.tbTrailer.Size = new System.Drawing.Size(200, 75);
+			this.tbTrailer.TabIndex = 5;
+			this.tbTrailer.Text = "";
+			// 
+			// pnlScrollOffset
+			// 
+			this.pnlScrollOffset.Controls.Add(tbNote);
+			this.pnlScrollOffset.Controls.Add(this.gbExpect);
+			this.pnlScrollOffset.Controls.Add(this.gbTE);
+			this.pnlScrollOffset.Controls.Add(this.gbAcceptHeads);
+			this.pnlScrollOffset.Controls.Add(this.gbIf);
+			this.pnlScrollOffset.Controls.Add(this.gbAuthorization);
+			this.pnlScrollOffset.Controls.Add(this.gbRouting);
+			this.pnlScrollOffset.Controls.Add(this.gbCacheControl);
+			this.pnlScrollOffset.Controls.Add(this.gbConnection);
+			this.pnlScrollOffset.Location = new System.Drawing.Point(0, 0);
+			this.pnlScrollOffset.Name = "pnlScrollOffset";
+			this.pnlScrollOffset.Size = new System.Drawing.Size(1116, 684);
+			this.pnlScrollOffset.TabIndex = 12;
+			// 
+			// tbNote
+			// 
+			tbNote.Enabled = false;
+			tbNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			tbNote.Location = new System.Drawing.Point(620, 524);
+			tbNote.Name = "tbNote";
+			tbNote.Size = new System.Drawing.Size(320, 126);
+			tbNote.TabIndex = 12;
+			tbNote.Text = "Note to self: Make separate forms forms for this dialog";
+			// 
+			// ClientHeaders
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScroll = true;
+			this.ClientSize = new System.Drawing.Size(1116, 684);
+			this.Controls.Add(this.pnlScrollOffset);
+			this.Name = "ClientHeaders";
+			this.Text = "Client Headers";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientHeaders_FormClosing);
+			this.Load += new System.EventHandler(this.ClientHeaders_Load);
+			this.gbAcceptHeads.ResumeLayout(false);
+			this.gbAcceptHeads.PerformLayout();
+			this.gbAuthorization.ResumeLayout(false);
+			this.gbAuthorization.PerformLayout();
+			this.gbCacheControl.ResumeLayout(false);
+			this.gbCacheControl.PerformLayout();
+			this.gbPrivate.ResumeLayout(false);
+			this.gbPrivate.PerformLayout();
+			this.gbNoCache.ResumeLayout(false);
+			this.gbNoCache.PerformLayout();
+			this.gbMaxStale.ResumeLayout(false);
+			this.gbMaxStale.PerformLayout();
+			this.gbConnection.ResumeLayout(false);
+			this.gbConnection.PerformLayout();
+			this.gbExpect.ResumeLayout(false);
+			this.gbExpect.PerformLayout();
+			this.gbRouting.ResumeLayout(false);
+			this.gbRouting.PerformLayout();
+			this.gbIf.ResumeLayout(false);
+			this.gbIf.PerformLayout();
+			this.gbTE.ResumeLayout(false);
+			this.gbTE.PerformLayout();
+			this.pnlScrollOffset.ResumeLayout(false);
+			this.ResumeLayout(false);
 
 		}
 
-		#endregion
-
-		private System.Windows.Forms.Label lblAccept;
-		private System.Windows.Forms.Label lblAcceptCharset;
-		private System.Windows.Forms.Label lblAcceptEncoding;
-		private System.Windows.Forms.Label lblAcceptLanguage;
-		private System.Windows.Forms.Label lblAuthoriaztion;
-		private System.Windows.Forms.Label lblCacheControl;
-		private System.Windows.Forms.Label lblConnection;
-		private System.Windows.Forms.Label lblDate;
-		private System.Windows.Forms.Label lblExpect;
-		private System.Windows.Forms.Label lblFrom;
-		private System.Windows.Forms.Label Host;
-		private System.Windows.Forms.Label lblIfMatch;
-		private System.Windows.Forms.Label lblIfModifiedSince;
-		private System.Windows.Forms.Label lblIfNoneMatch;
-		private System.Windows.Forms.Label lblIfRange;
-		private System.Windows.Forms.Label lblIfUnmodifiedSince;
-		private System.Windows.Forms.Label lblProxyAuthorization;
-		private System.Windows.Forms.Label lblRange;
-		private System.Windows.Forms.Label lblReferrer;
-		private System.Windows.Forms.Label lblTE;
-		private System.Windows.Forms.Label Trailer;
-		private System.Windows.Forms.Label lblTransferEncoding;
-		private System.Windows.Forms.Label lblUserAgent;
-		private System.Windows.Forms.Label lblVia;
-		private System.Windows.Forms.Label lblWarning;
-		private System.Windows.Forms.RichTextBox tbAccept;
-		private System.Windows.Forms.RichTextBox tbAcceptCharset;
-		private System.Windows.Forms.RichTextBox tbAcceptEncoding;
-		private System.Windows.Forms.RichTextBox tbAcceptLanguage;
-		private System.Windows.Forms.RichTextBox tbAuthorization;
-		private System.Windows.Forms.RichTextBox tbCacheControl;
-		private System.Windows.Forms.RichTextBox tbConnection;
-		private System.Windows.Forms.RichTextBox tbDate;
-		private System.Windows.Forms.RichTextBox tbExpect;
-		private System.Windows.Forms.RichTextBox tbFrom;
-		private System.Windows.Forms.RichTextBox tbHost;
-		private System.Windows.Forms.RichTextBox tbIfMatch;
-		private System.Windows.Forms.RichTextBox tbIfModifiedSince;
-		private System.Windows.Forms.RichTextBox tbIfNoneMatch;
-		private System.Windows.Forms.RichTextBox tbIfRange;
+        #endregion
+        private System.Windows.Forms.RichTextBox tbAccept;
+        private System.Windows.Forms.RichTextBox tbAcceptEncoding;
+        private System.Windows.Forms.Label lblAcceptEncoding;
+        private System.Windows.Forms.RichTextBox tbAcceptCharset;
+        private System.Windows.Forms.Label lblAcceptCharset;
+        private System.Windows.Forms.RichTextBox tbAcceptLanguage;
+        private System.Windows.Forms.Label lblAcceptLanguage;
+        private System.Windows.Forms.TextBox tbAuthScheme;
+        private System.Windows.Forms.Label lblAuthScheme;
+        private System.Windows.Forms.Label lblAuthorization;
+        private System.Windows.Forms.RichTextBox tbAuthorization;
+        private System.Windows.Forms.GroupBox gbAcceptHeads;
+        private System.Windows.Forms.GroupBox gbAuthorization;
+        private System.Windows.Forms.GroupBox gbCacheControl;
+        private System.Windows.Forms.RichTextBox tbExtensions;
+        private System.Windows.Forms.Label lblExtensions;
+        private System.Windows.Forms.GroupBox gbMaxStale;
+        private System.Windows.Forms.TextBox tbMaxAge;
+        private System.Windows.Forms.Label lblMaxAge;
+        private System.Windows.Forms.TextBox tbMaxStaleLimit;
+        private System.Windows.Forms.Label lblMaxStaleLimit;
+        private System.Windows.Forms.TextBox tbMinFresh;
+        private System.Windows.Forms.Label lblMinFresh;
+        private System.Windows.Forms.CheckBox cbMaxStale;
+        private System.Windows.Forms.GroupBox gbNoCache;
+        private System.Windows.Forms.RichTextBox tbNoCacheHeaders;
+        private System.Windows.Forms.Label lblNoCacheHeaders;
+        private System.Windows.Forms.CheckBox cbNoCache;
+        private System.Windows.Forms.CheckBox cbMustRevalidate;
+        private System.Windows.Forms.CheckBox cbNoStore;
+        private System.Windows.Forms.CheckBox cbNoTransform;
+        private System.Windows.Forms.CheckBox cbOnlyIfCached;
+        private System.Windows.Forms.CheckBox cbPrivate;
+        private System.Windows.Forms.GroupBox gbPrivate;
+        private System.Windows.Forms.Label lblPrivateHeaders;
+        private System.Windows.Forms.RichTextBox tbPrivateHeaders;
+        private System.Windows.Forms.CheckBox cbProxyRevalidate;
+        private System.Windows.Forms.CheckBox cbPublic;
+        private System.Windows.Forms.TextBox tbSharedMaxAge;
+        private System.Windows.Forms.Label lblSharedMaxAge;
+        private System.Windows.Forms.GroupBox gbConnection;
+        private System.Windows.Forms.CheckBox cbConnectionClose;
+        private System.Windows.Forms.TextBox tbConnection;
+        private System.Windows.Forms.GroupBox gbExpect;
+        private System.Windows.Forms.CheckBox cbExpectContinue;
+        private System.Windows.Forms.RichTextBox tbExpect;
+        private System.Windows.Forms.GroupBox gbRouting;
+        private System.Windows.Forms.TextBox tbFrom;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.TextBox tbHost;
+        private System.Windows.Forms.Label lblHost;
+        private System.Windows.Forms.TextBox tbReferrer;
+        private System.Windows.Forms.Label lblReferrer;
+        private System.Windows.Forms.GroupBox gbIf;
+        private System.Windows.Forms.RichTextBox tbIfMatch;
+        private System.Windows.Forms.Label lblIfMatch;
+        private System.Windows.Forms.RichTextBox tbIfModifiedSince;
+        private System.Windows.Forms.Label lblIfModifiedSince;
+        private System.Windows.Forms.RichTextBox tbIfNoneMatch;
+        private System.Windows.Forms.Label lblIfNoneMatch;
 		private System.Windows.Forms.RichTextBox tbIfUnmodifiedSince;
-		private System.Windows.Forms.RichTextBox tbProxyAuthorzition;
-		private System.Windows.Forms.RichTextBox tbRange;
-        private System.Windows.Forms.RichTextBox tbReferrer;
-        private System.Windows.Forms.RichTextBox tbTE;
-        private System.Windows.Forms.RichTextBox tbTrailer;
-        private System.Windows.Forms.RichTextBox tbTransferEncoding;
-        private System.Windows.Forms.RichTextBox tbUserAgent;
-        private System.Windows.Forms.RichTextBox tbVia;
-        private System.Windows.Forms.RichTextBox tbWarning;
-        private System.Windows.Forms.Panel pnlForm;
-    }
+		private System.Windows.Forms.Label lblIfUnmodifiedSince;
+		private System.Windows.Forms.RichTextBox tbIfrange;
+		private System.Windows.Forms.Label lblIfRange;
+		private System.Windows.Forms.GroupBox gbTE;
+		private System.Windows.Forms.TextBox tbTE;
+		private System.Windows.Forms.Label lblTransferEncoding;
+		private System.Windows.Forms.RichTextBox tbTransferEncoding;
+		private System.Windows.Forms.CheckBox cbTransferEncodingChunked;
+		private System.Windows.Forms.RichTextBox tbTrailer;
+		private System.Windows.Forms.Label lblTrailer;
+		private System.Windows.Forms.Panel pnlScrollOffset;
+	}
 }
