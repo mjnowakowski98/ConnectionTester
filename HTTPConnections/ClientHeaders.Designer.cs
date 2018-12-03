@@ -336,6 +336,11 @@
             this.nudMaxAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMaxAge.Location = new System.Drawing.Point(6, 32);
+            this.nudMaxAge.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudMaxAge.Name = "nudMaxAge";
             this.nudMaxAge.Size = new System.Drawing.Size(188, 20);
             this.nudMaxAge.TabIndex = 1;

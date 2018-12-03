@@ -25,8 +25,52 @@ namespace HTTPConnections {
             // No persistant connections, connecting creates a new client
             // Allows updating DefaultRequestHeaders without a race condition
 			client = new HttpClient();
+            HttpClientHeaders clientHeaders = httpControl.ClientHeaders;
+            foreach(String header in clientHeaders.Accept)
+                if (header.Length > 0) client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(header));
 
-            // TODO: Implement setting DefaultRequestHeaders
+            foreach (String header in clientHeaders.AcceptLanguage)
+                if(header.Length > 0)client.DefaultRequestHeaders.AcceptLanguage.Add(new StringWithQualityHeaderValue(header));
+
+            if(clientHeaders.Authorization.Length > 0)
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(clientHeaders.AuthorizationType, clientHeaders.Authorization);
+            if(clientHeaders.ProxyAuthorization.Length > 0)
+                client.DefaultRequestHeaders.ProxyAuthorization = new AuthenticationHeaderValue(clientHeaders.ProxyAuthorizationType, clientHeaders.ProxyAuthorizationType);
+
+            if(clientHeaders.MaxAge > TimeSpan.Zero)
+                client.DefaultRequestHeaders.CacheControl.MaxAge = clientHeaders.MaxAge;
+            if(clientHeaders.MaxStaleLimit > TimeSpan.Zero)
+                client.DefaultRequestHeaders.CacheControl.MaxStaleLimit = clientHeaders.MaxStaleLimit;
+            if(clientHeaders.MinFresh > TimeSpan.Zero)
+                client.DefaultRequestHeaders.CacheControl.MinFresh = clientHeaders.MinFresh;
+
+            // Cache control is null, will break here
+            client.DefaultRequestHeaders.CacheControl.NoCache = clientHeaders.NoCache;
+            client.DefaultRequestHeaders.CacheControl.NoStore = clientHeaders.NoStore;
+            client.DefaultRequestHeaders.CacheControl.NoTransform = clientHeaders.NoTransform;
+            client.DefaultRequestHeaders.CacheControl.OnlyIfCached = clientHeaders.OnlyIfCached;
+            client.DefaultRequestHeaders.ExpectContinue = clientHeaders.ExpectContinue;
+
+            if(clientHeaders.From.Length > 0) client.DefaultRequestHeaders.From = clientHeaders.From;
+            /*foreach (String header in clientHeaders.IfMatch)
+                client.DefaultRequestHeaders.IfMatch.Add(new EntityTagHeaderValue(header));
+
+            // Kill me
+            /*foreach(String header in clientHeaders.IfModifiedSince)
+                client.DefaultRequestHeaders.IfModifiedSince
+
+            foreach (String header in clientHeaders.IfNoneMatch)
+                client.DefaultRequestHeaders.IfNoneMatch.Add(new EntityTagHeaderValue(header));
+
+            client.DefaultRequestHeaders.IfRange = new RangeConditionHeaderValue(new EntityTagHeaderValue(clientHeaders.IfRange));
+            // IfUnmodifiedSince goes here
+
+            // Why is this so painful to figure out what the hell these values expect
+            //client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue())
+
+            // Warning goes here
+
+            */
 
 			log += "Connected\n";
 			OnConnectionEvent(this, new ConnectionEventArgs(EventType.Connected));

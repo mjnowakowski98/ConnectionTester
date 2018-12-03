@@ -8,86 +8,138 @@ namespace HTTPConnections {
     internal class HttpClientHeaders {
         #region internalvars
         private List<String> accept;
-        private List<String> acceptCharset;
-        private List<String> acceptEncoding;
         private List<String> acceptLanguage;
+
+        private String authType;
         private String authorization;
-        private String cacheControl;
-        private List<String> connection;
-        private String date;
-        private String expect;
+        private String proxyAuthType;
+        private String proxyAuth;
+
+        private TimeSpan maxAge;
+        private TimeSpan maxStaleLimit;
+        private TimeSpan minfresh;
+
+        private bool noCache;
+        private bool noStore;
+        private bool noTransform;
+        private bool onlyIfCached;
+
+        private bool expectContinue;
+
         private String from;
-        private String host;
+
         private List<String> ifMatch;
         private List<String> ifModifiedSince;
         private List<String> ifNoneMatch;
-        private List<String> ifRange;
+        private String ifRange;
         private List<String> ifUnmodifiedSince;
-        private String proxyAuthorization;
-        private List<String> range;
-        private String referrer;
-        private List<String> te;
-        private List<String> trailer;
-        private String transferEncoding;
+
+        private String range;
+
         private String userAgent;
-        private List<String> via;
         private String warning;
         #endregion
 
+        public HttpClientHeaders() {
+            accept = new List<string>();
+            acceptLanguage = new List<String>();
+            authType = "";
+            authorization = "";
+            proxyAuthType = "";
+            proxyAuth = "";
+            maxAge = TimeSpan.Zero;
+            maxStaleLimit = TimeSpan.Zero;
+            minfresh = TimeSpan.Zero;
+            noCache = false;
+            noStore = false;
+            noTransform = false;
+            onlyIfCached = false;
+            expectContinue = false;
+            from = "";
+            ifMatch = new List<string>();
+            ifModifiedSince = new List<string>();
+            ifNoneMatch = new List<string>();
+            ifRange = "";
+            ifUnmodifiedSince = new List<string>();
+            range = "";
+            userAgent = "";
+            warning = "";
+        }
+
         #region properties
-        public List<string> Accept {
+        public List<String> Accept {
             get { return accept; }
             set { accept = value; }
         }
 
-        public List<string> AcceptCharset {
-            get { return acceptCharset; }
-            set { acceptCharset = value; }
-        }
-
-        public List<string> AcceptEncoding {
-            get { return acceptEncoding; }
-            set { acceptEncoding = value; }
-        }
-
-        public List<string> AcceptLanguage {
+        public List<String> AcceptLanguage {
             get { return acceptLanguage; }
             set { acceptLanguage = value; }
         }
 
-        public string Authorization {
+        public String AuthorizationType {
+            get { return authType; }
+            set { authType = value; }
+        }
+
+        public String Authorization {
             get { return authorization; }
             set { authorization = value; }
         }
 
-        public string CacheControl {
-            get { return cacheControl; }
-            set { cacheControl = value; }
+        public String ProxyAuthorizationType {
+            get { return proxyAuthType; }
+            set { proxyAuthType = value; }
         }
 
-        public List<string> Connection {
-            get { return connection; }
-            set { connection = value; }
+        public String ProxyAuthorization {
+            get { return proxyAuth; }
+            set { proxyAuth = value; }
         }
 
-        public string Date {
-            get { return date; }
-            set { date = value; }
+        public TimeSpan MaxAge {
+            get { return maxAge; }
+            set { maxAge = value; }
         }
 
-        public string Expect {
-            get { return expect; }
-            set { expect = value; }
+        public TimeSpan MaxStaleLimit {
+            get { return maxStaleLimit; }
+            set { maxStaleLimit = value; }
+        }
+
+        public TimeSpan MinFresh {
+            get { return minfresh; }
+            set { minfresh = value; }
+        }
+
+        public bool NoCache {
+            get { return noCache; }
+            set { noCache = value; }
+        }
+
+        public bool NoStore {
+            get { return noStore; }
+            set { noStore = value; }
+        }
+
+        public bool NoTransform {
+            get { return noTransform; }
+            set { noTransform = value; }
+        }
+
+        public bool OnlyIfCached {
+            get { return onlyIfCached; }
+            set { onlyIfCached = value; }
+        }
+
+        public bool ExpectContinue {
+            get { return expectContinue; }
+            set { expectContinue = value; }
         }
 
         public string From {
             get { return from; }
             set { from = value; }
-        }
-
-        public string Host {
-            get { return host; }
-            set { host = value; }
         }
 
         public List<string> IfMatch {
@@ -105,54 +157,24 @@ namespace HTTPConnections {
             set { ifNoneMatch = value; }
         }
 
-        public List<string> IfRange {
+        public String IfRange {
             get { return ifRange; }
             set { ifRange = value; }
         }
 
         public List<string> IfUnmodifiedSince {
             get { return ifUnmodifiedSince; }
-            set { ifUnmodifiedSince = value; }
+            set { ifUnmodifiedSince = value;}
         }
 
-        public string ProxyAuthorization {
-            get { return proxyAuthorization; }
-            set { proxyAuthorization = value; }
-        }
-
-        public List<string> Range {
+        public string Range {
             get { return range; }
             set { range = value; }
-        }
-
-        public string Referrer {
-            get { return referrer; }
-            set { referrer = value; }
-        }
-
-        public List<string> Te {
-            get { return te; }
-            set { te = value; }
-        }
-
-        public List<String> Trailer {
-            get { return trailer; }
-            set { trailer = value; }
-        }
-
-        public string TransferEncoding {
-            get { return transferEncoding; }
-            set { transferEncoding = value; }
         }
 
         public string UserAgent {
             get { return userAgent; }
             set { userAgent = value; }
-        }
-
-        public List<string> Via {
-            get { return via; }
-            set { via = value; }
         }
 
         public string Warning {

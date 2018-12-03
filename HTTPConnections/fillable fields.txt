@@ -21,7 +21,7 @@ ExpectContinue - bool
 From - String
 --
 IfMatch - Collection
-IfModifiedSince - Collection
+IfModifiedSince - DateTimeOffset
 IfNoneMatch - Collection
 IfRange - Collection
 IfUnmodifiedSince - Collection
