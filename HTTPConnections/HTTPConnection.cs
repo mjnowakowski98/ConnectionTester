@@ -45,8 +45,10 @@ namespace HTTPConnections {
             client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue();
             if (clientHeaders.MaxAge > TimeSpan.Zero)
                 client.DefaultRequestHeaders.CacheControl.MaxAge = clientHeaders.MaxAge;
-            if(clientHeaders.MaxStaleLimit > TimeSpan.Zero)
+            if (clientHeaders.MaxStaleLimit > TimeSpan.Zero) {
+                client.DefaultRequestHeaders.CacheControl.MaxStale = true;
                 client.DefaultRequestHeaders.CacheControl.MaxStaleLimit = clientHeaders.MaxStaleLimit;
+            }
             if(clientHeaders.MinFresh > TimeSpan.Zero)
                 client.DefaultRequestHeaders.CacheControl.MinFresh = clientHeaders.MinFresh;
 

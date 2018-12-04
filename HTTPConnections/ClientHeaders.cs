@@ -18,14 +18,18 @@ namespace HTTPConnections {
             clientHeaders = _clientHeaders;
 		}
 
+        private String RemoveWhiteSpace(String input) {
+            return new string(input.ToCharArray().Where(c => !Char.IsWhiteSpace(c)).ToArray());
+        }
+
         // Set client headers to UI control
         private void ClientHeaders_FormClosing(object sender, FormClosingEventArgs e) {
-            clientHeaders.Accept = tbAccept.Text;
-            clientHeaders.AcceptLanguage = tbAcceptLanguage.Text;
+            clientHeaders.Accept = RemoveWhiteSpace(tbAccept.Text);
+            clientHeaders.AcceptLanguage = RemoveWhiteSpace(tbAcceptLanguage.Text);
             clientHeaders.AuthorizationType = cbAuthType.Text;
-            clientHeaders.Authorization = tbAuthCredentials.Text;
+            clientHeaders.Authorization = RemoveWhiteSpace(tbAuthCredentials.Text);
             clientHeaders.ProxyAuthorizationType = cbProxyAuthType.Text;
-            clientHeaders.ProxyAuthorization = tbProxyAuthCredentials.Text;
+            clientHeaders.ProxyAuthorization = RemoveWhiteSpace(tbProxyAuthCredentials.Text);
             clientHeaders.MaxAge = new TimeSpan(Convert.ToInt64(nudMaxAge.Value));
             clientHeaders.MaxStaleLimit = new TimeSpan(Convert.ToInt64(nudMaxStale.Value));
             clientHeaders.MinFresh = new TimeSpan(Convert.ToInt64(nudMinFresh.Value));
@@ -38,11 +42,11 @@ namespace HTTPConnections {
             clientHeaders.IfNoneMatch.AddRange(tbIfNonMatch.Text.Split(delim));
             clientHeaders.IfRange = tbIfRange.Text;
             clientHeaders.IfUnmodifiedSince.AddRange(tbIfUnmodifiedSince.Text.Split(delim));*/
-            clientHeaders.From = tbFrom.Text;
+            clientHeaders.From = RemoveWhiteSpace(tbFrom.Text);
             clientHeaders.ExpectContinue = cbExpectContinue.Checked;
-            clientHeaders.Range = tbRange.Text;
-            clientHeaders.UserAgent = tbUserAgent.Text;
-            clientHeaders.Warning = tbWarning.Text;
+            clientHeaders.Range = RemoveWhiteSpace(tbRange.Text);
+            clientHeaders.UserAgent = RemoveWhiteSpace(tbUserAgent.Text);
+            clientHeaders.Warning = RemoveWhiteSpace(tbWarning.Text);
 
         }
 
