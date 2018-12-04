@@ -10,26 +10,31 @@ using ConnectionInterface;
 namespace HTTPConnections {
     public class HTTPConnection : Connection {
         private HttpClient client; // HttpClient used for requests/responses
+        private HttpClientHeaders clientHeaders;
         private HttpResponseMessage response; // Last response from server
 
         private HTTPControl httpControl; // UI control for ConnectionType
 
         public HTTPConnection(String name, String hostName, int port) : base (name, hostName, port) {
+            clientHeaders = new HttpClientHeaders();
             response = null;
 
             httpControl = HTTPControl.GetInstance();
             SetUIControl(httpControl);
         }
 
+        internal HttpClientHeaders ClientHeaders {
+            get { return clientHeaders; }
+        }
+
         public override void Connect() {
             // No persistant connections, connecting creates a new client
             // Allows updating DefaultRequestHeaders without a race condition
 			client = new HttpClient();
-            HttpClientHeaders clientHeaders = httpControl.ClientHeaders;
-            foreach(String header in clientHeaders.Accept)
+            foreach(String header in clientHeaders.Accept.Split(','))
                 if (header.Length > 0) client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(header));
 
-            foreach (String header in clientHeaders.AcceptLanguage)
+            foreach (String header in clientHeaders.AcceptLanguage.Split(','))
                 if(header.Length > 0)client.DefaultRequestHeaders.AcceptLanguage.Add(new StringWithQualityHeaderValue(header));
 
             if(clientHeaders.Authorization.Length > 0)
@@ -37,14 +42,14 @@ namespace HTTPConnections {
             if(clientHeaders.ProxyAuthorization.Length > 0)
                 client.DefaultRequestHeaders.ProxyAuthorization = new AuthenticationHeaderValue(clientHeaders.ProxyAuthorizationType, clientHeaders.ProxyAuthorizationType);
 
-            if(clientHeaders.MaxAge > TimeSpan.Zero)
+            client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue();
+            if (clientHeaders.MaxAge > TimeSpan.Zero)
                 client.DefaultRequestHeaders.CacheControl.MaxAge = clientHeaders.MaxAge;
             if(clientHeaders.MaxStaleLimit > TimeSpan.Zero)
                 client.DefaultRequestHeaders.CacheControl.MaxStaleLimit = clientHeaders.MaxStaleLimit;
             if(clientHeaders.MinFresh > TimeSpan.Zero)
                 client.DefaultRequestHeaders.CacheControl.MinFresh = clientHeaders.MinFresh;
 
-            // Cache control is null, will break here
             client.DefaultRequestHeaders.CacheControl.NoCache = clientHeaders.NoCache;
             client.DefaultRequestHeaders.CacheControl.NoStore = clientHeaders.NoStore;
             client.DefaultRequestHeaders.CacheControl.NoTransform = clientHeaders.NoTransform;

@@ -300,6 +300,11 @@
             this.nudMinFresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMinFresh.Location = new System.Drawing.Point(6, 110);
+            this.nudMinFresh.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nudMinFresh.Name = "nudMinFresh";
             this.nudMinFresh.Size = new System.Drawing.Size(188, 20);
             this.nudMinFresh.TabIndex = 5;
@@ -318,6 +323,11 @@
             this.nudMaxStale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMaxStale.Location = new System.Drawing.Point(6, 71);
+            this.nudMaxStale.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nudMaxStale.Name = "nudMaxStale";
             this.nudMaxStale.Size = new System.Drawing.Size(188, 20);
             this.nudMaxStale.TabIndex = 3;
@@ -337,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMaxAge.Location = new System.Drawing.Point(6, 32);
             this.nudMaxAge.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});

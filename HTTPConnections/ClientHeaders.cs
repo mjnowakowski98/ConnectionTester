@@ -20,25 +20,24 @@ namespace HTTPConnections {
 
         // Set client headers to UI control
         private void ClientHeaders_FormClosing(object sender, FormClosingEventArgs e) {
-            char delim = ',';
-            clientHeaders.Accept.AddRange(tbAccept.Text.Split(delim));
-            clientHeaders.AcceptLanguage.AddRange(tbAcceptLanguage.Text.Split(delim));
+            clientHeaders.Accept = tbAccept.Text;
+            clientHeaders.AcceptLanguage = tbAcceptLanguage.Text;
             clientHeaders.AuthorizationType = cbAuthType.Text;
             clientHeaders.Authorization = tbAuthCredentials.Text;
             clientHeaders.ProxyAuthorizationType = cbProxyAuthType.Text;
             clientHeaders.ProxyAuthorization = tbProxyAuthCredentials.Text;
-            clientHeaders.MaxAge = new TimeSpan(long.Parse(nudMaxAge.Value.ToString()));
-            clientHeaders.MaxStaleLimit = new TimeSpan(long.Parse(nudMaxStale.Value.ToString()));
-            clientHeaders.MinFresh = new TimeSpan(long.Parse(nudMinFresh.Value.ToString()));
+            clientHeaders.MaxAge = new TimeSpan(Convert.ToInt64(nudMaxAge.Value));
+            clientHeaders.MaxStaleLimit = new TimeSpan(Convert.ToInt64(nudMaxStale.Value));
+            clientHeaders.MinFresh = new TimeSpan(Convert.ToInt64(nudMinFresh.Value));
             clientHeaders.NoCache = cbNoCache.Checked;
             clientHeaders.NoStore = cbNoStore.Checked;
             clientHeaders.NoTransform = cbNoTransform.Checked;
             clientHeaders.OnlyIfCached = cbOnlyIfCached.Checked;
-            clientHeaders.IfMatch.AddRange(tbIfMatch.Text.Split(delim));
+            /*clientHeaders.IfMatch.AddRange(tbIfMatch.Text.Split(delim));
             clientHeaders.IfModifiedSince.AddRange(tbIfModifiedSince.Text.Split(delim));
             clientHeaders.IfNoneMatch.AddRange(tbIfNonMatch.Text.Split(delim));
             clientHeaders.IfRange = tbIfRange.Text;
-            clientHeaders.IfUnmodifiedSince.AddRange(tbIfUnmodifiedSince.Text.Split(delim));
+            clientHeaders.IfUnmodifiedSince.AddRange(tbIfUnmodifiedSince.Text.Split(delim));*/
             clientHeaders.From = tbFrom.Text;
             clientHeaders.ExpectContinue = cbExpectContinue.Checked;
             clientHeaders.Range = tbRange.Text;
@@ -47,8 +46,28 @@ namespace HTTPConnections {
 
         }
 
-		private void ClientHeaders_Load(object sender, EventArgs e) {
+        private void ClientHeaders_Load(object sender, EventArgs e) {
+            tbAccept.Text = clientHeaders.Accept;
+            tbAcceptLanguage.Text = clientHeaders.AcceptLanguage;
+            cbAuthType.Text = clientHeaders.AuthorizationType;
+            tbAuthCredentials.Text = clientHeaders.Authorization;
+            cbProxyAuthType.Text = clientHeaders.ProxyAuthorizationType;
+            tbProxyAuthCredentials.Text = clientHeaders.ProxyAuthorization;
+            nudMaxAge.Value = clientHeaders.MaxAge.Ticks;
+            nudMaxStale.Value = clientHeaders.MaxStaleLimit.Ticks;
+            nudMinFresh.Value = clientHeaders.MinFresh.Ticks;
+            cbNoCache.Checked = clientHeaders.NoCache;
+            cbNoStore.Checked = clientHeaders.NoStore;
+            cbNoTransform.Checked = clientHeaders.NoTransform;
+            cbOnlyIfCached.Checked = clientHeaders.OnlyIfCached;
 
-		}
+            // Conditionals go here
+
+            tbFrom.Text = clientHeaders.From;
+            cbExpectContinue.Checked = clientHeaders.ExpectContinue;
+            tbRange.Text = clientHeaders.Range;
+            tbUserAgent.Text = clientHeaders.UserAgent;
+            tbWarning.Text = clientHeaders.UserAgent;
+        }
 	}
 }

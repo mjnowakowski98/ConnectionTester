@@ -7,13 +7,15 @@ using System.Windows.Forms;
 
 namespace ConnectionInterface {
     public class UIControl : UserControl {
-        protected bool currentConnectionIsConnected;
+        private Connection currentConnection;
 
-        public virtual bool CurrentConnectionIsConnected {
-            get { return currentConnectionIsConnected; }
-            set {
-                currentConnectionIsConnected = value;
-            }
+        public Connection CurrentConnection {
+            get { return currentConnection; }
+            set { currentConnection = value; }
+        }
+
+        public virtual void SetConnectedUI(bool connected) {
+
         }
     }
 }

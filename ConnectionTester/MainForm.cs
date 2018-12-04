@@ -38,7 +38,6 @@ namespace ConnectionTester {
 				tbHostName.Enabled = false;
 				tbPortNum.Enabled = false;
                 currentConnectionType.UIControl.Enabled = false; // No connection, no UserControl
-                currentConnectionType.UIControl.CurrentConnectionIsConnected = false;
 				return;
 			}
 
@@ -50,7 +49,7 @@ namespace ConnectionTester {
 			tbHostName.Enabled = !connected; // Can not update host
 			tbPortNum.Enabled = !connected; // Can not update port
             currentConnectionType.UIControl.Enabled = true; // Always able to use ConnectionType's UserControl
-            currentConnectionType.UIControl.CurrentConnectionIsConnected = connected;
+            currentConnectionType.UIControl.SetConnectedUI(connected);
 		}
 
 		// Add the connection control to the ConnectionType's tab page

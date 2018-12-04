@@ -14,23 +14,13 @@ namespace HTTPConnections {
     internal partial class HTTPControl : UIControl {
         private static HTTPControl uniqueInstance = null;
 
-        private HttpClientHeaders clientHeaders = new HttpClientHeaders();
-
-        public override bool CurrentConnectionIsConnected {
-            get { return base.CurrentConnectionIsConnected; }
-            set {
-                base.CurrentConnectionIsConnected = value;
-                btnClientHeaders.Enabled = !value;
-                tbRequestData.Enabled = value;
-            }
+        public override void SetConnectedUI(bool connected) {
+            btnClientHeaders.Enabled = !connected;
+            tbRequestData.Enabled = connected;
         }
 
         private HTTPControl() {
             InitializeComponent();
-        }
-
-        public HttpClientHeaders ClientHeaders {
-            get { return clientHeaders; }
         }
 
         #region formevents
@@ -44,7 +34,8 @@ namespace HTTPConnections {
         }
 
         private void btnClientHeaders_Click(object sender, EventArgs e) {
-            ClientHeaders dialog = new ClientHeaders(clientHeaders);
+            HTTPConnection tmp = (HTTPConnection)CurrentConnection;
+            ClientHeaders dialog = new ClientHeaders(tmp.ClientHeaders);
             dialog.ShowDialog();
         }
         #endregion

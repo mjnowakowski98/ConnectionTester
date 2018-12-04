@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace HTTPConnections {
     internal class HttpClientHeaders {
         #region internalvars
-        private List<String> accept;
-        private List<String> acceptLanguage;
+        private String accept;
+        private String acceptLanguage;
 
         private String authType;
         private String authorization;
@@ -28,11 +28,11 @@ namespace HTTPConnections {
 
         private String from;
 
-        private List<String> ifMatch;
+        /*private List<String> ifMatch;
         private List<String> ifModifiedSince;
         private List<String> ifNoneMatch;
         private String ifRange;
-        private List<String> ifUnmodifiedSince;
+        private List<String> ifUnmodifiedSince;*/
 
         private String range;
 
@@ -41,8 +41,8 @@ namespace HTTPConnections {
         #endregion
 
         public HttpClientHeaders() {
-            accept = new List<string>();
-            acceptLanguage = new List<String>();
+            accept = "";
+            acceptLanguage = "";
             authType = "";
             authorization = "";
             proxyAuthType = "";
@@ -56,23 +56,23 @@ namespace HTTPConnections {
             onlyIfCached = false;
             expectContinue = false;
             from = "";
-            ifMatch = new List<string>();
+            /*ifMatch = new List<string>();
             ifModifiedSince = new List<string>();
             ifNoneMatch = new List<string>();
             ifRange = "";
-            ifUnmodifiedSince = new List<string>();
+            ifUnmodifiedSince = new List<string>();*/
             range = "";
             userAgent = "";
             warning = "";
         }
 
         #region properties
-        public List<String> Accept {
+        public String Accept {
             get { return accept; }
             set { accept = value; }
         }
 
-        public List<String> AcceptLanguage {
+        public String AcceptLanguage {
             get { return acceptLanguage; }
             set { acceptLanguage = value; }
         }
@@ -142,7 +142,7 @@ namespace HTTPConnections {
             set { from = value; }
         }
 
-        public List<string> IfMatch {
+        /*public List<string> IfMatch {
             get { return ifMatch; }
             set { ifMatch = value; }
         }
@@ -165,19 +165,19 @@ namespace HTTPConnections {
         public List<string> IfUnmodifiedSince {
             get { return ifUnmodifiedSince; }
             set { ifUnmodifiedSince = value;}
-        }
+        }*/
 
-        public string Range {
+        public String Range {
             get { return range; }
             set { range = value; }
         }
 
-        public string UserAgent {
+        public String UserAgent {
             get { return userAgent; }
             set { userAgent = value; }
         }
 
-        public string Warning {
+        public String Warning {
             get { return warning; }
             set { warning = value; }
         }

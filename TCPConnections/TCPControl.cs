@@ -17,12 +17,8 @@ namespace TCPConnections {
 			InitializeComponent();
 		}
 
-        public override bool CurrentConnectionIsConnected {
-            get { return base.CurrentConnectionIsConnected; }
-            set {
-                base.CurrentConnectionIsConnected = value;
-                tbSendString.Enabled = value;
-            }
+        public override void SetConnectedUI(bool connected) {
+            tbSendString.Enabled = connected;
         }
 
         internal String SendString {

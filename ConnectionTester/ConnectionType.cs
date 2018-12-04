@@ -84,8 +84,13 @@ namespace ConnectionTester {
 
 		public void SetCurrentConnectionByName(String connectionName) {
 			int ndx = GetConnectionNdxByName(connectionName);
-			if (ndx >= 0) currentConnection = connections[ndx];
-			else currentConnection = null;
+            if (ndx >= 0) {
+                currentConnection = connections[ndx];
+                uiControl.CurrentConnection = connections[ndx];
+            } else {
+                currentConnection = new NoConnection();
+                uiControl.CurrentConnection = new NoConnection();
+            }
 		}
 
 		public void SetNoConnection() { currentConnection = new NoConnection(); }
