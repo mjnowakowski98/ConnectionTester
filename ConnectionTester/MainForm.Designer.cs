@@ -283,6 +283,7 @@
 			this.MinimumSize = new System.Drawing.Size(391, 479);
 			this.Name = "MainForm";
 			this.Text = "Network Thing";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.connectionHostContainer.ResumeLayout(false);
 			this.connectionHostContainer.PerformLayout();

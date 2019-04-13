@@ -79,9 +79,15 @@ namespace ConnectionTester {
 		}
 		#endregion
 
+		private void ClearConnectionTypes() {
+			foreach (ConnectionType connectionType in loadedTypes)
+				connectionType.CloseAllConnections();
+			loadedTypes.Clear(); // Clear loaded ConnectionTypes
+		}
+
 		// Load ConnectionType libraries based on application settings
 		private void LoadConnectionLibs() {
-			loadedTypes.Clear(); // Clear loaded ConnectionTypes
+			ClearConnectionTypes();
             foreach (SettingsProperty libSetting in Properties.ConnectionLibs.Default.Properties) {
 				// Load connection dll
                 Assembly connectionDLL = null;
@@ -116,6 +122,9 @@ namespace ConnectionTester {
 			FillConnectionsList();
 			SetConnectedUI(currentConnectionType.CurrentConnection.IsConnected);
 		}
+
+		// Form Closing
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e) { ClearConnectionTypes(); }
 
 		// Connect to server using ConnectionType inplementation
 		private void btnConnect_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.Connect(); }
@@ -196,5 +205,7 @@ namespace ConnectionTester {
 
 		private void btnClearLog_Click(object sender, EventArgs e) { currentConnectionType.CurrentConnection.ClearLog(); }
 		#endregion
+
+
 	}
 }

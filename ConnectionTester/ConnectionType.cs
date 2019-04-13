@@ -28,11 +28,6 @@ namespace ConnectionTester {
 			uiControl = control; // UI for creating requests
 		}
 
-		~ConnectionType() {
-			foreach (Connection connection in connections)
-				connection.Disconnect();
-		}
-
 		// Readonly
 		// Connection type
 		public Type DerivedType {
@@ -130,5 +125,11 @@ namespace ConnectionTester {
 			RemoveConnection(ndx);	// No need to duplicate
 		}
 		#endregion
+
+		// Close all active connections
+		public void CloseAllConnections() {
+			foreach (Connection connection in connections)
+				connection.Disconnect();
+		}
 	}
 }

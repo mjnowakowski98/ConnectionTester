@@ -63,7 +63,8 @@ namespace TCPConnections {
 				OnConnectionEvent(this, new ConnectionEventArgs(EventType.DataSent));
 				tcpControl.SendString = "";
 				GetResponses();
-			} catch (SocketException err) { SocketPanic(err); } catch (System.IO.IOException) { Disconnect(); }
+			} catch (SocketException err) { SocketPanic(err); }
+			catch (System.IO.IOException) { Disconnect(); }
 		}
 
 		// Get server responses
